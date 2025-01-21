@@ -10,26 +10,91 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="favicon" href="assets/">
     <link rel="stylesheet" href="output.css">
-    <title>Login - WebName</title>
+    <link rel="stylesheet" href="input.css">
+    <title>Login</title>
 </head>
 
-<body>
-    <header class="flex items-center justify-between mx-8">
-        <div class="flex items-center">
-            <img class="mr-5" src="https://dummyimage.com/50x50/ff0000/fff&text=logo" alt="Logo sitio web">
-            <h1 class="text-xl">WebName</h1>
+<body class="flex flex-col items-center justify-center h-screen w-full">
+    <main class="flex flex-col p-5 gap-20 w-[360px] h-screen items-center justify-center">
+        <div class="flex flex-col gap-5">
+            <div class="text-center space-y-2">
+                <span class="font-Inter text-xl">
+                    Bienvenido de vuelta
+                </span>
+                <p class="text-trece font-Inter text-gray-500">Introduce las credenciales para acceder a tu cuenta</p>
+            </div>
+    
+            <div>
+                <form id="form_login" method="post" class="space-y-5">
+                    <div>
+                        <div class="relative">
+                          <input
+                            type="email"
+                            id="email"
+                            class="peer w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-blue-400 hover:border-slate-300 focus:shadow"
+                          />
+                          <label id="labEmail" class="absolute font-Inter top-2.5 text-trece cursor-text pointer-events-none bg-white px-1 left-2.5 text-slate-400 transition-all transform origin-left">
+                            Email
+                          </label>
+                        </div>
+                    </div>
+    
+                    <div class="flex flex-col gap-2">
+                        <div class="relative">
+                            <input
+                                type="password"
+                                id="contra"
+                              class="peer w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-blue-400 hover:border-slate-300 focus:shadow"
+                            />
+                            <label id="labContra" class="absolute font-Inter top-2.5 text-trece cursor-text pointer-events-none bg-white px-1 left-2.5 text-slate-400 transition-all transform origin-left">
+                              Contraseña
+                            </label>
+                            <div class="absolute right-2 top-[5px]">
+                                <button id="verContra" class="rounded-md p-1 hover:bg-gray-100 outline-none">
+                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="#737373"  stroke-width="1.8"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
+                                </button>
+                            </div>
+                        </div>
+    
+                        <div class="ml-auto">
+                            <a href="#" class="font-Inter text-blue-500 flex text-xs hover:underline">Olvidé la contraseña</a>
+                        </div>
+                    </div>
+    
+                    <div>
+                        <div>
+                            <button id="loginf" class="rounded-md w-full bg-[#275BC3] px-5 py-2 text-trece text-white font-Inter hover:opacity-90 transition-opacity duration-300">Iniciar Sesión</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="links">
-            <a href="index.html">Inicio</a>
-            <a href="login.html">Login</a>
-            <a href="register.html">Registro</a>
+
+        <div>
+            <div class="text-center">
+                <p class="font-Inter text-trece text-gray-600">¿No tienes una cuenta? <a href="#" class="font-Inter text-blue-500 text-xs hover:underline">Registrarme</a></p>
+            </div>
         </div>
-    </header>
-    <main>
-        
     </main>
-    <footer>
-        
+
+    <footer class="mt-auto h-10 flex items-center gap-5">
+        <div>
+            <a href="#" class="font-Inter text-xs text-gray-500">
+                Condiciones de uso
+            </a>
+        </div>
+
+        <div>
+            <span class="font-Inter text-xs text-gray-500">·</span>
+        </div>
+
+        <div>
+            <a href="#" class="font-Inter text-xs text-gray-500">
+                Política de privacidad
+            </a>
+        </div>
     </footer>
+
+    <script src="./auth/login.js"></script>
 </body>
 </html>
