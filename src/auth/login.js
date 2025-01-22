@@ -1,4 +1,6 @@
 
+let msj = document.querySelector("#msj")
+let msj_box = document.querySelector("#msj_box")
 
 let inputEmail = document.querySelector("#email")
 let labEmail = document.querySelector("#labEmail")
@@ -36,7 +38,7 @@ inputEmail.addEventListener("blur", () => {
     if (valorEmail.length === 0) {
 
         labEmail.classList.add("top-2.5", "text-trece", "scale-100")
-        labEmail.classList.remove("peer-focus:-top-2", "text-xs", "peer-focus:left-2.5",  "peer-focus:text-xs", "peer-focus:text-blue-400", "peer-focus:scale-90")
+        labEmail.classList.remove("peer-focus:-top-2", "text-xs", "peer-focus:left-2.5",  "peer-focus:text-xs", "peer-focus:text-blue-400", "peer-focus:scale-90", "scale-90")
 
     } else {
         
@@ -61,7 +63,7 @@ inputContra.addEventListener("blur", () => {
     if (valorContra.length === 0) {
 
         labContra.classList.add("top-2.5", "text-trece", "scale-100")
-        labContra.classList.remove("peer-focus:-top-2", "text-xs", "peer-focus:left-2.5",  "peer-focus:text-xs", "peer-focus:text-blue-400", "peer-focus:scale-90")
+        labContra.classList.remove("peer-focus:-top-2", "text-xs", "peer-focus:left-2.5",  "peer-focus:text-xs", "peer-focus:text-blue-400", "peer-focus:scale-90", "scale-90")
 
     } else {
         
@@ -99,15 +101,40 @@ form_login.addEventListener("submit", (e) => {
         })
         .then((data) => {
     
-            console.log(data)
+           if (data.token) {
+
+                token = data.token
+                localStorage.setItem("logged", token)
+                localStorage.setItem("IS_LOGGED", true)
+
+                window.location.href = "/"
+           }
+
+           if (data.code !== 200) {
+
+                msj.textContent = data.mensaje
+                msj_box.classList.add("opacity-100")
+
+                setTimeout(() => {
+                    msj_box.classList.remove("opacity-100")
+                }, 5000)
+           } 
+            
         })
+
     } catch(error) {
 
         throw new Error(error)
 
     } finally {
-
+        
         inputEmail.value = ""
         inputContra.value = ""
+
+
+        labEmail.classList.add("top-2.5", "text-trece", "scale-100")
+        labEmail.classList.remove("peer-focus:-top-2", "text-xs", "peer-focus:left-2.5",  "peer-focus:text-xs", "peer-focus:text-blue-400", "peer-focus:scale-90", "scale-90")
+        labContra.classList.add("top-2.5", "text-trece", "scale-100")
+        labContra.classList.remove("peer-focus:-top-2", "text-xs", "peer-focus:left-2.5",  "peer-focus:text-xs", "peer-focus:text-blue-400", "peer-focus:scale-90", "scale-90")
     }
 })  
