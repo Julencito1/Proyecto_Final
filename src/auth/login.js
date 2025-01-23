@@ -1,6 +1,7 @@
 
 let msj = document.querySelector("#msj")
 let msj_box = document.querySelector("#msj_box")
+let cerrar_msj = document.querySelector("#cerrar_msj")
 
 let inputEmail = document.querySelector("#email")
 let labEmail = document.querySelector("#labEmail")
@@ -42,7 +43,7 @@ inputEmail.addEventListener("blur", () => {
 
     } else {
         
-        labContra.classList.remove("scale-100")
+        labEmail.classList.remove("scale-100")
         labEmail.classList.add("-top-2", "left-2.5",  "text-xs", "text-slate-400", "scale-90")
     }
 
@@ -72,6 +73,11 @@ inputContra.addEventListener("blur", () => {
     }
 
     
+})
+
+cerrar_msj.addEventListener("click", () => {
+
+    msj_box.classList.remove("opacity-100")
 })
 
 
@@ -115,9 +121,6 @@ form_login.addEventListener("submit", (e) => {
                 msj.textContent = data.mensaje
                 msj_box.classList.add("opacity-100")
 
-                setTimeout(() => {
-                    msj_box.classList.remove("opacity-100")
-                }, 5000)
            } 
             
         })
