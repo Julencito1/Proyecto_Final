@@ -55,7 +55,7 @@ inputNombre.addEventListener("blur", () => {
 
 inputEmail.addEventListener("focus", () => {
 
-    labEmail.classList.add("peer-focus:-top-2", "peer-focus:left-2.5",  "peer-focus:text-xs", "peer-focus:text-blue-400", "peer-focus:scale-90")
+    labEmail.classList.add("peer-focus:-top-2", "peer-focus:left-2.5",  "peer-focus:text-xs", "peer-focus:scale-90")
     labEmail.classList.remove("top-2.5")
 })
 
@@ -66,7 +66,7 @@ inputEmail.addEventListener("blur", () => {
     if (valorEmail.length === 0) {
 
         labEmail.classList.add("top-2.5", "text-trece", "scale-100")
-        labEmail.classList.remove("peer-focus:-top-2", "text-xs", "peer-focus:left-2.5",  "peer-focus:text-xs", "peer-focus:text-blue-400", "peer-focus:scale-90", "scale-90")
+        labEmail.classList.remove("peer-focus:-top-2", "text-xs", "peer-focus:left-2.5",  "peer-focus:text-xs", "peer-focus:scale-90", "scale-90")
 
     } else {
         
@@ -102,11 +102,6 @@ inputContra.addEventListener("blur", () => {
     
 })
 
-cerrar_msj.addEventListener("click", () => {
-
-    msj_box.classList.remove("opacity-100")
-})
-
 
 form_signup.addEventListener("submit", (e) => {
 
@@ -118,6 +113,9 @@ form_signup.addEventListener("submit", (e) => {
         fetch ("http://localhost/api_proyecto_ies/endpoints/signup",
             {
                 method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
                 body: JSON.stringify({
                     nombre: inputNombre.value,
                     email: inputEmail.value,
@@ -141,6 +139,8 @@ form_signup.addEventListener("submit", (e) => {
 
                 msj.textContent = data.mensaje
                 msj_box.classList.add("opacity-100")
+                inputEmail.classList.add("border-red-500", "focus:border-red-500", "hover:border-red-500")
+                labEmail.classList.add("text-red-500")
 
            } else {
 

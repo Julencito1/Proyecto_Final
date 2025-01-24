@@ -1,7 +1,7 @@
 
 let msj = document.querySelector("#msj")
 let msj_box = document.querySelector("#msj_box")
-let cerrar_msj = document.querySelector("#cerrar_msj")
+
 
 let inputEmail = document.querySelector("#email")
 let labEmail = document.querySelector("#labEmail")
@@ -53,7 +53,7 @@ inputEmail.addEventListener("blur", () => {
 inputContra.addEventListener("focus", () => {
 
  
-    labContra.classList.add("peer-focus:-top-2", "peer-focus:left-2.5",  "peer-focus:text-xs", "peer-focus:text-blue-400", "peer-focus:scale-90")
+    labContra.classList.add("peer-focus:-top-2", "peer-focus:left-2.5",  "peer-focus:text-xs", "peer-focus:scale-90")
     labContra.classList.remove("top-2.5")
 })
 
@@ -64,7 +64,7 @@ inputContra.addEventListener("blur", () => {
     if (valorContra.length === 0) {
 
         labContra.classList.add("top-2.5", "text-trece", "scale-100")
-        labContra.classList.remove("peer-focus:-top-2", "text-xs", "peer-focus:left-2.5",  "peer-focus:text-xs", "peer-focus:text-blue-400", "peer-focus:scale-90", "scale-90")
+        labContra.classList.remove("peer-focus:-top-2", "text-xs", "peer-focus:left-2.5",  "peer-focus:text-xs", "peer-focus:scale-90", "scale-90")
 
     } else {
         
@@ -75,10 +75,7 @@ inputContra.addEventListener("blur", () => {
     
 })
 
-cerrar_msj.addEventListener("click", () => {
 
-    msj_box.classList.remove("opacity-100")
-})
 
 
 form_login.addEventListener("submit", (e) => {
@@ -120,6 +117,8 @@ form_login.addEventListener("submit", (e) => {
 
                 msj.textContent = data.mensaje
                 msj_box.classList.add("opacity-100")
+                inputContra.classList.add("border-red-500", "focus:border-red-500", "hover:border-red-500")
+                labContra.classList.add("text-red-500")
 
            } 
             
