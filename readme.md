@@ -1,5 +1,5 @@
 # Proyecto Fin de Grado - IES Abdera
-David Escutia de Haro y Julen Agüero Fernandez
+Julen Agüero Fernandez
 <br><br>
 ## Tecnologías utilizadas
 - **FrontEnd** - HTML5 y Tailwind
