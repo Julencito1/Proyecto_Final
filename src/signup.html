@@ -3,13 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="David Escutia de Haro">
-    <meta name="author" content="Julen Agüero Fernández">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="favicon" href="assets/">
-    <link rel="stylesheet" href="output.css">
-    <link rel="stylesheet" href="input.css">
+    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="./input.css">
+    <link rel="shortcut icon" href="./assets/favicon/newtube.ico" type="image/x-icon">
     <title>Registrarme</title>
 </head>
 <body class="flex flex-col items-center justify-center h-screen w-full">
@@ -17,14 +15,14 @@
 
         <div class="flex flex-col gap-5 w-full">
             <div class="flex items-center justify-center">
-                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="#275BC3"  stroke-width="1.8"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-redhat"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 10.5l1.436 -4c.318 -.876 .728 -1.302 1.359 -1.302c.219 0 1.054 .365 1.88 .583c.825 .219 .733 -.329 .908 -.487c.176 -.158 .355 -.294 .61 -.294c.242 0 .553 .048 1.692 .448c.759 .267 1.493 .574 2.204 .922c1.175 .582 1.426 .913 1.595 1.507l.816 4.623c2.086 .898 3.5 2.357 3.5 3.682c0 1.685 -1.2 3.818 -5.957 3.818c-6.206 0 -14.043 -4.042 -14.043 -7.32c0 -1.044 1.333 -1.77 4 -2.18z" /><path d="M6 10.5c0 .969 4.39 3.5 9.5 3.5c1.314 0 3 .063 3 -1.5" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.25 27h13.5a6.75 6.75 0 0 0 0 -13.5 9 9 0 0 0 -17.438 -1.125A5.625 5.625 0 0 0 11.25 27" fill="#F03" stroke="none" stroke-width="0.9"/><path d="m20.25 18 -5.625 -3.375v6.75z" stroke="#FFF" fill="#FFF" stroke-width="0.5625"/></svg>
             </div>
             
             <div class="text-center space-y-2">
                 <span class="font-Inter text-xl font-medium">
                     Crear una cuenta
                 </span>
-                <p class="text-trece font-Inter text-gray-500">Bienvenido a NOMBRE, registrate para empezar</p>
+                <p class="text-trece font-Inter text-gray-500">Bienvenido a NewTube, registrate para empezar</p>
             </div>
     
             <div>
@@ -36,9 +34,9 @@
                             type="text"
                             id="nombre"
                             spellcheck="false"
-                            class="peer w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-blue-400 hover:border-slate-300 focus:shadow"
+                            class="peer w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1.5 transition duration-300 ease focus:outline-none focus:border-blue-400 hover:border-slate-300 focus:shadow"
                           />
-                          <label id="labNombre" class="absolute font-Inter top-2.5 text-trece cursor-text pointer-events-none bg-white px-1 left-2.5 text-slate-400 transition-all transform origin-left">
+                          <label id="labNombre" class="absolute font-Inter top-2 text-trece cursor-text pointer-events-none bg-white px-1 left-2.5 text-slate-400 transition-all transform origin-left">
                             Nombre
                           </label>
                         </div>
@@ -50,9 +48,9 @@
                             type="email"
                             id="email"
                             spellcheck="false"
-                            class="peer w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-blue-400 hover:border-slate-300"
+                            class="peer w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1.5 transition duration-300 ease focus:outline-none focus:border-blue-400 hover:border-slate-300"
                           />
-                          <label id="labEmail" class="absolute font-Inter top-2.5 text-trece cursor-text peer-focus:text-blue-400 pointer-events-none bg-white px-1 left-2.5 text-slate-400 transition-all transform origin-left">
+                          <label id="labEmail" class="absolute font-Inter top-2 text-trece cursor-text peer-focus:text-blue-400 pointer-events-none bg-white px-1 left-2.5 text-slate-400 transition-all transform origin-left">
                             Email
                           </label>
                         </div>
@@ -67,12 +65,12 @@
                                 type="password"
                                 id="contra"
                                 spellcheck="false"
-                              class="peer w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-blue-400 hover:border-slate-300"
+                              class="peer w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1.5 transition duration-300 ease focus:outline-none focus:border-blue-400 hover:border-slate-300"
                             />
-                            <label id="labContra" class="absolute font-Inter top-2.5 text-trece cursor-text pointer-events-none bg-white px-1 left-2.5 text-slate-400 transition-all transform origin-left">
+                            <label id="labContra" class="absolute font-Inter top-2 text-trece cursor-text pointer-events-none bg-white px-1 left-2.5 text-slate-400 transition-all transform origin-left">
                               Contraseña
                             </label>
-                            <div class="absolute right-2 top-[5px]">
+                            <div class="absolute right-2 top-[3px]">
                                 <button id="verContra" class="rounded-md p-1 hover:bg-gray-100 outline-none">
                                     <svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="#737373"  stroke-width="1.8"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
                                 </button>
@@ -83,7 +81,7 @@
     
                     <div>
                         <div>
-                            <button id="signupf" class="rounded-md w-full bg-[#275BC3] px-5 py-2 text-trece text-white font-Inter hover:opacity-90 transition-opacity duration-300">Continuar</button>
+                            <button id="signupf" class="rounded-md w-full bg-[#FF0033] px-5 py-1.5 text-trece text-white font-Inter hover:opacity-90 transition-opacity duration-300">Continuar</button>
                         </div>
                     </div>
                 </form>
@@ -115,6 +113,6 @@
         </div>
     </footer>
 
-    <script src="./auth/signup.js"></script>
+    <script src="./js/auth/signup.js"></script>
 </body>
 </html>
