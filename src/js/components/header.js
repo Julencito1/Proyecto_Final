@@ -4,6 +4,8 @@ const posicion_mostrar_header = document.getElementById("posicion_mostrar_header
 const btn_crear_nuevo = document.getElementById("btn_crear_nuevo")
 const contenedor_notificaciones = document.getElementById("contenedor_notificaciones")
 
+var IMAGEN_USUARIO = ""
+
 function EstaLogeado() {
 
     if (localStorage.getItem("logged")) 
@@ -15,7 +17,7 @@ function EstaLogeado() {
 
         contendor_usuario.innerHTML = `
             
-            <button id="btn_menuusuario" class="w-8 h-8 flex items-center justify-center overflow-hidden rounded-full cursor-pointer transition-colors duration-150 hover:bg-[#262626]">
+            <button aria-label='Botón Menu Usuario' id="btn_menuusuario" class="w-8 h-8 flex items-center justify-center overflow-hidden rounded-full cursor-pointer transition-colors duration-150 hover:bg-[#262626]">
               <img src="" class="avatar_usuario w-8 h-8 rounded-full bg-no-repeat bg-cover bg-center">
             </button>
             <div id="menu_usuario" class="hidden origin-top-right absolute border right-0 z-50 bg-white py-2 rounded-md shadow-md w-60">
@@ -146,6 +148,15 @@ buscador.addEventListener("input", () => {
 
 })
 
+buscador.addEventListener("keydown", (e) => {
+
+    if (e.key === "Enter")
+    {
+        window.location.href = `./buscar.php?q=` + buscador.value
+    }
+
+})
+
 const desplegable_crear = document.getElementById("desplegable_crear")
 btn_crear_nuevo.addEventListener("click", () => {   
     
@@ -163,7 +174,10 @@ limpiar_buscador.addEventListener("click", () => {
 
 buscador.addEventListener("focus", () => {
 
-    RecomendacionesIn()
+    if (recomendaciones.childElementCount > 0)
+    {
+        RecomendacionesIn()
+    }
 })
 
 
@@ -339,13 +353,13 @@ function NotificacionesUsuario(limit = 20, offset = 0)
                        
                         contenedor_notificaciones.appendChild(nuevoContenedor)
             
-                        if (contenedor_notificaciones.childElementCount === limit)
+                        if (contenedor_notificaciones.childElementCount === offset+20)
                         {
                             let ultimaNoti = document.getElementById("noti_" + String(i + limit))
                             
                             if (ultimaNoti)
                             {
-                                ObservarElemento(ultimaNoti, contenedor_notificaciones, false, true, () => NotificacionesUsuario(limit + 20, offset + 20))  
+                                ObservarElemento(ultimaNoti, contenedor_notificaciones, false, true, () => NotificacionesUsuario(limit, offset + 20))  
                             }
                         }
                        
@@ -425,7 +439,7 @@ function DatosUsuario()
             e.src = `${datos.mensaje.usuario.imagen.avatar}`
             e.classList.remove("animate-pulse")    
         })
-        
+        IMAGEN_USUARIO = datos.mensaje.usuario.imagen.avatar
         usuario_nombre.textContent = `${datos.mensaje.usuario.nombre}` 
         usuario_nombre.title = `${datos.mensaje.usuario.nombre}` 
         usuario_nombre_canal.textContent = `${datos.mensaje.usuario.canal.nombre_canal}`
@@ -434,3 +448,35 @@ function DatosUsuario()
 }
 
 DatosUsuario()  
+
+function MostrarRecomendaciones()
+{
+    let array = localStorage.getItem("busquedas_recientes")
+    if (array)
+    {
+        let arrayRecientes = JSON.parse(array)
+
+        for (let v = 0; v < arrayRecientes.length; v++)
+        {
+            let nuevaRecomendacion = document.createElement("a")
+
+            nuevaRecomendacion.setAttribute("class", "flex items-center gap-4 py-1.5 px-3 transition-colors duration-150 hover:bg-gray-100")
+            nuevaRecomendacion.href =  "/buscar.php?q=" + arrayRecientes[v].contenido
+
+            nuevaRecomendacion.innerHTML = `
+            
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 22.5 22.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-history-icon lucide-history"><path d="M2.813 11.25A8.438 8.438 0 1 0 11.25 2.813a9.139 9.139 0 0 0 -6.318 2.568L2.813 7.5"/><path d="M2.813 2.813V7.5H7.5"/><path d="M11.25 6.563V11.25l3.75 1.875"/></svg>
+                </div>
+                <div class='font-Geist text-[13px] line-clamp-1 block truncate'>
+                    ${arrayRecientes[v].contenido}
+                </div>
+            `
+
+            recomendaciones.appendChild(nuevaRecomendacion)
+        }
+    }
+    
+}
+
+MostrarRecomendaciones()
