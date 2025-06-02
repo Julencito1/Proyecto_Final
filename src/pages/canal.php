@@ -6,23 +6,24 @@
   <title> - NewTube</title>
   <link href='../styles/styles.css' rel='stylesheet'>
   <link href="../output.css" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/fonts.css">
   <link rel="icon" type="image/x-icon" href="../assets/favicon/newtube.ico">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 </head>
 <body>
   <div id="plantilla">
     <?php include '../components/header.php'; ?>
     <main id='main' class="contenedor_ref px-5 overflow-auto h-[100vh-50px]">
-      <div class="flex flex-col space-y-4">
+      <div class="flex flex-col space-y-4 w-[1284px] mx-auto">
 
-          <div class="rounded-md overflow-hidden h-[150px] w-full">
-            <img id="portada_canal" draggable="false">
+          <div class="rounded-md w-full">
+            <img id="portada_canal" class="bg-cover bg-no-repeat bg-center h-[190px] w-full rounded-md" draggable="false">
           </div>
           
-        <div  id="info_canal" class="w-1/2 flex flex-col gap-8">
+        <div  id="info_canal" class="flex flex-col gap-8">
           <div class="flex gap-6">
             <div>
-                <img id="avatar_usuario_canal" width="105" height="105" class="bg-cover" draggable="false">
+                <img id="avatar_usuario_canal" width="105" height="105" class="bg-cover rounded-full bg-center bg-no-repeat" draggable="false">
             </div>
             <div id="contenedor_info_canal" class="flex flex-col gap-2">
                 <div>
