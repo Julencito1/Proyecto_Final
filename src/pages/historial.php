@@ -6,8 +6,8 @@
   <title>Historial - NewTube</title>
   <link href='../styles/styles.css' rel='stylesheet'>
   <link href="../output.css" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/fonts.css">
   <link rel="icon" type="image/x-icon" href="../assets/favicon/newtube.ico">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
   <div id="plantilla">
