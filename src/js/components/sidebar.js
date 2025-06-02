@@ -1,10 +1,8 @@
 const links_sidebar = [
     `Inicio`,
-    `Explorar`,
     `Historial`,
     `Me Gusta`,
     `Videos Guardados`,
-    `Reportes`,
     `Suscripciones`
 ]
 
@@ -15,34 +13,34 @@ const historial_sidebar = document.getElementById("historial")
 const contenedor_suscripciones = document.getElementById("contenedor_suscripciones")
 
 
-    switch(window.location.pathname) {
+    // switch(window.location.pathname) {
 
-        case "/" || "/index.php":
-            inicio_sidebar.classList.add("bg-[#e6e6e6]", "hover:bg-[#d9d9d9]")
-            inicio_sidebar.classList.remove("hover:bg-[#f2f2f2]")
+    //     case "/" || "/index.php":
+    //         inicio_sidebar.classList.add("bg-[#e6e6e6]", "hover:bg-[#d9d9d9]")
+    //         inicio_sidebar.classList.remove("hover:bg-[#f2f2f2]")
             
     
-            historial_sidebar.classList.remove("bg-[#e6e6e6]", "hover:bg-[#d9d9d9]")
-            historial_sidebar.classList.add("hover:bg-[#f2f2f2]")
+    //         historial_sidebar.classList.remove("bg-[#e6e6e6]", "hover:bg-[#d9d9d9]")
+    //         historial_sidebar.classList.add("hover:bg-[#f2f2f2]")
             
-            break;
+    //         break;
     
-        case "/proyecto_final-main/src/pages/historial.php":
-            inicio_sidebar.classList.remove("bg-[#e6e6e6]", "hover:bg-[#d9d9d9]")
-            inicio_sidebar.classList.add("hover:bg-[#f2f2f2]")
+    //     case "/proyecto_final-main/src/pages/historial.php":
+    //         inicio_sidebar.classList.remove("bg-[#e6e6e6]", "hover:bg-[#d9d9d9]")
+    //         inicio_sidebar.classList.add("hover:bg-[#f2f2f2]")
            
     
-            historial_sidebar.classList.add("bg-[#e6e6e6]", "hover:bg-[#d9d9d9]")
-            historial_sidebar.classList.remove("hover:bg-[#f2f2f2]")
+    //         historial_sidebar.classList.add("bg-[#e6e6e6]", "hover:bg-[#d9d9d9]")
+    //         historial_sidebar.classList.remove("hover:bg-[#f2f2f2]")
           
-            break;
+    //         break;
     
-        default: 
-            inicio_sidebar.classList.add("bg-[#e6e6e6]", "hover:bg-[#d9d9d9]")
-            inicio_sidebar.classList.remove("hover:bg-[#f2f2f2]")
-            break;
+    //     default: 
+    //         inicio_sidebar.classList.add("bg-[#e6e6e6]", "hover:bg-[#d9d9d9]")
+    //         inicio_sidebar.classList.remove("hover:bg-[#f2f2f2]")
+    //         break;
         
-    }
+    // }
 
 
 
@@ -85,10 +83,11 @@ function SidebarSuscripciones()
                             let nuevoA = document.createElement("a")
             
                             nuevoA.classList.add("sidebar_nav", "rounded-md", "px-1.5", "w-full", "h-[34px]", "flex", "items-center", "gap-2", "cursor-pointer", "transition-colors", "duration-150", "hover:bg-[#f2f2f2]")
+                            nuevoA.title = suscripciones[u].usuario.nombre
                             nuevoA.innerHTML = `
                             
                             <div class='min-w-[20px] min-h-[20px]'>
-                                <img src="${suscripciones[u].usuario.media.avatar}" width="20" height="20">
+                                <img src="${suscripciones[u].usuario.media.avatar}" width="20" height="20" class='rounded-full bg-center bg-cover bg-no-repeat'>
                             </div>
                             <div class="txt text-[13.2px] font-Roboto line-clamp-1">
                                 ${suscripciones[u].usuario.nombre}
@@ -104,6 +103,7 @@ function SidebarSuscripciones()
                             let nuevoB = document.createElement("a")
             
                             nuevoB.classList.add("sidebar_nav", "rounded-md", "px-2", "w-full", "h-[34px]", "flex", "items-center", "gap-2", "cursor-pointer", "transition-colors", "duration-150", "hover:bg-[#f2f2f2]")
+                            nuevoB.title = 'Mostrar Más'
                             nuevoB.innerHTML = `
                         
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide min-w-[16px] lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
