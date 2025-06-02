@@ -3,10 +3,10 @@
 <div id="header" class="px-4 py-2 flex items-center justify-between">
       <div>
         <div class="flex items-center gap-1">
-          <button id="btn_sidebar" class="p-2 rounded-full cursor-pointer transition-colors duration-150 hover:bg-[#f2f2f2]">
+          <button aria-label="Botón Menu Sidebar" id="btn_sidebar" class="p-2 rounded-full cursor-pointer transition-colors duration-150 hover:bg-[#f2f2f2]">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
           </button>
-          <a href="/" class="text-white">
+          <a href="/" aria-label="Link Página Principal" class="text-white">
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.25 27h13.5a6.75 6.75 0 0 0 0 -13.5 9 9 0 0 0 -17.438 -1.125A5.625 5.625 0 0 0 11.25 27" fill="#F03" stroke="none" stroke-width="0.9"/><path d="m20.25 18 -5.625 -3.375v6.75z" stroke="#FFF" fill="#FFF" stroke-width="0.5625"/></svg>
           </a>
         </div>
@@ -21,15 +21,15 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
           </button>
         </div>
-        <input id="buscador" spellcheck='false' type="text" class="w-full rounded-lg text-[#737373] h-full outline-none text-[13px] font-light font-Inter px-9 placeholder:text-[#737373]" placeholder="Buscar..." />
-        <div id='recomendaciones' class="absolute top-9 hidden border bg-white shadow-md w-full h-96 rounded-md">
-            d
+        <input id="buscador" autocomplete="off" spellcheck='false' type="text" class="w-full rounded-lg text-[#737373] h-full outline-none text-[13px] font-light font-Inter px-9 placeholder:text-[#737373]" placeholder="Buscar..." />
+        <div id='recomendaciones' class="absolute top-9 hidden border bg-white shadow-md w-full py-2 rounded-md">
+            
         </div>
       </div>
 
       <div class="flex items-center gap-2">
         <div id="contenedor_crear" class="relative">
-          <button id="btn_crear_nuevo" class="p-2 rounded-full cursor-pointer transition-colors duration-150 hover:bg-[#f2f2f2]">
+          <button id="btn_crear_nuevo" title="Nuevo" class="p-2 rounded-full cursor-pointer transition-colors duration-150 hover:bg-[#f2f2f2]">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus-icon lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
           </button>
           <div id="desplegable_crear" class="absolute hidden z-50 right-0 p-2 rounded-md w-36 border origin-top-right bg-white shadow-md overflow-hidden">
@@ -40,7 +40,7 @@
           </div>
         </div>
         <div id="contenedor_notificaciones_btn" class="relative">
-          <button id="btn_notificaciones" class="relative p-2 rounded-full cursor-pointer transition-colors duration-150 hover:bg-[#f2f2f2]">
+          <button id="btn_notificaciones" title="Notificaciones" class="relative p-2 rounded-full cursor-pointer transition-colors duration-150 hover:bg-[#f2f2f2]">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell-icon lucide-bell"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>
             <div class="absolute top-0.5 right-0">
               <span id="total_notis" class="rounded-full text-white flex items-center justify-center min-w-[19.21px] text-[8px] font-Inter bg-[#FF0033] pointer-events-none select-none">
