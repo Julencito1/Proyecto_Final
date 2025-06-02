@@ -3,14 +3,21 @@ module.exports = {
   content: ["./src/**/*.{html,js,php}"],
   theme: {
     extend: {
+      screens: {
+        'max-xs': { max: '475px' },
+        'max-sm': { max: '639px' },
+        'max-md': { max: '767px' },
+        'max-lg': { max: '1023px' },
+        'max-xl': { max: '1279px' },
+        'max-2xl': { max: '1535px' },
+      },
       fontFamily: {
         Inter: ["Inter", "sans-serif"],
         Poppins: ["Poppins", "sans-serif"],
-        WorkSans: ["Work Sans", "sans-serif"],
         NotoSans: ["Noto Sans", "sans-serif"],
         Roboto: ["Roboto", "sans-serif"],
-        Rubik: ["Rubik", "sans-serif"],
-        Montserrat: ["Montserrat", "sans-serif"],
+        Lexend: ["Lexend", "sans-serif"],
+        Geist: ["Geist", "sans-serif"],
       },
       fontSize: {
         'trece': '13px',
