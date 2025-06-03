@@ -135,7 +135,7 @@ video_tag.addEventListener("timeupdate", () => {
     barra_mover_video.value = Math.floor(video_tag.currentTime)
 
     tiempo_actual.textContent = `${String(Math.floor(tiempoActual / 60)).padStart(2, "0")}:${String(tiempoActual % 60).padStart(2, "0")}`
-    console.log(video_tag.duration, video_tag.currentTime)
+    
     if (video_tag.duration === video_tag.currentTime) {
 
         llego_final = true
@@ -157,9 +157,11 @@ agrandar_video_btn.addEventListener("click", () => {
     if (ESTADO_FS) {
        
         document.exitFullscreen()
+        video_tag.setAttribute("class", "w-full max-h-[840px] object-contain")
         ESTADO_FS = false
     } else {
         contenedor_ref_video_reproductor.requestFullscreen()
+        video_tag.setAttribute("class", "w-full object-contain h-full")
         ESTADO_FS = true
     }
 })
