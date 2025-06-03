@@ -320,7 +320,7 @@ Esta sección es parecida a la de "Videos", se actualizará el nombre de la secc
 
 ![1748936964955](image/readme/1748936964955.png)
 
-Se navegará automáticamente a esta página en el caso en que el usuario intenté acceder a un vídeo, a una sección o a un canal que no existe, es una página sencilla, minimalista que cuenta además con un link para ofrecer la oportunidad al usuario de navegar directamente a la página inicial de la aplicación `"/"`.
+Se navegará automáticamente a esta página en el caso en que el usuario intenté acceder a un vídeo, a una categoría o a un canal que no existe, es una página sencilla, minimalista que cuenta además con un link para ofrecer la oportunidad al usuario de navegar directamente a la página inicial de la aplicación `"/"`.
 
 #### Demostración
 
