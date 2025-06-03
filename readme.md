@@ -129,8 +129,6 @@ Cada elemento es un link que te llevará al video original.
 
 ---
 
-
-
 #### Comentarios
 
 En esta segunda sección, se listarán los comentarios marcados del usuario mostrando la siguiente información:
@@ -149,6 +147,18 @@ Cada comentario es un link que te llevará al video donde se escribió ese comen
 ![1748947503909](image/readme/1748947503909.png)
 
 ![1748947533635](image/readme/1748947533635.png)
+
+---
+
+### Suscripciones
+
+Dentro de esta página aparecerán los canales a los que el usuario actual está suscrito, esta sección ofrece la posibilidad de visitar directamente el canal seleccionado, además debajo de cada canal se situa un botón "Quitar" que al hacer click ofrece la posibilidad de quitar la suscripción desde esta página
+
+![1748980496476](image/readme/1748980496476.png)
+
+Si el usuario actual no está suscrito a ningún canal aparecerá la siguiente pantalla:
+
+![1748980255532](image/readme/1748980255532.png)
 
 ---
 
