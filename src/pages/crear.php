@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </label>
-            <input type="file" id="input_miniatura_crear" accept="image/*" class="hidden" />
+            <input type="file" id="input_miniatura_crear" accept=".webp, .png, .jpeg, .jpg, .avif" class="hidden" />
             
         </div>
 
