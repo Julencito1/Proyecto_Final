@@ -365,7 +365,7 @@ function VideosCanal(limit = 20, offset = 0)
                             let nuevoVideo = document.createElement("div")
                             nuevoVideo.innerHTML = `
                             
-                            <a href="./videos.php?ref=${e.canal.videos.link.ruta.split("ref=")[1]}" id="video_${offset + (m+1)}" class='flex flex-col gap-3'>
+                            <a href="./videos.php?ref=${e.canal.videos.link.ruta}" id="video_${offset + (m+1)}" class='flex flex-col gap-3'>
                             <div class='relative w-full overflow-hidden'>
                                 <img class='rounded-md w-full h-[130px]' src="${e.canal.videos.media.miniatura}" />
                                 <div class='absolute select-none bg-black rounded-sm py-0.5 px-1 right-0 mb-1 bottom-0 mr-1'>
@@ -391,7 +391,7 @@ function VideosCanal(limit = 20, offset = 0)
                                         
                                         ${ESTADO_ACTUAL ? `
                                             
-                                            <button onclick="OcultarVideo('${e.canal.videos.link.ruta.split("ref=")[1]}'); event.stopPropagation(); event.preventDefault();" class='flex items-center gap-2 font-Inter text-xs w-full text-left rounded-md transition-colors duration-150 p-1.5 hover:bg-gray-100'>
+                                            <button onclick="OcultarVideo('${e.canal.videos.link.ruta}'); event.stopPropagation(); event.preventDefault();" class='flex items-center gap-2 font-Inter text-xs w-full text-left rounded-md transition-colors duration-150 p-1.5 hover:bg-gray-100'>
                                             <div>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-off-icon lucide-eye-off"><path d="M9.391 4.441a9.4 9.4 0 0 1 9.804 5.753.88.88 0 0 1 0 .609 9.5 9.5 0 0 1-1.264 2.179m-5.608-.594a2.625 2.625 0 0 1-3.712-3.712"/><path d="M15.294 15.312a9.406 9.406 0 0 1-13.49-4.507.88.88 0 0 1 0-.609 9.4 9.4 0 0 1 3.89-4.5M1.75 1.75l17.5 17.5"/></svg>
                                             </div>
@@ -403,7 +403,7 @@ function VideosCanal(limit = 20, offset = 0)
                                         `}
                                         ${e.canal.videos.estadisticas.guardado ? 
                                             `
-                                            <button onclick="QuitarVideoGuardados('${e.canal.videos.link.ruta.split("ref=")[1]}'); event.stopPropagation(); event.preventDefault();" class='flex items-center gap-2 font-Inter text-xs w-full text-left rounded-md transition-colors duration-150 p-1.5 hover:bg-gray-100'>
+                                            <button onclick="QuitarVideoGuardados('${e.canal.videos.link.ruta}'); event.stopPropagation(); event.preventDefault();" class='flex items-center gap-2 font-Inter text-xs w-full text-left rounded-md transition-colors duration-150 p-1.5 hover:bg-gray-100'>
                                                 <div>
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bookmark-minus-icon lucide-bookmark-minus"><path d="m16.625 18.375 -6.125 -3.5 -6.125 3.5V4.375a1.75 1.75 0 0 1 1.75 -1.75h8.75a1.75 1.75 0 0 1 1.75 1.75z"/><path x1="15" x2="9" y1="10" y2="10" d="M13.125 8.75L7.875 8.75"/></svg>
                                                 </div>
@@ -411,7 +411,7 @@ function VideosCanal(limit = 20, offset = 0)
                                             </button>
                                             ` 
                                             : `
-                                            <button onclick="GuardarVideo('${e.canal.videos.link.ruta.split("ref=")[1]}'); event.stopPropagation(); event.preventDefault();" class='flex items-center gap-2 font-Inter text-xs w-full text-left rounded-md transition-colors duration-150 p-1.5 hover:bg-gray-100'>
+                                            <button onclick="GuardarVideo('${e.canal.videos.link.ruta}'); event.stopPropagation(); event.preventDefault();" class='flex items-center gap-2 font-Inter text-xs w-full text-left rounded-md transition-colors duration-150 p-1.5 hover:bg-gray-100'>
                                             <div>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bookmark-icon lucide-bookmark"><path d="m16.625 18.375-6.125-3.5-6.125 3.5v-14a1.75 1.75 0 0 1 1.75-1.75h8.75a1.75 1.75 0 0 1 1.75 1.75z"/></svg>
                                             </div>
@@ -631,7 +631,7 @@ function VideosPrivadosCanal(limit = 20, offset = 0)
                             let nuevoVideo = document.createElement("div")
                             nuevoVideo.innerHTML = `
                             
-                            <a href="#" id="video_${offset + (m+1)}" class='flex flex-col gap-3'>
+                            <div  id="video_${offset + (m+1)}" class='flex flex-col gap-3'>
                             <div class='relative w-full overflow-hidden'>
                                 <img class='rounded-md w-full h-[130px]' src="${e.canal.videos.media.miniatura}" />
                                 <div class='absolute select-none bg-black rounded-sm py-0.5 px-1 right-0 mb-1 bottom-0 mr-1'>
@@ -650,18 +650,18 @@ function VideosPrivadosCanal(limit = 20, offset = 0)
                                 </div>
                                 </div>
                                 <div class='relative' id='contenedor_sp_${m + offset}'>
-                                    <button onclick="MostrarMenuSeleccionadoVideosPrivados(${m + offset}); event.stopPropagation(); event.preventDefault();" id='btn_privado_${m + offset}' class="p-2 rounded-full cursor-pointer transition-colors duration-150 hover:bg-[#e6e6e6]">
+                                    <button onclick='MostrarMenuSeleccionadoVideosPrivados(${m + offset})' id='btn_privado_${m + offset}' class="p-2 rounded-full cursor-pointer transition-colors duration-150 hover:bg-[#e6e6e6]">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
                                     </button>
                                     <div id='submenu_${m + offset}' class='absolute flex flex-col w-36 p-1 rounded-md bg-white z-20 shadow-md border hidden origin-top-left'>
-                                        <button onclick="HacerPublicoVideo('${e.canal.videos.link.ruta.split("ref=")[1]}'); event.stopPropagation(); event.preventDefault();" class='flex items-center gap-2 font-Inter text-xs w-full text-left rounded-md transition-colors duration-150 p-1.5 hover:bg-gray-100'>
+                                        <button onclick='HacerPublicoVideo("${e.canal.videos.link.ruta}")' class='flex items-center gap-2 font-Inter text-xs w-full text-left rounded-md transition-colors duration-150 p-1.5 hover:bg-gray-100'>
                                         <div>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-share-icon lucide-share"><path d="M3.5 10.5v7a1.75 1.75 0 0 0 1.75 1.75h10.5a1.75 1.75 0 0 0 1.75 -1.75v-7"/><path points="16 6 12 2 8 6" d="M14 5.25L10.5 1.75L7 5.25"/><path x1="12" x2="12" y1="2" y2="15" d="M10.5 1.75L10.5 13.125"/></svg>
                                         </div>
                                         Publicar video
                                         </button>
 
-                                        <button onclick="BorrarVideo('${e.canal.videos.link.ruta.split("ref=")[1]}'); event.stopPropagation(); event.preventDefault();" class='flex items-center gap-2 font-Inter text-xs w-full text-left rounded-md transition-colors duration-150 p-1.5 hover:bg-gray-100'>
+                                        <button onclick='BorrarVideo("${e.canal.videos.link.ruta}")' class='flex items-center gap-2 font-Inter text-xs w-full text-left rounded-md transition-colors duration-150 p-1.5 hover:bg-gray-100'>
                                         <div>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M2.625 5.25h15.75"/><path d="M16.625 5.25v12.25c0 0.875 -0.875 1.75 -1.75 1.75H6.125c-0.875 0 -1.75 -0.875 -1.75 -1.75V5.25"/><path d="M7 5.25V3.5c0 -0.875 0.875 -1.75 1.75 -1.75h3.5c0.875 0 1.75 0.875 1.75 1.75v1.75"/><path x1="10" x2="10" y1="11" y2="17" d="M8.75 9.625L8.75 14.875"/><path x1="14" x2="14" y1="11" y2="17" d="M12.25 9.625L12.25 14.875"/></svg>
                                         </div>
@@ -670,7 +670,7 @@ function VideosPrivadosCanal(limit = 20, offset = 0)
                                     </div>
                                 </div>
                             </div>
-                            </a>
+                            </div>
                             `
 
                             contenedor_contenido_tabs.appendChild(nuevoVideo)
