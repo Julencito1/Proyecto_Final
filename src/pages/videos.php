@@ -15,8 +15,8 @@
     <main id='main' class="contenedor_ref p-5 overflow-auto h-[100vh-50px]"> 
         <div class="w-full flex gap-5">
             <div id="contenedor_video_reproducir" class="w-[70%] flex flex-col gap-5">
-                <div  class="relative overflow-hidden rounded-md" id="contenedor_ref_video_reproductor" >
-                    <video id="video_tag" class="w-full max-h-[840px]">
+                <div  class="relative overflow-hidden  rounded-md" id="contenedor_ref_video_reproductor" >
+                    <video id="video_tag" class="w-full max-h-[840px] object-contain">
                     </video>
                     <div id="controles_video_tag_cus" class="absolute bottom-0 w-full flex flex-col gap-3 p-2 transition-opacity duration-150">
                         <div>
