@@ -42,10 +42,6 @@ function EstaLogeado() {
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tv-icon lucide-tv"><rect width="20" height="15" x="2" y="7" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
                         Tu Canal
                     </a>
-                    <a href="#" class="w-full flex items-center gap-2 text-left px-4 py-2 font-Inter text-xs transition-colors duration-150 hover:bg-gray-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-icon lucide-settings"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
-                        Ajustes
-                    </a>
                     </div>
                     <div>
                     <button id="usuario_cerrar_sesion" class="w-full flex items-center gap-2 text-left px-4 py-2 font-Inter text-xs transition-colors duration-150 hover:bg-gray-100">
@@ -318,19 +314,19 @@ function NotificacionesUsuario(limit = 20, offset = 0)
                                     <img src="${datos.mensaje[i].notificaciones.contenido.video.usuario.media.avatar}" class="w-full h-full rounded-full" />
                                 </div>
                                 
-                                <div class="flex flex-col">
+                                <div class="flex flex-col w-full">
                                     <div class="flex w-full gap-2">
                                         <div class="w-full line-clamp-3 w-[calc(100%-110px)] block">
                                         <p class="font-NotoSans text-xs text-gray-600 line-clamp-3">
                                             ${datos.mensaje[i].notificaciones.contenido.video.extra.titulo}
                                         </p>
                                         </div>
-                                        <div class="w-[110px] min-w-[90px] h-[64px]">
+                                        <div class="min-w-[110px] h-[64px]">
                                             <img src="${datos.mensaje[i].notificaciones.contenido.video.media.miniatura}" class="object-cover w-full h-full rounded" />
                                         </div>
                                     </div>
                                     <div class="font-Inter text-[10px] text-gray-600">
-                                        hace 20 minutos
+                                        ${datos.mensaje[i].notificaciones.info.fecha}
                                     </div>
                                 </div>
                             
