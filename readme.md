@@ -162,6 +162,279 @@ Si el usuario actual no está suscrito a ningún canal aparecerá la siguiente p
 
 ---
 
+### Búsqueda
+
+![1749019592702](image/readme/1749019592702.png)
+
+Al realizar un búsqueda en la barra situada en el header de la aplicación te redirigirá a una página nueva: `buscar.php`, con un parámetro en la url, el texto que introduciste. Una vez ya en la página se mostrarán todos los videos / canales que coincidan o que contengan el texto introducido en la barra de búsqueda.
+
+#### Vídeos
+
+Cada video mostrará:
+
+1. Miniatura
+2. Duración
+3. Titulo
+4. Num. Visualizaciones
+5. Fecha publicación
+6. Avatar usuario
+7. Nombre usuario
+8. Descripción video
+9. Categoría video
+
+Cada tarjeta de vídeo será un enlace que te llevará al correspondiente video.
+
+---
+
+#### Canales
+
+Cada canal mostrará:
+
+1. Avatar usuario
+2. Nombre usuario
+3. Nombre canal
+4. Num. Total suscriptores
+5. Descripción canal
+
+Cada tarjeta de canal será un enlace que te llevara al correspondiente canal.
+
+> En cuanto a la disposición de los resultados será completamente aleatoria por cada búsqueda.
+
+#### Demostración
+
+![1749019613040](image/readme/1749019613040.png)
+
+![1749020411154](image/readme/1749020411154.png)
+
+En caso de que no se encuentre ningún video ni ningún canal aparecerá la siguiente pantalla:
+
+![1749019470511](image/readme/1749019470511.png)
+
+---
+
+### Vídeos
+
+![1749024083997](image/readme/1749024083997.png)
+
+Dentro de esta página el usuario podra observar una gran cantidad de elementos entre ellos destacan:
+
+1. Reproductor de video
+2. Información del video
+3. Videos recomendados
+4. Sección de comentarios
+
+> Al entrar en esta página se comprueba si:
+>
+> * El usuario ha visto el video (para aumentar o no las visualizaciones)
+> * Contiene el video guardado `( GUARDADO / NO GUARDADO )`
+> * Tiene marcado el video `( GUSTADO / NO GUSTADO )`
+> * Estado `( PUBLICO / PRIVADO)` --> Llevará al usuario a la página 404 en caso de que el video sea privado.
+> * Si el usuario actual (loggeado) es propietario del video
+> * Si es suscriptor o no.
+
+#### Reproductor de vídeo
+
+Los controles del reproductor de vídeo se mostrarán mientras que el cursor del usuario esté por encima del video, estos están formados por:
+
+| Posición actual vídeo                                                                                                       | Botón Reproducir / Parar                                                           | Botón / Barra sonido                                                                                                                                                                                                                                                                                                                                                                                                                      | Contador / Posición Video                                                                                                                                              | Botón Velocidades                                                                               | Botón disposición video                                                                                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Esta barra horizontal permite al usuario poner el video en un segundo determinado, debido a que es perfectamente arrastrable. | Este botón ofrece la posibilidad de parar o continuar la visualizacion del vídeo. | Este elemento ofrece la posibilidad de cambiar el nivel de volumen del video, haciendo click en el boton en caso de que el volumen sea mayor que 0, este se establecerá como muteado, en caso contrario, se establecerá el volumen en nivel 1. También esta la posibilidad de interactura con el volumen através de la barra de volumen perfectamente arrastrable, además el icono del volumen cambiar dependiendo del nivel de este. | El contador del video muestra la posicion actual de este en segundos, es decir, cada segundo que transcurre este aumenta llegando así a la duracion máxima del video. | Al hacer click sobre este botón aparecerá un menu con 3 velocidades disponibles:`0.5, 1, 2`. | <br />Al hacer click en este botón el video se se pondrá en modo "***pantalla completa***", en caso de que ya esté en pantalla completa volverá a sus dimensiones originales. |
+
+![1749024216122](image/readme/1749024216122.png)
+
+![1749025029153](image/readme/1749025029153.png)
+
+![1749026652719](image/readme/1749026652719.png)
+
+---
+
+#### Información del video
+
+Justo debajo del reproductor de video podemos encontrar información acerca del video actual:
+
+1. Título
+2. Avatar usuario
+3. Nombre usuario
+4. Total suscriptores
+5. Estado suscripción `( SUSCRITO / SUSCRIBIRME )`
+6. Conteo `( ME GUSTA / NO ME GUSTA)`
+7. Compartir
+8. Más opciones
+9. Número Visualizaciones
+10. Fecha de publicación
+11. Categoría
+12. Descripción
+
+##### Avatar - Nombre - Total suscriptores
+
+Esta "minisección" dentro de la información del video es un link que te llevará al canal del creador del video.
+
+![1749026711299](image/readme/1749026711299.png)
+
+---
+
+##### Estado suscripción `( SUSCRITO / SUSCRIBIRME)`
+
+Este botón aparecerá en caso de que el creador del video no sea el usuario que esta loggeado actualmente, este botón ofrece la posibilidad de suscribirse o quitar la suscripción del canal.
+
+![1749026670177](image/readme/1749026670177.png)
+
+![1749026676603](image/readme/1749026676603.png)
+
+![1749026699909](image/readme/1749026699909.png)
+
+---
+
+##### Conteo `( ME GUSTA / NO ME GUSTA )`
+
+Junto a estos 2 botones se mostrará el número total de "Me gusta" y "No me gusta", al hacer click en ellos se aumentará el contador, y se guardará como video marcado para el usuario, en caso de que quiera quitar la marca en un video, simplemente haciendo click en el botón marcado para disminuir el contador.
+
+![1749026727490](image/readme/1749026727490.png)
+
+![1749026739424](image/readme/1749026739424.png)
+
+---
+
+##### Compartir
+
+Este botón simplemente copia en el portapapeles la dirección actual del video al hacer click en él.
+
+![1749026588161](image/readme/1749026588161.png)
+
+---
+
+##### Más opciones
+
+Al hacer click sobre este botón aparecerá un menú con la posibilidad de guardar o quitar de guardados el video (dependiendo si esta guardado o no previamente)
+
+![1749026625147](image/readme/1749026625147.png)
+
+![1749026630893](image/readme/1749026630893.png)
+
+---
+
+##### Categoría
+
+La categoría es un link que al hacer click te lleva a la página principal, con filtro por categoría para mostrar todos los vídeos que contienen la categoría seleccionada.
+
+![1749026856461](image/readme/1749026856461.png)
+
+---
+
+#### Vídeos recomendados
+
+A la derecha de la pantalla se mostrará una lista con los videos recomendados para el usuario por parte de la aplicación, en cuanto a la disposición será completamente aleatoria.
+
+Cada video enseñará la siguiente información:
+
+1. Miniatura
+2. Duración
+3. Título
+4. Num. Visualizaciones
+5. Fecha publicación
+6. Avatar usuario
+7. Nombre usuario
+
+Cada tarjeta de vídeo es un link que te llevará al correspondiente vídeo.
+
+![1749027189313](image/readme/1749027189313.png)
+
+---
+
+#### Sección de comentarios
+
+Dentro de esta sección podemos encontrar en la parte superior un cuadro de texto el cual ofrece la posibilidad al usuario de escribir un comentario haciendo referencia a contenido del vídeo o lo que sea, junto al cuadro de texto, en la parte inferior derecha se encuentra el boton de "***Comentar***" el cual solo funcionará si el cuadro de texto contiene más de 0 caracteres, al hacer click en el botón se publica directamente el nuevo comentario.
+
+Un poco más abajo podemos encontrar un conteo total de los comentarios publicados en el vídeo. Debajo de este se encuentran los primeros comentarios publicados, los cuales muestran la siguiente información:
+
+1. Avatar usuario
+2. Nombre usuario
+3. Fecha publicación
+4. Contenido comentario
+5. Conteo `( ME GUSTA / NO ME GUSTA)`
+6. Responder
+7. Mostrar respuestas `( MOSTRAR / OCULTAR RESPUESTAS )`
+
+![1749028308071](image/readme/1749028308071.png)
+
+##### Avatar usuario - Nombre usuario
+
+Estos elementos están contenidos por un elemento padre que es un link, al hacer click en este te llevará al canal seleccionado.
+
+---
+
+##### Conteo `( ME GUSTA / NO ME GUSTA)`
+
+El conteo de los comentarios funciona exactamente igual que el conteo del video, ambos botones muestran el conteo total de "Me gusta" y "No me gusta" y el usuario puede marcarlo como "Me gusta" o "No me gusta", también tiene la posibilidad de quitar la marca.
+
+![1749027792739](image/readme/1749027792739.png)
+
+---
+
+##### Responder
+
+Al hacer click en este botón aparecerá un componente con los siguientes elementos:
+
+* Avatar usuario loggeado
+* Cuadro de texto para responder
+* Botón cancelar
+* Botón responder
+
+Al hacer click en el botón de "***Cancelar***" se ocultará el componente para responder al usuario.
+
+Al hacer click en el botón de "***Responder***" se enviará el contenido escrito en el cuadro de texto y establecerá como respuesta del comentario o comentario hijo.
+
+![1749027905995](image/readme/1749027905995.png)
+
+![1749027934785](image/readme/1749027934785.png)
+
+---
+
+##### Mostrar respuestas `( MOSTRAR / OCULTAR RESPUESTAS )`
+
+Al hacer click cuando el botón ponga "Mostrar respuestas" aparecerá el componente que contiene todos los elementos hijos del comentario actual seleccionado.
+
+Al hacer click cuando el botón ponga "Ocultar respuestas" se ocultará el componente que contiene todos los elementos hijos del comentario actual seleccionado.
+
+> Para que aparezca este botón el comentario debe contener al menos 1 comentario hijo o respuesta.
+
+![1749028184368](image/readme/1749028184368.png)
+
+![1749028192269](image/readme/1749028192269.png)
+
+![1749028271653](image/readme/1749028271653.png)
+
+---
+
+En caso de que el vídeo no contenga ningún comentario aparecerá la siguiente pantalla.
+
+![1749027240585](image/readme/1749027240585.png)
+
+---
+
+#### Demostración
+
+![1749024067588](image/readme/1749024067588.png)
+
+---
+
+### Historial
+
+![1749064850507](image/readme/1749064850507.png)
+
+Una vez dentro de la página "***Historial***" se listarán los videos vistos recientemente por el usuario divididos y filtrados según la fecha de visualización. Además esta sección contará con una barra de búsqueda para encontrar vídeos según su título.
+
+
+En este ejemplo se introdujo en la barra de búsqueda: ´***f***´
+
+![1749065723543](image/readme/1749065723543.png)
+
+En caso de que el usuario no haya visto todavía ningun video o la búsqueda no encuentre ningún video se mostrará la siguiente pantalla:
+
+![1749066408339](image/readme/1749066408339.png)
+
+---
+
 ### Videos Guardados
 
 En esta página se listarán los videos que el usuario guarde.
