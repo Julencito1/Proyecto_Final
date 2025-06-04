@@ -367,7 +367,7 @@ function VideosCanal(limit = 20, offset = 0)
                             
                             <a href="./videos.php?ref=${e.canal.videos.link.ruta}" id="video_${offset + (m+1)}" class='flex flex-col gap-3'>
                             <div class='relative w-full overflow-hidden'>
-                                <img class='rounded-md w-full h-[130px]' src="${e.canal.videos.media.miniatura}" />
+                                <img class='rounded-md object-cover w-full h-[130px]' src="${e.canal.videos.media.miniatura}" />
                                 <div class='absolute select-none bg-black rounded-sm py-0.5 px-1 right-0 mb-1 bottom-0 mr-1'>
                                 <div class='text-white select-none font-Inter text-[10px]'>${e.canal.videos.estadisticas.duracion}</div>
                                 </div>
@@ -383,7 +383,7 @@ function VideosCanal(limit = 20, offset = 0)
                                     </div>
                                 </div>
                                 </div>
-                                <div class='relative' id='contenedor_sp_${m + offset}'>
+                                <div class='relative ml-auto' id='contenedor_sp_${m + offset}'>
                                     <button onclick="MostrarMenuSeleccionadoVideosPrivados(${m + offset}); event.stopPropagation(); event.preventDefault();" id='btn_privado_${m + offset}' class="p-2 z-40 rounded-full cursor-pointer transition-colors duration-150 hover:bg-[#e6e6e6]">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
                                     </button>
@@ -633,7 +633,7 @@ function VideosPrivadosCanal(limit = 20, offset = 0)
                             
                             <div  id="video_${offset + (m+1)}" class='flex flex-col gap-3'>
                             <div class='relative w-full overflow-hidden'>
-                                <img class='rounded-md w-full h-[130px]' src="${e.canal.videos.media.miniatura}" />
+                                <img class='rounded-md object-cover w-full h-[130px]' src="${e.canal.videos.media.miniatura}" />
                                 <div class='absolute select-none bg-black rounded-sm py-0.5 px-1 right-0 mb-1 bottom-0 mr-1'>
                                 <div class='text-white select-none font-Inter text-[10px]'>${e.canal.videos.estadisticas.duracion}</div>
                                 </div>
@@ -649,7 +649,7 @@ function VideosPrivadosCanal(limit = 20, offset = 0)
                                     </div>
                                 </div>
                                 </div>
-                                <div class='relative' id='contenedor_sp_${m + offset}'>
+                                <div class='relative ml-auto' id='contenedor_sp_${m + offset}'>
                                     <button onclick='MostrarMenuSeleccionadoVideosPrivados(${m + offset})' id='btn_privado_${m + offset}' class="p-2 rounded-full cursor-pointer transition-colors duration-150 hover:bg-[#e6e6e6]">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
                                     </button>
@@ -1010,7 +1010,7 @@ function InicioCanal()
                             
                             <a href="./videos.php?ref=${e.canal.videos.link.ruta}" aria-label="Link Video" id="video_${m+1}" class='flex flex-col gap-3'>
                             <div class='relative w-full overflow-hidden'>
-                                <img class='rounded-md w-full h-[130px]' src="${e.canal.videos.media.miniatura}" />
+                                <img class='rounded-md object-cover w-full h-[130px]' src="${e.canal.videos.media.miniatura}" />
                                 <div class='absolute select-none bg-black rounded-sm py-0.5 px-1 right-0 mb-1 bottom-0 mr-1'>
                                 <div class='text-white select-none font-Inter text-[10px]'>${e.canal.videos.estadisticas.duracion}</div>
                                 </div>
