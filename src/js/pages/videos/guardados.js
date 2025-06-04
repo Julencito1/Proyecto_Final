@@ -68,7 +68,7 @@ function VideosGuardados(limit = limitActual, offset = offsetActual, filtro = fi
                         {
                 
                             let nuevoContenedor = document.createElement("a")
-                            nuevoContenedor.href = "#"
+                            nuevoContenedor.href = "../videos.php?ref=" + datos.mensaje.contenedor[i].video.link.url
 
                             nuevoContenedor.classList.add("flex", "items-center", "gap-4", "transition-colors", "duration-150", "rounded-md", "p-2", "hover:bg-gray-50")
                             
@@ -78,7 +78,7 @@ function VideosGuardados(limit = limitActual, offset = offsetActual, filtro = fi
                             
                                 <div class='flex gap-4 w-full group'>
                                     <div class='w-[170px] h-[100px] relative'>
-                                        <img src='${datos.mensaje.contenedor[i].video.media.miniatura}' class='rounded-md bg-cover bg-no-repeat bg-center w-[170px] h-[100px]'>
+                                        <img src='${datos.mensaje.contenedor[i].video.media.miniatura}' class='rounded-md object-cover bg-cover bg-no-repeat bg-center w-[170px] h-[100px]'>
                                         <div class='absolute select-none bg-black rounded-sm py-0.5 px-1 right-0 mb-1 bottom-0 mr-1'>
                                             <div class='text-white select-none font-Inter text-[10px]'>${datos.mensaje.contenedor[i].video.estadisticas.duracion}</div>
                                         </div>
