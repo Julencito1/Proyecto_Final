@@ -103,7 +103,7 @@ function VideosMarcados(offset = 0) {
                                 
                                     <div class='flex items-center gap-4 w-full group'>
                                         <div class='w-[170px] h-[100px] relative'>
-                                            <img src='${vm[i].media.video.miniatura}' class='rounded-md bg-cover bg-no-repeat bg-center w-[170px] h-[100px]'>
+                                            <img src='${vm[i].media.video.miniatura}' class='rounded-md object-cover bg-cover bg-no-repeat bg-center w-[170px] h-[100px]'>
                                             <div class='absolute select-none bg-black rounded-sm py-0.5 px-1 right-0 mb-1 bottom-0 mr-1'>
                                                 <div class='text-white select-none font-Inter text-[10px]'>${vm[i].estadisticas.duracion}</div>
                                             </div>
