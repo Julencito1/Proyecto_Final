@@ -105,10 +105,10 @@ function BuscarResultados(offsetC = 0, offsetV = 0)
                             let nuevoContenedor = document.createElement("a")
                             if (mixResultados[almacenarAleatorio[i]].tipo === "video")
                             {
-                                nuevoContenedor.setAttribute("class", "flex gap-5")
+                                nuevoContenedor.setAttribute("class", "flex gap-5 shrink-0")
                                 nuevoContenedor.href = `./videos.php?ref=${mixResultados[almacenarAleatorio[i]].link.ruta}`
                             } else {
-                                nuevoContenedor.setAttribute("class", "flex items-center gap-5")
+                                nuevoContenedor.setAttribute("class", "flex items-center gap-5 shrink-0")
                                 nuevoContenedor.href = `./canal.php?ref=${mixResultados[almacenarAleatorio[i]].nombre_canal}`
                             }
         
@@ -118,8 +118,10 @@ function BuscarResultados(offsetC = 0, offsetV = 0)
                             nuevoContenedor.innerHTML = `
                                 ${mixResultados[almacenarAleatorio[i]].tipo === "video" ? (
                                     `
-                                        <div class='max-w-[320px] overflow-hidden rounded-md relative'>
-                                            <img src="${mixResultados[almacenarAleatorio[i]].media.miniatura}" class='rounded-md min-h-[180px] min-w-[320px] bg-cover bg-no-repeat bg-center' />
+                                        <div class='rounded-md relative'>
+                                            <div class='min-w-[320px] max-w-[320px] h-[180px] '>
+                                            <img src="${mixResultados[almacenarAleatorio[i]].media.miniatura}" class='rounded-md min-h-[180px] max-h-[180px] max-w-[320px] min-w-[320px] object-cover bg-cover bg-no-repeat bg-center' />
+                                            </div>
                                             <div class='absolute select-none bg-black rounded-sm py-0.5 px-1 right-0 mb-1 bottom-0 mr-1'>
                                                 <div class='text-white select-none font-Inter text-[10px]'>${mixResultados[almacenarAleatorio[i]].estadisticas.duracion}</div>
                                             </div>
@@ -160,7 +162,7 @@ function BuscarResultados(offsetC = 0, offsetV = 0)
                                                     ${mixResultados[almacenarAleatorio[i]].categoria}
                                                 </div>
                                             </div>
-                                        </dvi>
+                                        </div>
                                     `
                                 ) : (
                                     `
