@@ -22,10 +22,10 @@
           <div class="flex items-center justify-between sticky top-0 z-30 bg-[#FDFDFD] py-5">
             <div class="relative">
               <div>
-                <input id="busqueda_ipt" type="text" class="border rounded-md py-1.5 font-Inter text-xs px-6 outline-none" placeholder="Buscar por título...">
+                <input id="busqueda_ipt" type="text" class="border w-[300px] rounded-md py-2 font-Inter text-xs px-6 outline-none" placeholder="Buscar por título...">
               </div>
-              <div class="absolute top-1.5 left-1">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 22.5 22.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m19.688 19.688-4.069-4.069m2.194-5.306a7.5 7.5 0 0 1-7.5 7.5 7.5 7.5 0 0 1-7.5-7.5 7.5 7.5 0 0 1 15 0"/></svg>
+              <div class="absolute top-2 left-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 22.5 22.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m19.688 19.688-4.069-4.069m2.194-5.306a7.5 7.5 0 0 1-7.5 7.5 7.5 7.5 0 0 1-7.5-7.5 7.5 7.5 0 0 1 15 0"/></svg>
               </div>
             </div>
             <div>
