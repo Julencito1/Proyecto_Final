@@ -1358,7 +1358,7 @@ function RecomendacionVideosVideo()
                         recomendacion.innerHTML = `
                         
                                             <div class='min-w-[180px] h-[100px] relative'>
-                                                <img src='${videos[k].media.miniatura}' class='rounded-md bg-cover bg-no-repeat bg-center min-w-[180px] h-[100px]'>
+                                                <img src='${videos[k].media.miniatura}' class='rounded-md bg-cover object-cover bg-no-repeat bg-center min-w-[180px] h-[100px]'>
                                                 <div class='absolute select-none bg-black rounded-sm py-0.5 px-1 right-0 mb-1 bottom-0 mr-1'>
                                                     <div class='text-white select-none font-Inter text-[10px]'>${videos[k].estadisticas.duracion}</div>
                                                 </div>
