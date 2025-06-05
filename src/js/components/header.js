@@ -96,6 +96,39 @@ var ESTADO_MENU = false
 var ESTADO_CREAR_NUEVO = false
 var TOTAL_NOTIS = 0
 
+window.addEventListener("resize", () => {
+
+    if (window.innerWidth <= 767)
+    {
+        inicio_texto.forEach((m) => {
+            m.textContent = ""
+        })
+        ESTADO_SIDEBAR = false
+        plantilla.style.gridTemplateColumns = `65px 1fr 1fr`
+    } else {
+
+        inicio_texto.forEach((m, e) => {
+            m.textContent = links_sidebar[e]
+        })
+        plantilla.style.gridTemplateColumns = `240px 1fr 1fr`
+
+        ESTADO_SIDEBAR = true
+    }
+
+})
+
+function ResponsiveInicial()
+{
+    if (window.innerWidth <= 767)
+        {
+            inicio_texto.forEach((m) => {
+                m.textContent = ""
+            })
+            ESTADO_SIDEBAR = false
+            plantilla.style.gridTemplateColumns = `65px 1fr 1fr`
+        }
+}
+ResponsiveInicial()
 
 btn_sidebar.addEventListener("click", () => {
 
@@ -316,12 +349,12 @@ function NotificacionesUsuario(limit = 20, offset = 0)
                                 
                                 <div class="flex flex-col w-full">
                                     <div class="flex w-full gap-2">
-                                        <div class="w-full line-clamp-3 w-[calc(100%-110px)] block">
+                                        <div class="line-clamp-3 w-[calc(100%-110px)] block">
                                         <p class="font-NotoSans text-xs text-gray-600 line-clamp-3">
                                             ${datos.mensaje[i].notificaciones.contenido.video.extra.titulo}
                                         </p>
                                         </div>
-                                        <div class="min-w-[110px] h-[64px]">
+                                        <div class="w-[110px] h-[64px]">
                                             <img src="${datos.mensaje[i].notificaciones.contenido.video.media.miniatura}" class="object-cover w-full h-full rounded" />
                                         </div>
                                     </div>
