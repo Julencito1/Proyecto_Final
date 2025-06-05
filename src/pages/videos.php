@@ -13,8 +13,8 @@
   <div id="plantilla">
     <?php include '../components/header.php'; ?>
     <main id='main' class="contenedor_ref p-5 overflow-auto h-[100vh-50px]"> 
-        <div class="w-full flex gap-5">
-            <div id="contenedor_video_reproducir" class="w-[70%] flex flex-col gap-5">
+        <div class="w-full flex gap-5 max-xl:flex-col">
+            <div id="contenedor_video_reproducir" class="w-[70%] max-xl:w-full flex flex-col gap-5">
                 <div  class="relative overflow-hidden  rounded-md" id="contenedor_ref_video_reproductor" >
                     <video id="video_tag" class="w-full max-h-[840px] object-contain">
                     </video>
@@ -23,7 +23,7 @@
                             <input id="barra_mover_video" type="range" step="1" min="0" value="0">
                         </div> 
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-5">
+                            <div class="flex items-center gap-5 max-xl:gap-2.5">
                                 <div>
                                     <button id="rep_par_btn" class="flex items-center outline-none">
                                     
@@ -33,11 +33,11 @@
                                     <button id="sonido_btn" class="outline-none">
 
                                     </button>
-                                    <div class="flex items-center">
-                                        <input id="barra_sonido" step="0.1" min="0" max="1" type="range">
+                                    <div class="flex items-center max-xl:w-[60%]">
+                                        <input id="barra_sonido" class="max-xl:w-[70%]" step="0.1" min="0" max="1" type="range">
                                     </div>
                                 </div>
-                                <div class="font-Geist text-xs text-white">
+                                <div class="font-Geist text-xs max-xl:text-[10px] text-white">
                                     <span id="tiempo_actual">00:00</span> / <span id="tiempo_video">00:00</span>
                                 </div>
                             </div>  
@@ -86,12 +86,12 @@
                 </div>
                 <div class="flex flex-col gap-4 w-full">
                     <div>
-                        <h2 id="titulo_video" class="font-Geist text-[16px] block line-clamp-1 truncate">
+                        <h2 id="titulo_video" class="font-Geist text-[16px] max-xl:text-[13px] line-clamp-2">
 
                         </h2>
                     </div>
-                    <div class="flex items-center justify-between">
-                        <div id="contenedor_video_segundalinea" class="flex items-center gap-3">
+                    <div class="flex items-center justify-between max-xl:items-start max-xl:gap-5 max-xl:flex-col-reverse">
+                        <div id="contenedor_video_segundalinea" class="flex items-center gap-3 max-xl:w-full max-xl:justify-between">
                             <a id="video_link_canal_usuario" class="flex items-center gap-3">
                             <div>
                                 <img id="img_video_canal_usuario" width="30" height="30" class="rounded-full overflow-hidden bg-cover bg-no-repeat bg-center">
@@ -107,7 +107,7 @@
                             </a>
                             
                         </div>
-                        <div class="flex items-center gap-3">
+                        <div class="flex items-center gap-3 max-xl:w-full">
                             <div class="flex items-center">
                                 <button id="btn_video_megusta" class="rounded-tl-full rounded-bl-full min-w-[55.5px] px-3 py-1.5 font-Inter text-xs border border-l border-t border-b border-gray-200 bg-white flex items-center gap-2 transition-colors duration-150 hover:bg-gray-100">
                                     <div class="flex items-center justify-center">
@@ -126,7 +126,7 @@
                                     </div>
                                 </button>    
                             </div>
-                            <div>
+                            <div class="max-xl:ml-auto">
                                 <button id="btn_compartir_video_enlace_videos" class="rounded-full px-3 py-1.5 font-Inter text-xs flex border items-center gap-2 transition-all duration-150 hover:opacity-80 hover:bg-gray-100">
                                     <div class="flex items-center justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-share2-icon lucide-share-2"><path cx="18" cy="5" r="3" d="M18.375 4.375A2.625 2.625 0 0 1 15.75 7A2.625 2.625 0 0 1 13.125 4.375A2.625 2.625 0 0 1 18.375 4.375z"/><path cx="6" cy="12" r="3" d="M7.875 10.5A2.625 2.625 0 0 1 5.25 13.125A2.625 2.625 0 0 1 2.625 10.5A2.625 2.625 0 0 1 7.875 10.5z"/><path cx="18" cy="19" r="3" d="M18.375 16.625A2.625 2.625 0 0 1 15.75 19.25A2.625 2.625 0 0 1 13.125 16.625A2.625 2.625 0 0 1 18.375 16.625z"/><path x1="8.59" x2="15.42" y1="13.51" y2="17.49" d="M7.516 11.821L13.492 15.304"/><path x1="15.41" x2="8.59" y1="6.51" y2="10.49" d="M13.484 5.696L7.516 9.179"/></svg>
@@ -153,7 +153,7 @@
                     
                     <hr class="bg-gray-200"/>
                     <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2">
+                        <div class="flex items-center gap-2 max-xl:flex-col max-xl:items-start">
                             <div class="flex items-center gap-2">
                                 <div class="flex items-center justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye"><path d="M1.804 10.805a.86.86 0 0 1 0-.61 9.407 9.407 0 0 1 17.391 0 .86.86 0 0 1 0 .61 9.407 9.407 0 0 1-17.391 0"/><path d="M13.126 10.5a2.63 2.63 0 0 1-2.626 2.626A2.63 2.63 0 0 1 7.874 10.5a2.626 2.626 0 0 1 5.25 0"/></svg>
@@ -162,7 +162,7 @@
 
                                 </div>
                             </div>
-                            <div class="font-Geist text-xs">·</div>
+                            <div class="font-Geist text-xs max-xl:hidden">·</div>
                             <div class="flex items-center gap-2">
                                 <div class="flex items-center justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-icon lucide-calendar"><path d="M7 1.75v3.5m7-3.5v3.5M4.375 3.5h12.25a1.75 1.75 0 0 1 1.75 1.75V17.5a1.75 1.75 0 0 1-1.75 1.75H4.375a1.75 1.75 0 0 1-1.75-1.75V5.25a1.75 1.75 0 0 1 1.75-1.75m-1.75 5.25h15.75"/></svg>
@@ -208,7 +208,8 @@
                     </div>
                 </div>
             </div>
-            <div id="contenedor_videos_recomendados_videos" class="flex flex-col gap-5 w-[30%]">
+            <hr class="hidden max-xl:block" />
+            <div id="contenedor_videos_recomendados_videos" class="flex flex-col gap-5 w-[30%] max-xl:w-full max-xl:gap-10">
                 
             </div>
         </div>
