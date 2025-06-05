@@ -13,11 +13,11 @@
 <body>
   <div id="plantilla">
     <?php include '../components/header.php'; ?>
-    <main id='main' class="contenedor_ref px-5 overflow-auto h-[100vh-50px]">
-      <div class="flex flex-col space-y-4 w-[1284px] mx-auto">
+    <main id='main' class="contenedor_ref p-5 overflow-auto h-[100vh-50px]">
+      <div class="flex flex-col space-y-4 w-[1284px] mx-auto max-xs:w-full">
 
           <div class="rounded-md w-full">
-            <img id="portada_canal" class="bg-cover bg-no-repeat bg-center h-[190px] w-full rounded-md" draggable="false">
+            <img id="portada_canal" class="bg-cover bg-no-repeat bg-center h-[190px] max-xs:h-[72px] w-full rounded-md" draggable="false">
           </div>
           
         <div  id="info_canal" class="flex flex-col gap-8">
@@ -25,22 +25,23 @@
             <div>
                 <img id="avatar_usuario_canal" width="105" height="105" class="bg-cover rounded-full bg-center bg-no-repeat" draggable="false">
             </div>
-            <div id="contenedor_info_canal" class="flex flex-col gap-2">
+            <div id="contenedor_info_canal" class="flex flex-col gap-2 max-xs:gap-1">
                 <div>
                   <h2 id="nombre_usuario" class="font-Poppins font-semibold text-xl">
 
                   </h2>
                 </div>
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2 max-xs:flex-col max-xs:items-start max-xs:gap-0">
                   <div>
                       <span id="nombre_canal" class="font-Inter text-xs">
 
                       </span>
                   </div>
-                  <div>
+                  <div class="max-xs:hidden">
                     <span class="text-gray-700">·</span>
                   </div>
-                  <div>
+                  <div class="flex items-center gap-2">
+                      <div>
                       <span class="font-Inter text-xs text-gray-700">
                         <span id="total_suscriptores">
                         
@@ -57,6 +58,7 @@
                         </span> videos 
                       </span>
                   </div>
+                  </div>
                 </div>
                 
             </div>
@@ -64,7 +66,7 @@
         </div>
         <div>
 
-        <div class="sticky top-0 bg-[#FDFDFD] z-30">
+        <div>
           <nav id="navegacion_tabs" class="border-b border-gray-200 flex items-center gap-6 py-2">
           <div>
               <button id="inicio_tab" class="flex items-center gap-2 font-Inter text-trece">
@@ -79,9 +81,9 @@
               </button>
             </div>
             <div>
-              <button id="sobre_mi_tab" class="flex items-center gap-2 font-Inter text-trece ">
+              <button id="sobre_mi_tab" class="flex items-center gap-2 font-Inter text-trece">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-user-icon lucide-book-user"><path d="M15 13a3 3 0 1 0-6 0"/><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/><circle cx="12" cy="8" r="2"/></svg>
-              Sobre Mí
+                <span class="block truncate line-clamp-1">Sobre Mí</span>
               </button>
             </div>
           </nav>
