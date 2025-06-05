@@ -67,14 +67,14 @@ function ObtenerHistorial(offset = 0)
                         videoTarjeta.setAttribute("id", `video_${contador}`)
 
                         videoTarjeta.innerHTML = `
-                            <div  class='flex items-center gap-4 w-full group'>
-                                        <div class='w-[170px] h-[100px] relative'>
-                                            <img src='${almacenarFechas[c].videos_fecha[i].media.miniatura}' class='rounded-md object-cover bg-cover bg-no-repeat bg-center w-[170px] h-[100px]'>
+                            <div  class='flex items-center gap-4 w-full group max-xs:flex-col max-xs:items-start'>
+                                        <div class='w-[170px] h-[100px] min-w-[170px] min-h-[100px] relative  max-xs:h-[180px] max-xs:min-w-[290px] max-xs:w-full'>
+                                            <img src='${almacenarFechas[c].videos_fecha[i].media.miniatura}' class='rounded-md max-xs:h-[180px] max-xs:min-w-[290px] max-xs:w-full object-cover bg-cover bg-no-repeat bg-center w-[170px] h-[100px]'>
                                             <div class='absolute select-none bg-black rounded-sm py-0.5 px-1 right-0 mb-1 bottom-0 mr-1'>
                                                 <div class='text-white select-none font-Inter text-[10px]'>${Math.trunc(almacenarFechas[c].videos_fecha[i].info.duracion / 60) < 10 ? "0" + String(Math.trunc(almacenarFechas[c].videos_fecha[i].info.duracion/ 60)) : String(Math.trunc(almacenarFechas[c].videos_fecha[i].info.duracion/ 60))}:${almacenarFechas[c].videos_fecha[i].info.duracion % 60 < 10 ? "0" + String(almacenarFechas[c].videos_fecha[i].info.duracion % 60) : almacenarFechas[c].videos_fecha[i].info.duracion % 60}</div>
                                             </div>
                                         </div>
-                                        <div class='flex flex-col gap-2 w-[70%]'>
+                                        <div class='flex flex-col gap-2 w-[70%] max-xs:w-full md:w-[60%] sm:w-[55%] max-sm:w-[50%]'>
                                             <div class='flex flex-col gap-2'>
                                                 <div class='font-Inter text-sm w-full'>
                                                 <div class='line-clamp-1 block truncate'>
