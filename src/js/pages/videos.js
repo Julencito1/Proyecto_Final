@@ -747,10 +747,10 @@ function ObtenerComentarios(limit = 20, offset = 0) {
                                         </div>
                                         <div id='responder_caja_comentario_${offset+j}' class='flex gap-3 w-full hidden'>
                                         <div>
-                                            <img src='${IMAGEN_USUARIO}' width='24' height='24' class='rounded-full bg-center bg-cover bg-no-repeat' />
+                                            <img src='${IMAGEN_USUARIO}'  class='rounded-full min-h-[24px] min-w-[24px] w-[24px] h-[24px] bg-center bg-cover bg-no-repeat' />
                                         </div>
-                                        <div class='w-full flex flex-col gap-3'>
-                                            <div id='responder_comentario_input_${offset+j}' contenteditable spellcheck='false' class='outline-none border-b px-2 py-1 font-Inter text-xs'></div>
+                                        <div class='w-[calc(100%-33.32px)] flex flex-col gap-3'>
+                                            <div id='responder_comentario_input_${offset+j}' contenteditable spellcheck='false' class='outline-none whitespace-break-spaces border-b px-2 py-1 font-Inter text-xs'></div>
                                             <div class='flex items-center gap-2 ml-auto'>
                                                 <div>
                                                     <button onclick='OcultarRespuestasInput(${offset+j})' class='rounded-full px-3 py-1.5 font-Geist text-xs transition-colors duration-150 hover:bg-gray-100'>
@@ -1352,18 +1352,18 @@ function RecomendacionVideosVideo()
                         let recomendacion = document.createElement("a")
                         recomendacion.href = './videos.php?ref=' + videos[k].link.ruta
                         recomendacion.setAttribute("id", "recomendacion_video_" + identificadoresVideos.length)
-                        recomendacion.classList.add("flex", "gap-2", "w-full")
+                        recomendacion.classList.add("flex", "gap-2", "w-full", "max-w-[350px]",  "max-xs:flex-col", "max-all:flex-col")
         
         
                         recomendacion.innerHTML = `
                         
-                                            <div class='min-w-[180px] h-[100px] relative'>
-                                                <img src='${videos[k].media.miniatura}' class='rounded-md bg-cover object-cover bg-no-repeat bg-center min-w-[180px] h-[100px]'>
+                                            <div class='min-w-[180px] h-[100px] max-xs:w-full max-xs:h-[180px] max-all:w-full max-all:h-[160px] relative'>
+                                                <img src='${videos[k].media.miniatura}' class='rounded-md bg-cover object-cover bg-no-repeat bg-center min-w-[180px] max-xs:h-[180px] max-xs:w-full max-all:w-full max-all:h-[160px] h-[100px]'>
                                                 <div class='absolute select-none bg-black rounded-sm py-0.5 px-1 right-0 mb-1 bottom-0 mr-1'>
                                                     <div class='text-white select-none font-Inter text-[10px]'>${videos[k].estadisticas.duracion}</div>
                                                 </div>
                                             </div>
-                                            <div class='flex flex-col gap-2 w-[calc(100%-180px)]'>
+                                            <div class='flex flex-col gap-2 w-[calc(100%-180px)] max-xs:w-full max-all:w-full'>
                                                 <div class='font-Inter text-xs'>
                                                     <div class='line-clamp-2'>
                                                         ${videos[k].contenido.titulo}
