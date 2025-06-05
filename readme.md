@@ -99,6 +99,48 @@ La barra lateral esta formada por un conjunto de links que facilitan la navegaci
 
 ---
 
+### Inicio ( Página principal )
+
+![1749109646161](image/readme/1749109646161.png)
+
+En la página principal de la aplicación se mostrarán un serie de videos obtenidos aleatoriamente, para que el usuario empiece a navegar e interactuar dentro de la aplicación. Dentro de esta pantalla el usuario podrá seleccionar si quiere observar videos según su categoría o completamente aleatorios. En la parte superior se encuentra:
+
+* Sin Categoría
+* Con Categoría
+
+El botón de "***Sin Categoría***" (por defecto) es el que mostrará una lista de videos aleatorios, por otro lado, los otros 5 botones serán de las categorías con más videos de toda la aplicación.
+
+`SIN CATEGORÍA`
+
+![1749109928837](image/readme/1749109928837.png)
+
+`CON CATEGORÍA`
+
+![1749109957630](image/readme/1749109957630.png)
+
+Cada tarjeta resultará ser un link que te llevará al video en cuestión, en cuanto a la información que muestran:
+
+* Miniatura
+* Duración
+* Título
+* Avatar usuario
+* Nombre usuario
+* Num. Visualizaciones
+* Fecha publicación
+
+En caso de que todavia no haya ningún video y no se haya seleccionado ninguna categoría aparecera la siguiente pantalla:
+
+![1749110567066](image/readme/1749110567066.png)
+
+---
+
+Y en caso de que no haya ningún video pero si haya una categoría seleccionada se mostrará esta otra pantalla:
+
+![1749110654817](image/readme/1749110654817.png)
+
+---
+
+
 ### Marcados
 
 En esta página se mostrarán los videos y comentarios que el usuario ha marcado (me gusta / no me gusta).
@@ -424,7 +466,6 @@ En caso de que el vídeo no contenga ningún comentario aparecerá la siguiente 
 
 Una vez dentro de la página "***Historial***" se listarán los videos vistos recientemente por el usuario divididos y filtrados según la fecha de visualización. Además esta sección contará con una barra de búsqueda para encontrar vídeos según su título.
 
-
 En este ejemplo se introdujo en la barra de búsqueda: ´***f***´
 
 ![1749065723543](image/readme/1749065723543.png)
@@ -565,6 +606,14 @@ En esta sección se mostrará información personal del usuario propietario del 
 * Breve descripción
 * Fecha en la que se registro en la aplicación
 * País de origen
+
+Si el usuario que esta loggeado es el dueño del actual canal, se mostrará un icono de lápiz junto a "***Breve descripción***" para poder actualizar la descripción del canal. Al hacer click en el botón del lápiz se la descripción se convertirá en un input y debajo de este podrás "***Cancelar***" la acción o "***Guardar***" la nueva descripción.
+
+![1749113615912](image/readme/1749113615912.png)
+
+![1749113782723](image/readme/1749113782723.png)
+
+Si el usuario no es el dueño del canal simplemente el lápiz se oculta:
 
 #### Demostración
 
