@@ -59,8 +59,10 @@ function CrearTabPrivado()
     privados_tab_btn.innerHTML = `
 
     
+        <div>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-off-icon lucide-eye-off"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></svg>
-        Tus Videos Privados
+        </div>
+        <span class="line-clamp-1">Mis Videos Privados</span>
     
     `
     privado.appendChild(privados_tab_btn)
@@ -387,7 +389,7 @@ function VideosCanal(limit = 20, offset = 0)
                                     <button onclick="MostrarMenuSeleccionadoVideosPrivados(${m + offset}); event.stopPropagation(); event.preventDefault();" id='btn_privado_${m + offset}' class="p-2 z-40 rounded-full cursor-pointer transition-colors duration-150 hover:bg-[#e6e6e6]">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
                                     </button>
-                                    <div id='submenu_${m + offset}' class='absolute flex flex-col w-44 p-1 rounded-md bg-white z-20 shadow-md border hidden origin-top-left'>
+                                    <div id='submenu_${m + offset}' class='absolute flex flex-col w-44 p-1 rounded-md bg-white z-20 max-xs:right-0 shadow-md border hidden origin-top-left max-xs:origin-top-right'>
                                         
                                         ${ESTADO_ACTUAL ? `
                                             
@@ -505,6 +507,7 @@ function SobreMi()
         try {
             if (datos.codigo === 200)
                 {
+                    contenedor_contenido_tabs.innerHTML = ''
                     let infoSobreMi = document.createElement("div")
         
                     infoSobreMi.classList.add("flex", "flex-col", "gap-10", "pt-5")
@@ -513,11 +516,21 @@ function SobreMi()
                     
                     
                      <div class='flex flex-col gap-2'>
-                        <div class='font-Inter font-medium text-trece'>
-                            Breve Descripción
+                        <div class='font-Inter font-medium text-trece flex items-center gap-2'>
+                            Breve Descripción ${ESTADO_ACTUAL ? (
+                                `<div>·</div> 
+                                <div>
+                                    <button id='btn_editar_descripcion' class='rounded-full p-1.5 transition-colors duration-150 hover:bg-gray-100'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-icon lucide-pencil"><path d="M18.527 5.961a.875.875 0 0 0-3.488-3.489L3.362 14.152a1.75 1.75 0 0 0-.438.726l-1.156 3.808a.438.438 0 0 0 .545.544l3.809-1.155a1.75 1.75 0 0 0 .726-.435zm-5.402-1.586 3.5 3.5"/></svg>
+                                    </button>
+                                </div>
+                                `
+                            ) : (
+                                ``
+                            )}
                         </div>
-                        <div class='font-Inter text-xs'>
-                        ${datos.mensaje.canal.info.descripcion === null ? "<i>Este canal no tiene ninguna descripción.</i>" : datos.mensaje.canal.info.descripcion}
+                        <div id='descripcion_canal_s' class='font-Inter text-xs'>
+                        ${datos.mensaje.canal.info.descripcion === null || datos.mensaje.canal.info.descripcion.trim().length === 0 ? "<i>Este canal no tiene ninguna descripción.</i>" : datos.mensaje.canal.info.descripcion}
                         </div>
                     </div>
                     <div class='flex flex-col gap-2'>
@@ -541,6 +554,37 @@ function SobreMi()
                     `
         
                     contenedor_contenido_tabs.appendChild(infoSobreMi)
+
+                    let btn_editar_descripcion = document.getElementById("btn_editar_descripcion")
+                    let descripcion_canal_s = document.getElementById("descripcion_canal_s")
+
+                    btn_editar_descripcion.addEventListener("click", () => {
+                        
+                        descripcion_canal_s.innerHTML = `
+                        
+                            <div class='flex flex-col gap-3'>
+                                <div>
+                                    <input autocomplete='off' spellcheck='false' placeholder="Descripción..." id="actualiza_descripcion_canal" type="text" class='w-full min-h-[30px] p-2 outline-none border rounded-md text-left' maxlength="255" value="${datos.mensaje.canal.info.descripcion === null ? "" : datos.mensaje.canal.info.descripcion.trim()}" />
+                                </div>
+                                <div class='ml-auto flex items-center gap-2'>
+                                    <div>
+                                        <button onclick='CancelarEditarDescripcion("${datos.mensaje.canal.info.descripcion}")' class='rounded-full px-3 py-1.5 font-Geist text-xs transition-colors duration-150 hover:bg-gray-100'>
+                                            Cancelar
+                                        </button>
+                                    </div>
+
+                                    <div>
+                                        <button onclick='ActualizarDescripcionCanal()' class='rounded-full px-3 py-1.5 bg-[#065FD4] text-white font-Geist text-xs transition-colors duration-150 hover:bg-[#0659c6]'>
+                                            Guardar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        
+                        `
+
+                    })
         }
         }
         catch(error) {
@@ -554,6 +598,52 @@ function SobreMi()
                 }    
         }
     })
+}
+
+function CancelarEditarDescripcion(datos)
+{
+    let descripcion_canal_s = document.getElementById("descripcion_canal_s")
+
+    descripcion_canal_s.innerHTML = `
+    
+    ${datos === null || datos.trim().length === 0 ? "<i>Este canal no tiene ninguna descripción.</i>" : datos}
+    `
+}
+
+function ActualizarDescripcionCanal()
+{
+    let actualiza_descripcion_canal = document.getElementById("actualiza_descripcion_canal")
+
+    fetch("http://localhost:8080/canal/actualizar/descripcion",
+        {
+            method: 'PUT',
+            body: JSON.stringify({
+                canal: canal,
+                descripcion: actualiza_descripcion_canal.value.trim()
+            }),
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem("logged")}`
+            }
+        }
+    )
+    .then((res) => {
+        if (!res.ok)
+        {
+            throw new Error("ERROR")
+        }
+
+        return res.json()
+    })
+    .then((datos) => {
+
+        if (datos.codigo === 200)
+        {
+            SobreMi()
+        }
+
+    })
+
+
 }
 
 function VideosPrivadosCanal(limit = 20, offset = 0)
@@ -600,8 +690,11 @@ function VideosPrivadosCanal(limit = 20, offset = 0)
                 {
                     let privados_tab_btn = document.getElementById("privados_tab")
                     
-                    privados_tab_btn.innerHTML = ` <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-off-icon lucide-eye-off"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></svg>
-        Tus Videos Privados (${datos.mensaje.datos.total})`
+                    privados_tab_btn.innerHTML = ` <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-off-icon lucide-eye-off"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></svg>
+                    </div>
+                    
+                    <span class="line-clamp-1">Mis Videos Privados (${datos.mensaje.datos.total})</span>`
 
                     if (datos.mensaje.respuesta.length === 0) {
                         let img_vacio = document.createElement("div")
@@ -653,7 +746,7 @@ function VideosPrivadosCanal(limit = 20, offset = 0)
                                     <button onclick='MostrarMenuSeleccionadoVideosPrivados(${m + offset})' id='btn_privado_${m + offset}' class="p-2 rounded-full cursor-pointer transition-colors duration-150 hover:bg-[#e6e6e6]">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
                                     </button>
-                                    <div id='submenu_${m + offset}' class='absolute flex flex-col w-36 p-1 rounded-md bg-white z-20 shadow-md border hidden origin-top-left'>
+                                    <div id='submenu_${m + offset}' class='absolute flex flex-col w-36 p-1 rounded-md bg-white z-20 shadow-md border hidden max-xs:right-0 origin-top-left max-xs:origin-top-right'>
                                         <button onclick='HacerPublicoVideo("${e.canal.videos.link.ruta}")' class='flex items-center gap-2 font-Inter text-xs w-full text-left rounded-md transition-colors duration-150 p-1.5 hover:bg-gray-100'>
                                         <div>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-share-icon lucide-share"><path d="M3.5 10.5v7a1.75 1.75 0 0 0 1.75 1.75h10.5a1.75 1.75 0 0 0 1.75 -1.75v-7"/><path points="16 6 12 2 8 6" d="M14 5.25L10.5 1.75L7 5.25"/><path x1="12" x2="12" y1="2" y2="15" d="M10.5 1.75L10.5 13.125"/></svg>
