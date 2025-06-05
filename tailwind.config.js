@@ -5,11 +5,12 @@ module.exports = {
     extend: {
       screens: {
         'max-xs': { max: '475px' },
-        'max-sm': { max: '639px' },
+        'max-sm': { max: '639px', min: '476px' },
         'max-md': { max: '767px' },
         'max-lg': { max: '1023px' },
         'max-xl': { max: '1279px' },
         'max-2xl': { max: '1535px' },
+        'max-all': {max: '1279px', min: '476px'}
       },
       fontFamily: {
         Inter: ["Inter", "sans-serif"],
