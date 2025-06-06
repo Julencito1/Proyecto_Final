@@ -14,10 +14,10 @@
   <div id="plantilla">
     <?php include '../components/header.php'; ?>
     <main id='main' class="contenedor_ref p-5 overflow-auto h-[100vh-50px]">
-      <div class="flex flex-col space-y-4 w-[1284px] mx-auto max-xs:w-full">
+      <div class="flex flex-col space-y-4 2xl:w-[1284px] mx-auto max-xs:w-full max-sm:w-full sm:w-full">
 
           <div class="rounded-md w-full">
-            <img id="portada_canal" class="bg-cover bg-no-repeat bg-center h-[190px] max-xs:h-[72px] w-full rounded-md" draggable="false">
+            <img id="portada_canal" class="bg-cover bg-no-repeat bg-center h-[190px] max-xs:h-[72px] max-sm:h-[90px] between_sm-md:h-[110px] between_md-lg:h-[140px] w-full rounded-md" draggable="false">
           </div>
           
         <div  id="info_canal" class="flex flex-col gap-8">
@@ -25,19 +25,19 @@
             <div>
                 <img id="avatar_usuario_canal" width="105" height="105" class="bg-cover rounded-full bg-center bg-no-repeat" draggable="false">
             </div>
-            <div id="contenedor_info_canal" class="flex flex-col gap-2 max-xs:gap-1">
+            <div id="contenedor_info_canal" class="flex flex-col gap-2 max-xs:gap-1 max-sm:gap-1">
                 <div>
                   <h2 id="nombre_usuario" class="font-Poppins font-semibold text-xl">
 
                   </h2>
                 </div>
-                <div class="flex items-center gap-2 max-xs:flex-col max-xs:items-start max-xs:gap-0">
+                <div class="flex items-center gap-2 max-xs:flex-col max-sm:flex-col max-sm:items-start max-sm:gap-0 max-xs:items-start max-xs:gap-0">
                   <div>
                       <span id="nombre_canal" class="font-Inter text-xs">
 
                       </span>
                   </div>
-                  <div class="max-xs:hidden">
+                  <div class="max-xs:hidden max-sm:hidden">
                     <span class="text-gray-700">·</span>
                   </div>
                   <div class="flex items-center gap-2">

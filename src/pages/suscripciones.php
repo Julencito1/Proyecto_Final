@@ -13,7 +13,7 @@
   <div id="plantilla">
     <?php include '../components/header.php'; ?>
     <main id='main' class="contenedor_ref p-5 overflow-auto h-[100vh-50px]">
-        <div class="w-[1284px] mx-auto pt-10 h-full flex flex-col gap-5">
+        <div class="w-full mx-auto pt-10 h-full flex flex-col gap-5">
             <div>
                 <h2 class="font-Poppins font-medium text-lg">
                     Canales a los que estás suscrito 
