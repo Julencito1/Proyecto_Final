@@ -249,7 +249,7 @@ box-shadow: inset 5px -32px 50px -30px #000000;
   }
 }
 
-@media (min-width: 476px) and (max-width: 1279px) {
+@media (min-width: 475.01px) and (max-width: 1279px) {
   #contenedor_videos_recomendados_videos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
