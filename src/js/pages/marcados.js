@@ -101,38 +101,40 @@ function VideosMarcados(offset = 0) {
                                 
                                 nuevoContenedor.innerHTML = `
                                 
-                                    <div class='flex items-center gap-4 w-full group'>
-                                        <div class='w-[170px] h-[100px] relative'>
-                                            <img src='${vm[i].media.video.miniatura}' class='rounded-md object-cover bg-cover bg-no-repeat bg-center w-[170px] h-[100px]'>
-                                            <div class='absolute select-none bg-black rounded-sm py-0.5 px-1 right-0 mb-1 bottom-0 mr-1'>
-                                                <div class='text-white select-none font-Inter text-[10px]'>${vm[i].estadisticas.duracion}</div>
+                                    <div class='flex overflow-hidden items-center gap-4 w-full group justify-between max-xs:flex-col max-xs:items-start max-lg:flex-col max-lg:items-start'>
+                                        <div class='flex items-center gap-4 max-xs:flex-col max-xs:items-start max-lg:w-full '>
+                                            <div class='w-[170px] h-[100px] min-w-[170px] min-h-[100px] relative  max-xs:h-[180px] max-xs:min-w-[290px] max-xs:w-full'>
+                                                <img src='${vm[i].media.video.miniatura}' class='rounded-md max-xs:h-[180px] max-xs:min-w-[290px] max-xs:w-full object-cover bg-cover bg-no-repeat bg-center w-[170px] h-[100px]'>
+                                                <div class='absolute select-none bg-black rounded-sm py-0.5 px-1 right-0 mb-1 bottom-0 mr-1'>
+                                                    <div class='text-white select-none font-Inter text-[10px]'>${vm[i].estadisticas.duracion}</div>
+                                                </div>
+                                            </div>
+                                            <div class='flex flex-col gap-2 w-[70%] max-xs:w-full md:w-[60%]'>
+                                                <div class='flex flex-col gap-2'>
+                                                    <div class='font-Inter text-sm w-full'>
+                                                    <div class='line-clamp-1 block truncate max-xs:w-full sm:w-[95%] max-sm:w-[70%]'>
+                                                        ${vm[i].contenido.titulo}
+                                                    </div>
+                                                </div>
+                                                <div class='flex items-center gap-2'>
+                                                    <div class='font-Inter text-xs text-gray-700'>
+                                                        ${vm[i].estadisticas.visitas} visitas · ${vm[i].estadisticas.fechas.fecha_creacion} 
+                                                    </div>
+                                                </div>
+                                                <div class='flex items-center gap-2'>
+                                                    <div>
+                                                        <img src='${vm[i].media.usuario.avatar}' class='rounded-md bg-cover bg-no-repeat bg-center w-6 h-6'>
+                                                    </div>
+                                                    <div class='font-Lexend text-xs'>
+                                                        ${vm[i].contenido.canal.usuario.nombre}
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                
                                             </div>
                                         </div>
-                                        <div class='flex flex-col gap-2 w-[70%]'>
-                                            <div class='flex flex-col gap-2'>
-                                                <div class='font-Inter text-sm w-full'>
-                                                <div class='line-clamp-1 block truncate'>
-                                                    ${vm[i].contenido.titulo}
-                                                </div>
-                                            </div>
-                                            <div class='flex items-center gap-2'>
-                                                <div class='font-Inter text-xs text-gray-700'>
-                                                    ${vm[i].estadisticas.visitas} visitas · ${vm[i].estadisticas.fechas.fecha_creacion} 
-                                                </div>
-                                            </div>
-                                            <div class='flex items-center gap-2'>
-                                                <div>
-                                                    <img src='${vm[i].media.usuario.avatar}' class='rounded-md bg-cover bg-no-repeat bg-center w-6 h-6'>
-                                                </div>
-                                                <div class='font-Lexend text-xs'>
-                                                    ${vm[i].contenido.canal.usuario.nombre}
-                                                </div>
-                                            </div>
-                                            </div>
-                                            
-                                        </div>
-                                        <div class='flex items-center justify-center z-10'>
-                                            <div>
+                                        <div class='flex items-center justify-center z-10 max-lg:w-full'>
+                                            <div class='max-lg:ml-auto'>
                                                 ${vm[i].estadisticas.gustado_vm === "si" ? (
                                                     `
                                                     <div class='flex items-center gap-2'>
