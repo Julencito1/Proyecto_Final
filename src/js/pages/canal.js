@@ -389,7 +389,7 @@ function VideosCanal(limit = 20, offset = 0)
                                     <button onclick="MostrarMenuSeleccionadoVideosPrivados(${m + offset}); event.stopPropagation(); event.preventDefault();" id='btn_privado_${m + offset}' class="p-2 z-40 rounded-full cursor-pointer transition-colors duration-150 hover:bg-[#e6e6e6]">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
                                     </button>
-                                    <div id='submenu_${m + offset}' class='absolute flex flex-col w-44 p-1 rounded-md bg-white z-20 max-xs:right-0 shadow-md border hidden origin-top-left max-xs:origin-top-right'>
+                                    <div id='submenu_${m + offset}' class='absolute flex flex-col w-44 p-1 rounded-md bg-white z-20 right-0 shadow-md border hidden origin-top-right'>
                                         
                                         ${ESTADO_ACTUAL ? `
                                             
@@ -530,7 +530,9 @@ function SobreMi()
                             )}
                         </div>
                         <div id='descripcion_canal_s' class='font-Inter text-xs'>
-                        ${datos.mensaje.canal.info.descripcion === null || datos.mensaje.canal.info.descripcion.trim().length === 0 ? "<i>Este canal no tiene ninguna descripción.</i>" : datos.mensaje.canal.info.descripcion}
+                            <p id='descripcion_contenido_canal' class='break-all'>
+                                
+                            </p>
                         </div>
                     </div>
                     <div class='flex flex-col gap-2'>
@@ -557,6 +559,9 @@ function SobreMi()
 
                     let btn_editar_descripcion = document.getElementById("btn_editar_descripcion")
                     let descripcion_canal_s = document.getElementById("descripcion_canal_s")
+                    let descripcion_contenido_canal = document.getElementById("descripcion_contenido_canal")
+                    descripcion_contenido_canal.textContent = `${datos.mensaje.canal.info.descripcion === null || datos.mensaje.canal.info.descripcion.trim().length === 0 ? "Este canal no tiene ninguna descripción." : datos.mensaje.canal.info.descripcion}`
+    
 
                     btn_editar_descripcion.addEventListener("click", () => {
                         
@@ -568,7 +573,7 @@ function SobreMi()
                                 </div>
                                 <div class='ml-auto flex items-center gap-2'>
                                     <div>
-                                        <button onclick='CancelarEditarDescripcion("${datos.mensaje.canal.info.descripcion}")' class='rounded-full px-3 py-1.5 font-Geist text-xs transition-colors duration-150 hover:bg-gray-100'>
+                                        <button onclick='CancelarEditarDescripcion("${datos.mensaje.canal.info.descripcion === null || datos.mensaje.canal.info.descripcion.trim().length === 0 ? "Este canal no tiene ninguna descripción." : datos.mensaje.canal.info.descripcion}")' class='rounded-full px-3 py-1.5 font-Geist text-xs transition-colors duration-150 hover:bg-gray-100'>
                                             Cancelar
                                         </button>
                                     </div>
@@ -602,12 +607,19 @@ function SobreMi()
 
 function CancelarEditarDescripcion(datos)
 {
+    
     let descripcion_canal_s = document.getElementById("descripcion_canal_s")
 
     descripcion_canal_s.innerHTML = `
     
-    ${datos === null || datos.trim().length === 0 ? "<i>Este canal no tiene ninguna descripción.</i>" : datos}
+    <p id='descripcion_contenido_canal' class='break-all'>
+                                
+                            </p>
     `
+
+    let descripcion_contenido_canal = document.getElementById("descripcion_contenido_canal")
+    descripcion_contenido_canal.textContent = `${datos === null || datos.trim().length === 0 ? "Este canal no tiene ninguna descripción." : datos}`   
+    
 }
 
 function ActualizarDescripcionCanal()
@@ -746,7 +758,7 @@ function VideosPrivadosCanal(limit = 20, offset = 0)
                                     <button onclick='MostrarMenuSeleccionadoVideosPrivados(${m + offset})' id='btn_privado_${m + offset}' class="p-2 rounded-full cursor-pointer transition-colors duration-150 hover:bg-[#e6e6e6]">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
                                     </button>
-                                    <div id='submenu_${m + offset}' class='absolute flex flex-col w-36 p-1 rounded-md bg-white z-20 shadow-md border hidden max-xs:right-0 origin-top-left max-xs:origin-top-right'>
+                                    <div id='submenu_${m + offset}' class='absolute flex flex-col w-36 p-1 rounded-md bg-white z-20 shadow-md border hidden right-0 origin-top-right'>
                                         <button onclick='HacerPublicoVideo("${e.canal.videos.link.ruta}")' class='flex items-center gap-2 font-Inter text-xs w-full text-left rounded-md transition-colors duration-150 p-1.5 hover:bg-gray-100'>
                                         <div>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-share-icon lucide-share"><path d="M3.5 10.5v7a1.75 1.75 0 0 0 1.75 1.75h10.5a1.75 1.75 0 0 0 1.75 -1.75v-7"/><path points="16 6 12 2 8 6" d="M14 5.25L10.5 1.75L7 5.25"/><path x1="12" x2="12" y1="2" y2="15" d="M10.5 1.75L10.5 13.125"/></svg>
