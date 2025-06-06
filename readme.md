@@ -1,5 +1,11 @@
 # MANUAL DE USUARIO
 
+![1749199818881](image/readme/1749199818881.png)
+
+***Julen Agüero Fernández***
+
+---
+
 ### Cabecera
 
 La cabecera está formada por los siguientes componentes:
@@ -139,7 +145,6 @@ Y en caso de que no haya ningún video pero si haya una categoría seleccionada 
 ![1749110654817](image/readme/1749110654817.png)
 
 ---
-
 
 ### Marcados
 
