@@ -76,36 +76,38 @@ function VideosGuardados(limit = limitActual, offset = offsetActual, filtro = fi
                             
                             nuevoContenedor.innerHTML = `
                             
-                                <div class='flex gap-4 w-full group'>
-                                    <div class='w-[170px] h-[100px] relative'>
-                                        <img src='${datos.mensaje.contenedor[i].video.media.miniatura}' class='rounded-md object-cover bg-cover bg-no-repeat bg-center w-[170px] h-[100px]'>
-                                        <div class='absolute select-none bg-black rounded-sm py-0.5 px-1 right-0 mb-1 bottom-0 mr-1'>
-                                            <div class='text-white select-none font-Inter text-[10px]'>${datos.mensaje.contenedor[i].video.estadisticas.duracion}</div>
+                                <div class='flex gap-4 w-full group justify-between max-xs:flex-col max-xs:items-start'>
+                                    <div class='flex gap-4 max-xs:w-full md:w-[80%] sm:w-[85%] max-sm:w-[75%] max-xs:flex-col '>
+                                        <div class=' w-[170px] h-[100px] min-w-[170px] min-h-[100px] relative  max-xs:h-[180px] max-xs:min-w-[290px] max-xs:w-full'>
+                                            <img src='${datos.mensaje.contenedor[i].video.media.miniatura}' class='rounded-md max-xs:h-[180px] max-xs:min-w-[290px] max-xs:w-full object-cover bg-cover bg-no-repeat bg-center w-[170px] h-[100px]'>
+                                            <div class='absolute select-none bg-black rounded-sm py-0.5 px-1 right-0 mb-1 bottom-0 mr-1'>
+                                                <div class='text-white select-none font-Inter text-[10px]'>${datos.mensaje.contenedor[i].video.estadisticas.duracion}</div>
+                                            </div>
+                                        </div>
+                                        <div class='flex flex-col gap-2 w-full'>
+                                            <div class='font-Inter text-sm w-full'>
+                                                <div class='line-clamp-1'>
+                                                    ${datos.mensaje.contenedor[i].video.titulo}
+                                                </div>
+                                            </div>
+                                            <div class='flex items-center gap-2'>
+                                                <div class='font-Inter text-xs text-gray-700'>
+                                                    ${datos.mensaje.contenedor[i].video.estadisticas.visitas} visitas · ${datos.mensaje.contenedor[i].video.estadisticas.fecha.fecha_creacion} 
+                                                </div>
+                                            </div>
+                                            <div class='flex items-center gap-2'>
+                                                <div>
+                                                    <img src='${datos.mensaje.contenedor[i].video.info.usuario.media.avatar}' class='rounded-md bg-cover bg-no-repeat bg-center w-6 h-6'>
+                                                </div>
+                                                <div class='font-Lexend text-xs'>
+                                                    ${datos.mensaje.contenedor[i].video.info.usuario.nombre}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class='flex flex-col gap-2 w-[70%]'>
-                                        <div class='font-Inter text-sm w-full'>
-                                            <div class='line-clamp-1 block truncate'>
-                                                ${datos.mensaje.contenedor[i].video.titulo}
-                                            </div>
-                                        </div>
-                                        <div class='flex items-center gap-2'>
-                                            <div class='font-Inter text-xs text-gray-700'>
-                                                ${datos.mensaje.contenedor[i].video.estadisticas.visitas} visitas · ${datos.mensaje.contenedor[i].video.estadisticas.fecha.fecha_creacion} 
-                                            </div>
-                                        </div>
-                                        <div class='flex items-center gap-2'>
-                                            <div>
-                                                <img src='${datos.mensaje.contenedor[i].video.info.usuario.media.avatar}' class='rounded-md bg-cover bg-no-repeat bg-center w-6 h-6'>
-                                            </div>
-                                            <div class='font-Lexend text-xs'>
-                                                ${datos.mensaje.contenedor[i].video.info.usuario.nombre}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class='flex items-center justify-center z-10 invisible group-hover:visible'>
-                                        <button onclick="QuitarVideo('${datos.mensaje.contenedor[i].video.guardado.identificador}')" class='rounded-full p-2 transition-colors duration-150 hover:bg-gray-100'>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 22.5 22.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="m16.875 5.625-11.25 11.25m0-11.25 11.25 11.25"/></svg>
+                                    <div class='flex items-center justify-center max-xs:visible ml-auto z-10 invisible group-hover:visible'>
+                                        <button onclick="QuitarVideo('${datos.mensaje.contenedor[i].video.guardado.identificador}'); event.stopPropagation(); event.preventDefault();" class='rounded-full p-2 transition-colors duration-150 hover:bg-gray-100'>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 22.5 22.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M2.813 5.625h16.875"/><path d="M17.813 5.625v13.125c0 0.938 -0.938 1.875 -1.875 1.875H6.563c-0.938 0 -1.875 -0.938 -1.875 -1.875V5.625"/><path d="M7.5 5.625V3.75c0 -0.938 0.938 -1.875 1.875 -1.875h3.75c0.938 0 1.875 0.938 1.875 1.875v1.875"/><path x1="10" x2="10" y1="11" y2="17" d="M9.375 10.313L9.375 15.938"/><path x1="14" x2="14" y1="11" y2="17" d="M13.125 10.313L13.125 15.938"/></svg>
                                         </button>
                                     </div>
                                 </div>
