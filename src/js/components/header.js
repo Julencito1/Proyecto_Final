@@ -442,6 +442,9 @@ const avatar_usuario = document.querySelectorAll(".avatar_usuario")
 
 function DatosUsuario()
 {
+
+    if (!localStorage.getItem("logged")) return 
+
     avatar_usuario.forEach((e) => {
         e.classList.add("animate-pulse")
     })
