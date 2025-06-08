@@ -105,10 +105,10 @@ function BuscarResultados(offsetC = 0, offsetV = 0)
                             let nuevoContenedor = document.createElement("a")
                             if (mixResultados[almacenarAleatorio[i]].tipo === "video")
                             {
-                                nuevoContenedor.setAttribute("class", "flex gap-5 shrink-0")
+                                nuevoContenedor.setAttribute("class", "flex gap-5 shrink-0 max-xs:flex-col max-sm:flex-col")
                                 nuevoContenedor.href = `./videos.php?ref=${mixResultados[almacenarAleatorio[i]].link.ruta}`
                             } else {
-                                nuevoContenedor.setAttribute("class", "flex items-center gap-5 shrink-0")
+                                nuevoContenedor.setAttribute("class", "flex items-center gap-5 shrink-0 max-xs:gap-3 max-sm:gap-0")
                                 nuevoContenedor.href = `./canal.php?ref=${mixResultados[almacenarAleatorio[i]].nombre_canal}`
                             }
         
@@ -118,17 +118,17 @@ function BuscarResultados(offsetC = 0, offsetV = 0)
                             nuevoContenedor.innerHTML = `
                                 ${mixResultados[almacenarAleatorio[i]].tipo === "video" ? (
                                     `
-                                        <div class='rounded-md relative'>
-                                            <div class='min-w-[320px] max-w-[320px] h-[180px] '>
-                                            <img src="${mixResultados[almacenarAleatorio[i]].media.miniatura}" class='rounded-md min-h-[180px] max-h-[180px] max-w-[320px] min-w-[320px] object-cover bg-cover bg-no-repeat bg-center' />
+                                        <div class='rounded-md relative max-sm:w-[320px]'>
+                                            <div class='min-w-[320px] max-w-[320px] h-[180px] max-xs:w-full max-xs:min-w-full'>
+                                            <img src="${mixResultados[almacenarAleatorio[i]].media.miniatura}" class='rounded-md min-h-[180px] max-h-[180px] max-w-[320px] max-xs:w-full max-xs:min-w-full max-xs:max-w-full min-w-[320px] object-cover bg-cover bg-no-repeat bg-center' />
                                             </div>
                                             <div class='absolute select-none bg-black rounded-sm py-0.5 px-1 right-0 mb-1 bottom-0 mr-1'>
                                                 <div class='text-white select-none font-Inter text-[10px]'>${mixResultados[almacenarAleatorio[i]].estadisticas.duracion}</div>
                                             </div>
                                         </div>
-                                        <div class='flex flex-col gap-2.5'>
+                                        <div class='flex flex-col gap-2.5 max-sm:w-[320px]'>
                                             <div class='flex flex-col gap-1'>
-                                            <div class='font-Geist text-[15px]'>
+                                            <div class='font-Geist text-[15px] line-clamp-2'>
                                                 ${mixResultados[almacenarAleatorio[i]].contenido.titulo}
                                             </div>
                                             <div class='flex items-center gap-2'>
@@ -166,22 +166,22 @@ function BuscarResultados(offsetC = 0, offsetV = 0)
                                     `
                                 ) : (
                                     `
-                                        <div class='min-w-[320px] w-[320px]'>
+                                        <div class='min-w-[320px] w-[320px] max-lg:w-[180px] max-lg:min-w-[180px]'>
                                             <div class='rounded-full overflow-hidden flex items-center justify-center'>
-                                                <img src='${mixResultados[almacenarAleatorio[i]].usuario.media.avatar}' class='w-36 h-36 rounded-full bg-center bg-cover bg-no-repeat' />
+                                                <img src='${mixResultados[almacenarAleatorio[i]].usuario.media.avatar}' class='w-36 h-36 max-lg:w-28 max-lg:h-28 rounded-full bg-center bg-cover bg-no-repeat' />
                                             </div>
                                         </div>
                                         <div class='flex flex-col gap-1'>
-                                            <div class='font-Geist text-[15px]'>
+                                            <div class='font-Geist text-[15px] line-clamp-1'>
                                                 ${mixResultados[almacenarAleatorio[i]].usuario.nombre}
                                             </div>
                                             <div class='flex flex-col gap-1'>
-                                                <div class='flex items-center gap-2'>
-                                                    <div class='font-Geist text-gray-600 text-[13px]'>
+                                                <div class='flex items-center gap-2 max-lg:flex-col max-lg:items-start'>
+                                                    <div class='font-Geist text-gray-600 text-[13px] line-clamp-1'>
                                                         ${mixResultados[almacenarAleatorio[i]].nombre_canal}
                                                     </div>
         
-                                                    <div class='font-Geist text-gray-600 text-[13px]'>
+                                                    <div class='font-Geist text-gray-600 text-[13px] max-lg:hidden'>
                                                         ·
                                                     </div>
         
