@@ -9,11 +9,12 @@ module.exports = {
         'max-md': { max: '767px' },
         'max-lg': { max: '1023px' },
         'max-xl': { max: '1279px' },
-        'max-2xl': { max: '1535px' },
+        'max-2xl': { max: '1579px' },
         'max-all': {max: '1279px', min: '475.01px'},
         'between_sm-md': { max: '767px', min: '639.01px'},
         'between_md-lg': { max: '1023px', min: '767.01px'},
         'between_lg-xl': { max: '1279px', min: '1023.01px'},
+        'max-sm-original': { max: '639px'},
       },
       fontFamily: {
         Inter: ["Inter", "sans-serif"],
