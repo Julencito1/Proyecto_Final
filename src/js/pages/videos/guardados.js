@@ -60,7 +60,7 @@ function VideosGuardados(limit = limitActual, offset = offsetActual, filtro = fi
        try {
         if (datos.codigo === 200)
             {
-                contenedor_videos_guardados.innerHTML = ''
+                
     
                 if (datos.mensaje.contenedor.length > 0) {
     
