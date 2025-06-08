@@ -14,7 +14,7 @@
   <div id="plantilla">
     <?php include '../components/header.php'; ?>
     <main id='main' class="contenedor_ref p-5 overflow-auto h-[100vh-50px]">
-      <div class="flex flex-col space-y-4 2xl:w-[1284px] mx-auto max-xs:w-full max-sm:w-full sm:w-full">
+      <div class="flex flex-col space-y-4 2xl:w-[1284px] mx-auto max-2xl:w-full">
 
           <div class="rounded-md w-full">
             <img id="portada_canal" class="bg-cover bg-no-repeat bg-center h-[190px] max-xs:h-[72px] max-sm:h-[90px] between_sm-md:h-[110px] between_md-lg:h-[140px] w-full rounded-md" draggable="false">
