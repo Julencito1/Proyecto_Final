@@ -13,22 +13,22 @@
   <div id="plantilla">
     <?php include '../../components/header.php'; ?>
     <main id='main' class="contenedor_ref px-5 overflow-auto h-[100vh-50px]">
-        <div class="flex flex-col w-[1284px] pt-10 mx-auto">
+        <div class="flex flex-col w-[1284px] pt-10 mx-auto max-2xl:w-full">
           <div>
             <h2 class="font-Poppins font-medium text-lg">
               Videos Guardados  
             </h2>
           </div>
-          <div class="flex items-center justify-between sticky top-0 z-30 bg-[#FDFDFD] py-5">
-            <div class="relative">
+          <div class="flex items-center flex-wrap justify-between gap-2 sticky top-0 z-30 bg-[#FDFDFD] py-5 max-xs:flex-col max-xs:items-start max-xs:gap-4">
+            <div class="relative max-sm-original:w-full">
               <div>
-                <input id="busqueda_ipt" type="text" class="border w-[300px] rounded-md py-2 font-Inter text-xs px-6 outline-none" placeholder="Buscar por título...">
+                <input id="busqueda_ipt" type="text" class="border w-[300px] max-sm-original:w-full rounded-md py-2 font-Inter text-xs px-6 outline-none" placeholder="Buscar por título...">
               </div>
               <div class="absolute top-2 left-1">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 22.5 22.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m19.688 19.688-4.069-4.069m2.194-5.306a7.5 7.5 0 0 1-7.5 7.5 7.5 7.5 0 0 1-7.5-7.5 7.5 7.5 0 0 1 15 0"/></svg>
               </div>
             </div>
-            <div>
+            <div class="ml-auto">
               <div id="contenedor_filtros_videos_guardar" class="relative">
                 <button id="btnFiltros_videos_guardar" class="font-Inter text-[13px] px-3 py-[4.25px] rounded-md border flex items-center gap-2 transition-colors duration-150 hover:bg-gray-50">
                     <div>
