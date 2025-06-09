@@ -63,7 +63,7 @@ function ObtenerHistorial(offset = 0)
                     {
                         contador++
                         let videoTarjeta = document.createElement("a")
-                        videoTarjeta.href = './videos.php?ref=' + almacenarFechas[c].videos_fecha[i].link.ruta
+                        videoTarjeta.href = './videos.html?ref=' + almacenarFechas[c].videos_fecha[i].link.ruta
                         videoTarjeta.setAttribute("id", `video_${contador}`)
 
                         videoTarjeta.innerHTML = `
