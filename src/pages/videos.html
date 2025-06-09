@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video - NewTube</title>
+  <link href='../styles/styles.css' rel='stylesheet'>
+  <link href="../output.css" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/fonts.css">
+  <link rel="icon" type="image/x-icon" href="../assets/favicon/newtube.ico">
+</head>
+<body>
+  <div id="plantilla">
+    
+
+<div id="header" class="px-4 py-2 flex items-center justify-between">
+      <div>
+        <div class="flex items-center gap-1">
+          <button aria-label="Botón Menu Sidebar" id="btn_sidebar" class="p-2 max-md:hidden rounded-full cursor-pointer transition-colors duration-150 hover:bg-[#f2f2f2]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </button>
+          <a href="../index.html" aria-label="Link Página Principal" class="text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.25 27h13.5a6.75 6.75 0 0 0 0 -13.5 9 9 0 0 0 -17.438 -1.125A5.625 5.625 0 0 0 11.25 27" fill="#F03" stroke="none" stroke-width="0.9"/><path d="m20.25 18 -5.625 -3.375v6.75z" stroke="#FFF" fill="#FFF" stroke-width="0.5625"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div id='contenedor_buscador' class="border border-[#e6e6e6] bg-[#f2f2f2] rounded-lg h-[34px] w-[35%] relative z-40">
+        <div class="absolute top-1.5 left-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </div>
+        <div class="absolute top-1 right-2">
+          <button id="limpiar_buscador" class="rounded-full p-1 hidden transition-colors duration-150 hover:bg-[#e6e6e6] cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+        <input id="buscador" autocomplete="off" spellcheck='false' type="text" class="w-full rounded-lg text-[#737373] h-full outline-none text-[13px] font-light font-Inter px-9 placeholder:text-[#737373]" placeholder="Buscar..." />
+        <div id='recomendaciones' class="absolute top-9 hidden border bg-white shadow-md w-full py-2 rounded-md">
+            
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <div id="contenedor_crear" class="relative">
+          <button id="btn_crear_nuevo" title="Nuevo" class="p-2 rounded-full cursor-pointer transition-colors duration-150 hover:bg-[#f2f2f2]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus-icon lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+          </button>
+          <div id="desplegable_crear" class="absolute hidden z-50 right-0 p-2 rounded-md w-36 border origin-top-right bg-white shadow-md overflow-hidden">
+            <a href="./crear.html" class="flex items-center gap-2 text-xs font-Inter rounded-md px-2 py-1.5 transition-colors duration-150 hover:bg-gray-100">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 22.5 22.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M4.688 11.25h13.125M11.25 4.688v13.125"/></svg>
+            Nuevo vídeo
+            </a>
+          </div>
+        </div>
+        <div id="contenedor_notificaciones_btn" class="relative">
+          <button id="btn_notificaciones" title="Notificaciones" class="relative p-2 rounded-full cursor-pointer transition-colors duration-150 hover:bg-[#f2f2f2]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell-icon lucide-bell"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>
+            <div class="absolute top-0.5 right-0">
+              <span id="total_notis" class="rounded-full text-white flex items-center justify-center min-w-[19.21px] text-[8px] font-Inter bg-[#FF0033] pointer-events-none select-none">
+                
+              </span>
+            </div>
+          </button>
+          <div id="notificaciones" class="absolute z-50 right-0 max-h-72 rounded-md w-80 border hidden origin-top-right bg-white shadow-md overflow-hidden">
+            <div class="flex flex-col">
+              <div class="font-Roboto text-[13px] py-3 p-2">
+                Notificaciones
+              </div>
+
+              <hr class="border-[#e6e6e6]" />
+
+              <div id="contenedor_notificaciones" class="overflow-auto h-[calc(288px-43.49px)]">
+              
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div id="posicion_mostrar_header" class="flex items-center justify-center">
+          
+        </div>
+      </div>
+    </div>
+
+
+    <main id='main' class="contenedor_ref p-5 overflow-auto h-[100vh-50px]"> 
+        <div class="w-full flex gap-5 max-xl:flex-col">
+            <div id="contenedor_video_reproducir" class="w-[70%] max-xl:w-full flex flex-col gap-5">
+                <div  class="relative overflow-hidden  rounded-md" id="contenedor_ref_video_reproductor" >
+                    <video id="video_tag" class="w-full max-h-[840px] object-contain">
+                    </video>
+                    <div id="controles_video_tag_cus" class="absolute bottom-0 w-full flex flex-col gap-3 p-2 transition-opacity duration-150">
+                        <div>
+                            <input id="barra_mover_video" type="range" step="1" min="0" value="0">
+                        </div> 
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-5 max-xl:gap-2.5">
+                                <div>
+                                    <button id="rep_par_btn" class="flex items-center outline-none">
+                                    
+                                    </button>
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <button id="sonido_btn" class="outline-none">
+
+                                    </button>
+                                    <div class="flex items-center max-xl:w-[60%]">
+                                        <input id="barra_sonido" class="max-xl:w-[70%]" step="0.1" min="0" max="1" type="range">
+                                    </div>
+                                </div>
+                                <div class="font-Geist text-xs max-xl:text-[10px] text-white">
+                                    <span id="tiempo_actual">00:00</span> / <span id="tiempo_video">00:00</span>
+                                </div>
+                            </div>  
+                            <div class="flex items-center gap-5">
+                                <div class="relative" id="contenedor_velocidades_video">
+                                    <button id="mostrarVelocidadesVideo" class="flex items-center outline-none">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge-icon lucide-gauge"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
+                                    </button>
+                                    <div id="submenu_velocidades_video" class="absolute hidden origin-bottom-right bottom-6 flex flex-col p-2 right-0 rounded-md w-36 bg-white z-40">
+                                        
+                                            <button id="btn_velocidad_lenta" class="flex items-center justify-between font-Geist text-[13px] transition-all duration-150 hover:bg-gray-200 rounded-md py-1.5 px-2 ">
+                                                <div class="flex items-center gap-2">
+                                                    <div>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-down-icon lucide-chevrons-down"><path d="m6.125 5.25 4.375 4.375 4.375 -4.375"/><path d="m6.125 11.375 4.375 4.375 4.375 -4.375"/></svg>
+                                                    </div>
+                                                 0.5
+                                                </div>
+                                            </button>
+                                            <button id="btn_velocidad_normal" class="flex items-center justify-between gap-2 font-Geist text-[13px] transition-all duration-150 hover:bg-gray-200 rounded-md py-1.5 px-2 ">
+                                                <div class="flex items-center gap-2">
+                                                    <div>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus-icon lucide-minus"><path d="M4.375 10.5h12.25"/></svg>
+                                                    </div>
+                                                    1
+                                                </div>
+                                            </button>
+                                            <button id="btn_velocidad_rapida" class="flex items-center justify-between gap-2 font-Geist text-[13px] transition-all duration-150 hover:bg-gray-200 rounded-md py-1.5 px-2 ">
+                                                <div class="flex items-center gap-2">
+                                                    <div>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-up-icon lucide-chevrons-up"><path d="M14.875 9.625 10.5 5.25 6.125 9.625m8.75 6.125L10.5 11.375 6.125 15.75"/></svg>
+                                                    </div>
+                                                    2
+                                                </div>
+                                            </button>
+                                        
+                                    </div>
+                                </div>
+                                <div>
+                                    <button id="agrandar_video_btn" class="flex items-center outline-none">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-maximize-icon lucide-maximize"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4 w-full">
+                    <div>
+                        <h2 id="titulo_video" class="font-Geist text-[16px] max-xl:text-[13px] line-clamp-2">
+
+                        </h2>
+                    </div>
+                    <div class="flex items-center justify-between max-xl:items-start max-xl:gap-5 max-xl:flex-col-reverse">
+                        <div id="contenedor_video_segundalinea" class="flex items-center gap-3 max-xl:w-full max-xl:justify-between">
+                            <a id="video_link_canal_usuario" class="flex items-center gap-3">
+                            <div>
+                                <img id="img_video_canal_usuario" width="30" height="30" class="rounded-full overflow-hidden bg-cover bg-no-repeat bg-center">
+                            </div>
+                            <div class="flex flex-col">
+                                <div id="nombre_video_canal_usuario" class="font-Inter text-[13px]">
+
+                                </div>
+                                <div class="font-Inter text-[10px] text-gray-700">
+                                   <span id="total_suscriptores_video_canal"></span> suscriptores
+                                </div>
+                            </div>
+                            </a>
+                            
+                        </div>
+                        <div class="flex items-center gap-3 max-xl:w-full">
+                            <div class="flex items-center">
+                                <button id="btn_video_megusta" class="rounded-tl-full rounded-bl-full min-w-[55.5px] px-3 py-1.5 font-Inter text-xs border border-l border-t border-b border-gray-200 bg-white flex items-center gap-2 transition-colors duration-150 hover:bg-gray-100">
+                                    <div class="flex items-center justify-center">
+                                        <svg id="video_svg_icono_megusta" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thumbs-up-icon lucide-thumbs-up"><path d="M6.125 8.75v10.5"/><path d="M13.125 5.145 12.25 8.75h5.101a1.75 1.75 0 0 1 1.68 2.24l-2.039 7A1.75 1.75 0 0 1 15.313 19.25H3.5a1.75 1.75 0 0 1 -1.75 -1.75v-7a1.75 1.75 0 0 1 1.75 -1.75h2.415a1.75 1.75 0 0 0 1.566 -0.971L10.5 1.75a2.739 2.739 0 0 1 2.625 3.395"/></svg>
+                                    </div>
+                                    <div id="video_total_megusta">
+                                        
+                                    </div>
+                                </button>
+                                <button id="btn_video_no_megusta" class="rounded-tr-full rounded-br-full min-w-[55.5px] px-3 py-1.5 font-Inter text-xs border-r border-t border-b  border-gray-200 bg-white flex items-center gap-2 transition-colors duration-150 hover:bg-gray-100">
+                                    <div class="flex items-center justify-center">
+                                        <svg id="video_svg_icono_nomegusta" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thumbs-down-icon lucide-thumbs-down"><path d="M14.875 12.25V1.75m-7 14.105.875-3.605H3.649a1.75 1.75 0 0 1-1.68-2.24l2.039-7a1.75 1.75 0 0 1 1.68-1.26H17.5a1.75 1.75 0 0 1 1.75 1.75v7a1.75 1.75 0 0 1-1.75 1.75h-2.415a1.75 1.75 0 0 0-1.566.971L10.5 19.25a2.74 2.74 0 0 1-2.625-3.395"/></svg>
+                                    </div>
+                                    <div id="video_total_nomegusta">
+                                        
+                                    </div>
+                                </button>    
+                            </div>
+                            <div class="max-xl:ml-auto">
+                                <button id="btn_compartir_video_enlace_videos" class="rounded-full px-3 py-1.5 font-Inter text-xs flex border items-center gap-2 transition-all duration-150 hover:opacity-80 hover:bg-gray-100">
+                                    <div class="flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-share2-icon lucide-share-2"><path cx="18" cy="5" r="3" d="M18.375 4.375A2.625 2.625 0 0 1 15.75 7A2.625 2.625 0 0 1 13.125 4.375A2.625 2.625 0 0 1 18.375 4.375z"/><path cx="6" cy="12" r="3" d="M7.875 10.5A2.625 2.625 0 0 1 5.25 13.125A2.625 2.625 0 0 1 2.625 10.5A2.625 2.625 0 0 1 7.875 10.5z"/><path cx="18" cy="19" r="3" d="M18.375 16.625A2.625 2.625 0 0 1 15.75 19.25A2.625 2.625 0 0 1 13.125 16.625A2.625 2.625 0 0 1 18.375 16.625z"/><path x1="8.59" x2="15.42" y1="13.51" y2="17.49" d="M7.516 11.821L13.492 15.304"/><path x1="15.41" x2="8.59" y1="6.51" y2="10.49" d="M13.484 5.696L7.516 9.179"/></svg>
+                                    </div>
+                                    <div>
+                                        Compartir
+                                    </div>
+                                </button>   
+                            </div>
+                            <div class="relative" id="contenedor_submenu_tres_puntos_video">
+                                <button id="tres_video_mostrar_submenu" class="rounded-full h-full p-2 flex items-center gap-2 transition-all duration-150 hover:opacity-80 hover:bg-gray-100">
+                                    <div class="flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical"><path d="M11.375 10.5a.875.875 0 0 1-.875.875.875.875 0 0 1-.875-.875.875.875 0 0 1 1.75 0m0-6.125a.875.875 0 0 1-.875.875.875.875 0 0 1-.875-.875.875.875 0 0 1 1.75 0m0 12.25a.875.875 0 0 1-.875.875.875.875 0 0 1-.875-.875.875.875 0 0 1 1.75 0"/></svg>
+                                    </div>
+                                </button>
+                                <div id="submenu_videos_menu_g" class='absolute flex flex-col w-44 p-1 right-0 rounded-md bg-white z-20 shadow-md border hidden origin-top-right'>
+                                    <button id="btn_video_guardar_video" class='flex items-center gap-2 font-Inter text-xs w-full text-left rounded-md transition-colors duration-150 p-1.5 hover:bg-gray-100'>
+
+                                    </button>
+                                </div>   
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="bg-gray-200"/>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2 max-xl:flex-col max-xl:items-start">
+                            <div class="flex items-center gap-2">
+                                <div class="flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye"><path d="M1.804 10.805a.86.86 0 0 1 0-.61 9.407 9.407 0 0 1 17.391 0 .86.86 0 0 1 0 .61 9.407 9.407 0 0 1-17.391 0"/><path d="M13.126 10.5a2.63 2.63 0 0 1-2.626 2.626A2.63 2.63 0 0 1 7.874 10.5a2.626 2.626 0 0 1 5.25 0"/></svg>
+                                </div>
+                                <div id="videos_vistas" class="font-Geist text-xs">
+
+                                </div>
+                            </div>
+                            <div class="font-Geist text-xs max-xl:hidden">·</div>
+                            <div class="flex items-center gap-2">
+                                <div class="flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-icon lucide-calendar"><path d="M7 1.75v3.5m7-3.5v3.5M4.375 3.5h12.25a1.75 1.75 0 0 1 1.75 1.75V17.5a1.75 1.75 0 0 1-1.75 1.75H4.375a1.75 1.75 0 0 1-1.75-1.75V5.25a1.75 1.75 0 0 1 1.75-1.75m-1.75 5.25h15.75"/></svg>
+                                </div>
+                                <div id="video_fecha_creacion" class="font-Geist text-xs">
+                                    Publicado 
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" id="video_categoria" class="text-[#564CBD] bg-[#F2F3FB] font-Geist text-xs rounded-full px-2 py-1 transition-colors duration-150 hover:bg-[#d8dbf3]">
+
+                        </a>
+                    </div>
+                    <div id="video_descripcion" class="font-Geist text-[13px] text-gray-700">
+                        
+                    </div>
+                    <hr class="bg-gray-200">
+                    <div class="border rounded-md flex flex-col">
+                        <div>
+                            <div contenteditable="" spellcheck="false" id="comentario_contenedor_editable" class="w-full outline-none p-2 font-Inter text-xs relative"></div>
+                        </div>
+                        <div class="p-2 ml-auto">
+                            <button id="btn_publicarComentario" class="rounded-full flex items-center gap-2 text-white px-3 py-1.5 bg-[#E65605] font-Geist text-xs transition-colors duration-150 hover:bg-[#e15505]">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send-horizontal-icon lucide-send-horizontal"><path d="M3.25 2.667a0.436 0.436 0 0 0 -0.598 0.549l2.488 6.674a1.75 1.75 0 0 1 0 1.221l-2.487 6.674a0.436 0.436 0 0 0 0.597 0.549l15.75 -7.438a0.438 0.438 0 0 0 0 -0.791z"/><path d="M5.25 10.5h14"/></svg>
+                                </div>
+                                Comentar   
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col gap-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h2 id="cabecera_comentarios_total" class="font-Geist text-[15px]">
+                                    Comentarios
+                                </h2>
+                            </div>
+                        </div>
+                        <div id="contenedor_comentarios_video" class="space-y-10">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="hidden max-xl:block" />
+            <div id="contenedor_videos_recomendados_videos" class="flex flex-col gap-5 w-[30%] max-xl:w-full max-xl:gap-10">
+                
+            </div>
+        </div>
+    </main>
+    <aside id="sidebar" class="px-4 py-2 flex flex-col gap-4 overflow-hidden">
+      <div>
+        <div>
+          <a id="inicio" href="../index.html" title="Inicio" class="sidebar_nav flex  items-center gap-2 cursor-pointer transition-colors duration-150 rounded-md px-2 h-[34px] w-full hover:bg-[#f2f2f2]">
+            <div>
+              <svg id="svg_inicio" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house-icon lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            </div>
+            <div class="txt text-[13.2px] font-Roboto">Inicio</div>
+          </a>
+        </div>
+      </div>
+
+      <hr class="border-[#e6e6e6]" />
+      
+
+      <div>
+        <div>
+          <a id="historial" href="./historial.html" title="Historial" class="sidebar_nav  flex  items-center gap-2 cursor-pointer transition-colors duration-150 rounded-md px-2 h-[34px] w-full hover:bg-[#f2f2f2]">
+            <div>
+              <svg id='svg_historial' xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-history-icon lucide-history"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+            </div>
+            <div class="txt text-[13.2px] font-Roboto">Historial</div>
+</a>
+        </div>
+  
+        <div>
+          <a id="me_gusta" href="./marcados.html" title="Me Gusta" class="sidebar_nav flex  items-center gap-2 cursor-pointer transition-colors duration-150 rounded-md px-2 h-[34px] w-full hover:bg-[#f2f2f2]">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thumbs-up-icon lucide-thumbs-up"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+            </div>
+            <div class="txt text-[13.2px] font-Roboto">Marcados</div>
+          </a>
+        </div>
+
+        <div>
+          <a id="videos_guardados" href="./videos/guardados.html" title="Videos Guardados" class="sidebar_nav flex  items-center gap-2 cursor-pointer transition-colors duration-150 rounded-md px-2 h-[34px] w-full hover:bg-[#f2f2f2]">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clapperboard-icon lucide-clapperboard"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9"/><path d="m12.4 3.4 3.1 4"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
+            </div>
+            <div class="txt text-[13.2px] font-Roboto">Videos Guardados</div>
+          </a>
+        </div>
+      </div>  
+
+      <hr class="border-[#e6e6e6]" />
+
+      <div>
+        <div>
+          <a id="suscripciones" href="./suscripciones.html" title="Suscripciones" class="sidebar_nav  flex  items-center gap-2 cursor-pointer transition-colors duration-150 rounded-md px-2 h-[34px] w-full hover:bg-[#f2f2f2]">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-podcast-icon lucide-podcast"><path d="M16.85 18.58a9 9 0 1 0-9.7 0"/><path d="M8 14a5 5 0 1 1 8 0"/><circle cx="12" cy="11" r="1"/><path d="M13 17a1 1 0 1 0-2 0l.5 4.5a.5.5 0 1 0 1 0Z"/></svg>
+            </div>
+            <div class="txt text-[13.2px] font-Roboto">Suscripciones</div>
+          </a>
+        </div>
+      
+        <div id="loader_suscripciones_sidebar" class="flex items-center justify-center hidden mt-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide animate-spin lucide-loader-icon lucide-loader"><path d="M9 1.5v3"/><path d="m12.144 5.844 2.172 -2.172"/><path d="M13.5 9h3"/><path d="m12.144 12.144 2.172 2.172"/><path d="M9 13.5v3"/><path d="m3.672 14.328 2.172 -2.172"/><path d="M1.5 9h3"/><path d="m3.672 3.672 2.172 2.172"/></svg>
+        </div>
+        <div id="contenedor_suscripciones" class="hidden">
+          
+        </div>
+      </div>
+    </aside>
+  </div>
+  <script src="../js/components/sidebar.js"></script>
+  <script src="../js/components/header.js"></script>
+  <script src="../js/utils/observer.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/animaciones/animaciones.js"></script>
+  <script src="../js/pages/videos.js"></script>
+  
+
+</body>
+</html>

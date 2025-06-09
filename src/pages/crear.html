@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crear - NewTube</title>
+  <link href='../styles/styles.css' rel='stylesheet'>
+  <link href="../output.css" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/fonts.css">
+  <link rel="icon" type="image/x-icon" href="../assets/favicon/newtube.ico">
+</head>
+<body class="min-h-screen w-full flex flex-col items-center justify-center">
+  <div class="w-[400px] flex flex-col gap-5 items-center">
+    <div>
+        <h1 class="font-Geist text-xl font-medium text-center">
+            Crear Video
+        </h1>
+    </div>
+    <div class="flex flex-col gap-4 w-full">
+        <div class="space-y-2">
+            <label class="font-Geist text-xs">Título</label>
+            <input type="text" id="input_titulo_crear" maxlength="255" placeholder="Título" class="border font-Geist text-[13px] px-3 py-1 w-full outline-none rounded-md transition-colors duration-150 focus:border-[#bbb] hover:border-[#bbb]" />
+        </div>
+
+        <div class="space-y-2">
+        <label class="font-Geist text-xs">Descripción</label>
+            <textarea id="textarea_descripcion_crear" placeholder="Descripción..." maxlength="255" class="border font-Geist vertical min-h-[75px] max-h-[150px] text-[13px] px-3 py-1 w-full outline-none rounded-md transition-colors duration-150 focus:border-[#bbb] hover:border-[#bbb]" ></textarea>
+        </div>
+
+        <div class="space-y-2 flex flex-col">
+        <label class="font-Geist text-xs">Categoría</label>
+            <button id="btn_menu_categoria" class="relative flex items-center justify-between border font-Geist text-[13px] px-3 py-1 w-full rounded-md transition-colors duration-150 hover:border-[#bbb] ">
+                <div id="categoria_seleccionada_actual">
+                    Categoría
+                </div>
+                <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m5.25 7.875 5.25 5.25 5.25-5.25"/></svg>
+                </div>
+                <div id="contenedor_categorias_listar" class="absolute hidden origin-top flex flex-col gap-2 p-2 overflow-auto max-h-56 w-full bg-white z-40 left-0 rounded-md border shadow-md top-7">
+
+                </div>
+            </button>
+        </div>
+
+        <div class="space-y-2">
+            <div>
+                <div class="font-Geist text-xs">
+                    Miniatura
+                </div>
+            </div>
+            <label id="miniatura_mostrar_contenedor" for="input_miniatura_crear" class="flex flex-col gap-2 border font-Geist text-[13px] px-3 py-1 outline-none rounded-md transition-colors duration-150 focus:border-[#bbb] hover:border-[#bbb]">
+                <div class="flex items-center gap-2">
+                    <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-image-icon lucide-image"><path d="M4.375 2.625h12.25a1.75 1.75 0 0 1 1.75 1.75v12.25a1.75 1.75 0 0 1-1.75 1.75H4.375a1.75 1.75 0 0 1-1.75-1.75V4.375a1.75 1.75 0 0 1 1.75-1.75"/><path d="M9.625 7.875a1.75 1.75 0 0 1-1.75 1.75 1.75 1.75 0 0 1-1.75-1.75 1.75 1.75 0 0 1 3.5 0m8.75 5.25-2.7-2.7a1.75 1.75 0 0 0-2.474 0l-7.951 7.95"/></svg>
+                    </div>
+                    <div id="mensaje_miniatura" class="block truncate line-clamp-1">
+                        Cargar miniatura
+                    </div>
+                </div>
+            </label>
+            <input type="file" id="input_miniatura_crear" accept=".webp, .png, .jpeg, .jpg, .avif" class="hidden" />
+            
+        </div>
+
+        <div class="space-y-2">
+            <div>
+                <div class="font-Geist text-xs">
+                    Vídeo
+                </div>
+            </div>
+            <label id="video_mostrar_contenedor" for="input_video_crear" class="flex flex-col gap-2 border block font-Geist text-[13px] px-3 py-1 outline-none rounded-md transition-colors duration-150 focus:border-[#bbb] hover:border-[#bbb]">
+                <div class="flex items-center gap-2">
+                    <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-video-icon lucide-file-video"><path d="M13.125 1.75H5.25a1.75 1.75 0 0 0 -1.75 1.75v14a1.75 1.75 0 0 0 1.75 1.75h10.5a1.75 1.75 0 0 0 1.75 -1.75V6.125Z"/><path d="M12.25 1.75v3.5a1.75 1.75 0 0 0 1.75 1.75h3.5"/><path d="m8.75 9.625 4.375 2.625 -4.375 2.625z"/></svg>
+                    </div>
+                    <div id="mensaje_video" class="block truncate line-clamp-1">
+                        Cargar vídeo
+                    </div>
+                </div>
+            </label>
+            <input type="file" accept="video/*" id="input_video_crear" class="hidden" />
+        </div>
+        <div class="space-y-2">
+            <div>
+                <div class="font-Geist text-xs">
+                    Estado
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2">
+                <input checked type="radio" value="publico" id="publico_estado_video" name="estado_video">  
+                <label class="font-Geist text-xs">
+                    Público
+                </label>
+                </div>
+                <div class="flex items-center gap-2">
+                <input type="radio" value="privado" id="privado_estado_video" name="estado_video"> 
+                <label class="font-Geist text-xs">
+                    Privado
+                </label>
+                </div>
+            </div>  
+        </div>
+    </div>
+
+    <div class="w-full">
+        <button id="enviar_crear_video" class="flex items-center justify-center gap-2 rounded-md bg-[#275BC3] text-white w-full px-2 py-1.5 font-Geist text-[13px] transition-opacity duration-150 hover:opacity-80">
+            Publicar video
+        </button>
+    </div>
+  </div>
+  <script src="../js/main.js"></script>
+  <script src="../js/animaciones/animaciones.js"></script>
+  <script src="../js/pages/crear.js"></script>
+  <script src="../js/utils/observer.js"></script>
+
+</body>
+</html>
