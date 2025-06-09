@@ -106,9 +106,26 @@ function CrearVideo() {
         CATEGORIA === "Categoría" ||
         !input_miniatura_crear.files[0] ||
         !input_video_crear.files[0] ||
-        input_titulo_crear.value === "" ||
-        textarea_descripcion_crear.value === ""
-    ) return;
+        input_titulo_crear.value.trim() === "" ||
+        textarea_descripcion_crear.value.trim() === ""
+    ) {
+        alert("Los campos no pueden estar vacios")
+        return
+    }
+
+    const timeout = setTimeout(() => {
+
+        enviar_crear_video.innerHTML = `
+            
+            <div class='animate-spin'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader-circle-icon lucide-loader-circle"><path d="M18.375 10.5a7.875 7.875 0 1 1-5.442-7.49"/></svg>
+            </div>
+            <div>
+            Publicando video...
+            </div>
+            `
+
+    }, 200)
 
     const archivoVideo = input_video_crear.files[0];
 
@@ -143,9 +160,21 @@ function CrearVideo() {
                 return res.json();
             })
             .then((datos) => {
-                if (datos.codigo === 200) {
-                    console.log("Video creado exitosamente");
-                    
+                try {
+                    if (datos.codigo === 200) {
+
+                        let tab = datos.mensaje.estado === "publico" ? "tab=videos" : "tab=videos-privados"
+                        window.location.href = "./canal.html?ref=" + datos.mensaje.canal + "&" + tab
+                        
+                    }
+                }
+                catch(error)
+                {
+                    console.error(error)
+                }
+                finally {
+                    clearTimeout(timeout)
+                    enviar_crear_video.innerHTML = `Publicar video`
                 }
             })
             .catch(error => {
