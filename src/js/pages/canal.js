@@ -25,7 +25,7 @@ var NOMBRE_USUARIO_CANAL = ""
 
 if (!canal)
 {
-    window.location.href = '../404.php'
+    window.location.href = '../404.html'
 }
 
 
@@ -145,7 +145,7 @@ function DatosCanal() {
             
         } else if (datos.codigo === 404)
         {
-            window.location.href = '../404.php'
+            window.location.href = '../404.html'
         }
 
     })
@@ -367,7 +367,7 @@ function VideosCanal(limit = 20, offset = 0)
                             let nuevoVideo = document.createElement("div")
                             nuevoVideo.innerHTML = `
                             
-                            <a href="./videos.php?ref=${e.canal.videos.link.ruta}" id="video_${offset + (m+1)}" class='flex flex-col gap-3'>
+                            <a href="./videos.html?ref=${e.canal.videos.link.ruta}" id="video_${offset + (m+1)}" class='flex flex-col gap-3'>
                             <div class='relative w-full overflow-hidden'>
                                 <img class='rounded-md object-cover w-full h-[130px]' src="${e.canal.videos.media.miniatura}" />
                                 <div class='absolute select-none bg-black rounded-sm py-0.5 px-1 right-0 mb-1 bottom-0 mr-1'>
@@ -1113,7 +1113,7 @@ function InicioCanal()
                             let nuevoVideo = document.createElement("div")
                             nuevoVideo.innerHTML = `
                             
-                            <a href="./videos.php?ref=${e.canal.videos.link.ruta}" aria-label="Link Video" id="video_${m+1}" class='flex flex-col gap-3'>
+                            <a href="./videos.html?ref=${e.canal.videos.link.ruta}" aria-label="Link Video" id="video_${m+1}" class='flex flex-col gap-3'>
                             <div class='relative w-full overflow-hidden'>
                                 <img class='rounded-md object-cover w-full h-[130px]' src="${e.canal.videos.media.miniatura}" />
                                 <div class='absolute select-none bg-black rounded-sm py-0.5 px-1 right-0 mb-1 bottom-0 mr-1'>
@@ -1146,7 +1146,7 @@ function InicioCanal()
                             let nuevoCanalSiguiendo = document.createElement("div")
                             nuevoCanalSiguiendo.innerHTML = `
                             
-                            <a href='./canal.php?ref=${e.canal.nombre_canal}' class='flex flex-col gap-5'>
+                            <a href='./canal.html?ref=${e.canal.nombre_canal}' class='flex flex-col gap-5'>
                                 <div>
                                     <img src='${e.media.avatar}' class='h-[70px] w-[70px] rounded-full overflow-hidden'>
                                 </div>
