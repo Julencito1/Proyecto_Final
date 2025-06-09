@@ -15,6 +15,11 @@ let labContra = document.querySelector("#labContra")
 
 let form_signup = document.querySelector("#form_signup")
 
+let msj_nombre_valido = document.getElementById("msj_nombre_valido")
+let msj_nv = document.getElementById("msj_nv")
+
+let msj_pass_invalida = document.getElementById("msj_pass_invalida")
+let msj_pi = document.getElementById("msj_pi")
 
 verContra.addEventListener("click", (e) => 
     {
@@ -107,7 +112,21 @@ form_signup.addEventListener("submit", (e) => {
 
     e.preventDefault()
 
-    if (inputNombre.value === "" || inputContra.value === "" || inputEmail.value === "") return
+    if (inputNombre.value.trim() === "" || inputContra.value.trim() === "" || inputEmail.value.trim() === "") return
+
+    if (!ContieneCaracteresValidos())
+    {
+        msj_nombre_valido.classList.remove("opacity-0")
+        msj_nv.textContent = `El nombre contiene caracteres inválidos`
+        return
+    }
+
+    if (inputContra.value.trim().length <= 7)
+    {
+        msj_pass_invalida.classList.remove("opacity-0")
+        msj_pi.textContent = `La contraseña debe contener al menos 8 caracteres`
+        return 
+    }
 
     try {
         fetch ("http://localhost:8080/signup",
@@ -168,3 +187,22 @@ form_signup.addEventListener("submit", (e) => {
         labContra.classList.remove("peer-focus:-top-2", "text-xs", "peer-focus:left-2.5",  "peer-focus:text-xs", "peer-focus:text-blue-400", "peer-focus:scale-90", "scale-90")
     }
 })  
+
+
+let caracteresValidos = [
+    "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+    "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
+]
+
+function ContieneCaracteresValidos()
+{
+    for (let i = 0; i < inputNombre.value.length; i++)
+    {
+        if (!caracteresValidos.includes(inputNombre.value[i])) {
+
+            return false
+        }
+    }
+
+    return true
+}
