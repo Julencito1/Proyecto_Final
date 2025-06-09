@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "tailwindcss -i ./src/index.css -o ./dist/style.css --minify"
+    "build": "mkdir dist && tailwindcss -i ./src/index.css -o ./dist/style.css --minify && cp -r ./src/*.html ./dist/"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.4"
