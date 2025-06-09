@@ -4,10 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inicio - NewTube</title>
-  <link rel="icon" type="image/x-icon" href="./assets/favicon/newtube.ico">
-  <link href='./styles/styles.css' rel='stylesheet'>
-  <link href="./output.css" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/fonts.css">
+  <link rel="icon" type="image/x-icon" href="./src/assets/favicon/newtube.ico">
+  <link href='./dist/style.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./src/styles/fonts.css">
 </head>
 <body>
   <div id="plantilla">
@@ -46,7 +45,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus-icon lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
           </button>
           <div id="desplegable_crear" class="absolute hidden z-50 right-0 p-2 rounded-md w-36 border origin-top-right bg-white shadow-md overflow-hidden">
-            <a href="./pages/crear.html" class="flex items-center gap-2 text-xs font-Inter rounded-md px-2 py-1.5 transition-colors duration-150 hover:bg-gray-100">
+            <a href="./src/pages/crear.html" class="flex items-center gap-2 text-xs font-Inter rounded-md px-2 py-1.5 transition-colors duration-150 hover:bg-gray-100">
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 22.5 22.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M4.688 11.25h13.125M11.25 4.688v13.125"/></svg>
             Nuevo vídeo
             </a>
@@ -113,7 +112,7 @@
 
       <div>
         <div>
-          <a id="historial" href="./pages/historial.html" title="Historial" class="sidebar_nav  flex  items-center gap-2 cursor-pointer transition-colors duration-150 rounded-md px-2 h-[34px] w-full hover:bg-[#f2f2f2]">
+          <a id="historial" href="./src/pages/historial.html" title="Historial" class="sidebar_nav  flex  items-center gap-2 cursor-pointer transition-colors duration-150 rounded-md px-2 h-[34px] w-full hover:bg-[#f2f2f2]">
             <div>
               <svg id='svg_historial' xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-history-icon lucide-history"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
             </div>
@@ -122,7 +121,7 @@
         </div>
   
         <div>
-          <a id="me_gusta" href="./pages/marcados.html" title="Me Gusta" class="sidebar_nav flex  items-center gap-2 cursor-pointer transition-colors duration-150 rounded-md px-2 h-[34px] w-full hover:bg-[#f2f2f2]">
+          <a id="me_gusta" href="./src/pages/marcados.html" title="Me Gusta" class="sidebar_nav flex  items-center gap-2 cursor-pointer transition-colors duration-150 rounded-md px-2 h-[34px] w-full hover:bg-[#f2f2f2]">
             <div>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thumbs-up-icon lucide-thumbs-up"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>
             </div>
@@ -131,7 +130,7 @@
         </div>
 
         <div>
-          <a id="videos_guardados" href="./pages/videos/guardados.html" title="Videos Guardados" class="sidebar_nav flex  items-center gap-2 cursor-pointer transition-colors duration-150 rounded-md px-2 h-[34px] w-full hover:bg-[#f2f2f2]">
+          <a id="videos_guardados" href="./src/pages/videos/guardados.html" title="Videos Guardados" class="sidebar_nav flex  items-center gap-2 cursor-pointer transition-colors duration-150 rounded-md px-2 h-[34px] w-full hover:bg-[#f2f2f2]">
             <div>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clapperboard-icon lucide-clapperboard"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9"/><path d="m12.4 3.4 3.1 4"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
             </div>
@@ -144,7 +143,7 @@
 
       <div>
         <div>
-          <a id="suscripciones" href="./pages/suscripciones.html" title="Suscripciones" class="sidebar_nav  flex  items-center gap-2 cursor-pointer transition-colors duration-150 rounded-md px-2 h-[34px] w-full hover:bg-[#f2f2f2]">
+          <a id="suscripciones" href="./src/pages/suscripciones.html" title="Suscripciones" class="sidebar_nav  flex  items-center gap-2 cursor-pointer transition-colors duration-150 rounded-md px-2 h-[34px] w-full hover:bg-[#f2f2f2]">
             <div>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-podcast-icon lucide-podcast"><path d="M16.85 18.58a9 9 0 1 0-9.7 0"/><path d="M8 14a5 5 0 1 1 8 0"/><circle cx="12" cy="11" r="1"/><path d="M13 17a1 1 0 1 0-2 0l.5 4.5a.5.5 0 1 0 1 0Z"/></svg>
             </div>
@@ -161,11 +160,11 @@
       </div>
     </aside>
   </div>
-  <script src="./js/components/sidebar.js"></script>
-  <script src="./js/components/header.js"></script>
-  <script src="./js/utils/observer.js"></script>
-  <script src="./js/main.js"></script>
-  <script src="./js/animaciones/animaciones.js"></script>
-  <script src="./js/pages/inicio.js"></script>
+  <script src="./src/js/components/sidebar.js"></script>
+  <script src="./src/js/components/header.js"></script>
+  <script src="./src/js/utils/observer.js"></script>
+  <script src="./src/js/main.js"></script>
+  <script src="./src/js/animaciones/animaciones.js"></script>
+  <script src="./src/js/pages/inicio.js"></script>
 </body>
 </html>
