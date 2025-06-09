@@ -82,7 +82,7 @@ form_login.addEventListener("submit", (e) => {
 
     e.preventDefault()
 
-    if (inputContra.value === "" || inputEmail.value === "") return
+    if (inputContra.value.trim() === "" || inputEmail.value.trim() === "") return
 
     try {
         fetch ("http://localhost:8080/login",
@@ -112,7 +112,7 @@ form_login.addEventListener("submit", (e) => {
                 token = data.token
                 localStorage.setItem("logged", token)
 
-                window.location.href = "./index.php"
+                window.location.href = "./index.html"
            }
 
            if (data.code !== 200) {
