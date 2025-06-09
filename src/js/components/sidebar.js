@@ -15,7 +15,7 @@ const contenedor_suscripciones = document.getElementById("contenedor_suscripcion
 
     // switch(window.location.pathname) {
 
-    //     case "/" || "/index.php":
+    //     case "/" || "/index.html":
     //         inicio_sidebar.classList.add("bg-[#e6e6e6]", "hover:bg-[#d9d9d9]")
     //         inicio_sidebar.classList.remove("hover:bg-[#f2f2f2]")
             
@@ -25,7 +25,7 @@ const contenedor_suscripciones = document.getElementById("contenedor_suscripcion
             
     //         break;
     
-    //     case "/proyecto_final-main/src/pages/historial.php":
+    //     case "/proyecto_final-main/src/pages/historial.html":
     //         inicio_sidebar.classList.remove("bg-[#e6e6e6]", "hover:bg-[#d9d9d9]")
     //         inicio_sidebar.classList.add("hover:bg-[#f2f2f2]")
            
