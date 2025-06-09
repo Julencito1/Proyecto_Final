@@ -6,6 +6,69 @@
 
 ---
 
+### Autenticación
+
+#### Registro
+
+Dentro de la página de "***Registro***" podemos encontrar un formulario para crear una cuenta dentro de la aplicación, el formulario consta de:
+
+* Input Nombre
+* Input Email
+* Input Contraseña
+
+Junto al input de contraseña se encuentra un botón para quitar el tipo "***password***" y observar la contraseña escrita. Debajo de este se sitúa el boton de continuar para proceder con la creación de la cuenta, y por último, se le ofrece la opción de navegar a la página de Login o Inicio sesón en caso de que ya tenga una cuenta creada.
+
+![1749452590745](image/readme/1749452590745.png)
+
+![1749452659670](image/readme/1749452659670.png)
+
+En caso de que el usuario intente acceder con un correo que ya exista dentro de la aplicación se mostrará el siguiente mensaje: "***El correo ya está en uso***"
+
+![1749452611295](image/readme/1749452611295.png)
+
+Si el nombre propuesto por el usuario contiene caracteres inválidos se mostrará el siguiente mensaje:
+
+![1749457375643](image/readme/1749457375643.png)
+
+Si la longitud de la contraseña es menor que 8 caracteres se mostrará el siguiente mensaje:
+
+![1749457661878](image/readme/1749457661878.png)
+
+Una vez que el usuario ha creado sus credenciales correctamente se le llevará automaticamente al Login / Iniciar Sesión.
+
+---
+
+
+
+#### Login / Iniciar Sesión
+
+Dentro de esta página el usuario deberá introducir las credenciales establecidas previamente en la página de "***Registro***", la pantalla cuenta con 2 inputs:
+
+* Email
+* Contraseña
+
+Junto al input de contraseña se encuentra un botón para quitar el tipo "***password***" y observar la contraseña escrita. En siguiente lugar podemos encontrar el botón que maneja toda la acción de autenticación en esta página "***Iniciar Sesión***" y por último se le ofrece la opción al usuario de crear una cuenta en caso de que no tenga ninguna creada.
+
+![1749450742335](image/readme/1749450742335.png)
+
+![1749452022535](image/readme/1749452022535.png)
+
+
+Si el usuario intenta acceder con credenciales que no existen se mostrará el siguiente mensaje: "***Correo o contraseña incorrectos***"
+
+![1749451954234](image/readme/1749451954234.png)
+
+
+Una vez completado correctamente, se creará un JWT, se le enviará al usuario para almacenarlo en el navegador y realizar operaciones con él como identificador y navegará automaticamente a la página de inicio de la aplicación.
+
+![1749452209050](image/readme/1749452209050.png)
+
+![1749452242885](image/readme/1749452242885.png)
+
+---
+
+
+
 ### Cabecera
 
 La cabecera está formada por los siguientes componentes:
@@ -213,7 +276,7 @@ Si el usuario actual no está suscrito a ningún canal aparecerá la siguiente p
 
 ![1749019592702](image/readme/1749019592702.png)
 
-Al realizar un búsqueda en la barra situada en el header de la aplicación te redirigirá a una página nueva: `buscar.php`, con un parámetro en la url, el texto que introduciste. Una vez ya en la página se mostrarán todos los videos / canales que coincidan o que contengan el texto introducido en la barra de búsqueda.
+Al realizar un búsqueda en la barra situada en el header de la aplicación te redirigirá a una página nueva: `buscar.html`, con un parámetro en la url, el texto que introduciste. Una vez ya en la página se mostrarán todos los videos / canales que coincidan o que contengan el texto introducido en la barra de búsqueda.
 
 #### Vídeos
 
@@ -640,6 +703,34 @@ Esta sección es parecida a la de "Videos", se actualizará el nombre de la secc
 ![1748865433320](image/readme/1748865433320.png)
 
 ![1748935664671](image/readme/1748935664671.png)
+
+---
+
+### Crear Video
+
+Dentro de la pantalla "***Crear Videos***" encontramos un formulario con todas las características para publicar un video dentro de la aplicación.
+
+* Título del video
+* Descripción del video
+* Categoría
+* Miniatura
+* Video
+* Estado `( PÚBLICO / PRIVADO )`
+
+Todos los campos son obligatorios, además el usuario seleccionara la categoría que más se asemeje al tipo de video que publica, las categorias estarán predefinidas y se mostrarán de la siguiente manera:
+
+![1749453670642](image/readme/1749453670642.png)
+
+![1749453962758](image/readme/1749453962758.png)
+
+Ejemplo con todos los campos completos:
+
+![1749454101183](image/readme/1749454101183.png)
+
+Si el video subido dura más de 50 minutos se mostrará la siguiente alerta en el navegador:
+![1749455300042](image/readme/1749455300042.png)
+
+Si la publicacion del video se ha completado correctamente te llevará automaticamente a tu canal y la seccion "***Videos o Videos Privados***" dependiendo de que estado se ha seleccionado a la hora de crear el video.
 
 ---
 
