@@ -68,7 +68,7 @@ function VideosGuardados(limit = limitActual, offset = offsetActual, filtro = fi
                         {
                 
                             let nuevoContenedor = document.createElement("a")
-                            nuevoContenedor.href = "../videos.php?ref=" + datos.mensaje.contenedor[i].video.link.url
+                            nuevoContenedor.href = "../videos.html?ref=" + datos.mensaje.contenedor[i].video.link.url
 
                             nuevoContenedor.classList.add("flex", "items-center", "gap-4", "transition-colors", "duration-150", "rounded-md", "p-2", "hover:bg-gray-50")
                             
@@ -179,6 +179,7 @@ busqueda_ipt.addEventListener("input", (e) => {
     
     let valor = e.target.value.trim()
     busquedaActual = valor
+    contenedor_videos_guardados.innerHTML = ''
     VideosGuardados(limitActual, offsetActual, filtroActual, valor)
 })
 
