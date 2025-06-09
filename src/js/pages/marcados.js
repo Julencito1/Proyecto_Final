@@ -93,7 +93,7 @@ function VideosMarcados(offset = 0) {
                         for (let i = 0; i < vm.length; i++)
                         {
                             let nuevoContenedor = document.createElement("a")
-                                nuevoContenedor.href = `./videos.php?ref=` + vm[i].link.identificador_video
+                                nuevoContenedor.href = `./videos.html?ref=` + vm[i].link.identificador_video
     
                                 nuevoContenedor.classList.add("flex", "items-center", "gap-4", "transition-colors", "duration-150", "rounded-md", "p-2", "hover:bg-gray-50")
                                 
@@ -272,7 +272,7 @@ function ComentariosMarcados(offset = 0) {
 
                             let nuevoContenedor = document.createElement("a")
                             nuevoContenedor.classList.add("flex", "items-center", "gap-4", "transition-colors", "duration-150", "rounded-md", "p-2", "hover:bg-gray-50")
-                            nuevoContenedor.href = `./videos.php?ref=` + comentarios[i].accion.identificador_video
+                            nuevoContenedor.href = `./videos.html?ref=` + comentarios[i].accion.identificador_video
                             nuevoContenedor.setAttribute("id", `comentario_marcado_${offset+i}`)
 
                             nuevoContenedor.innerHTML = `

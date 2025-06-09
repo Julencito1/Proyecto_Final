@@ -181,7 +181,7 @@ buscador.addEventListener("keydown", (e) => {
 
     if (e.key === "Enter")
     {
-        window.location.href = `./buscar.php?q=` + buscador.value
+        window.location.href = `./buscar.html?q=` + buscador.value
     }
 
 })
@@ -336,7 +336,7 @@ function NotificacionesUsuario(limit = 20, offset = 0)
                     {
                         let nuevoContenedor = document.createElement("a")
                         
-                        nuevoContenedor.href = "videos.php?ref=" + datos.mensaje[i].notificaciones.info.link.enlace
+                        nuevoContenedor.href = "videos.html?ref=" + datos.mensaje[i].notificaciones.info.link.enlace
                         nuevoContenedor.classList.add("cursor-pointer")
             
                         let html = `
@@ -493,7 +493,7 @@ function MostrarRecomendaciones()
             let nuevaRecomendacion = document.createElement("a")
 
             nuevaRecomendacion.setAttribute("class", "flex items-center gap-4 py-1.5 px-3 transition-colors duration-150 hover:bg-gray-100")
-            nuevaRecomendacion.href =  "/buscar.php?q=" + arrayRecientes[v].contenido
+            nuevaRecomendacion.href =  "/buscar.html?q=" + arrayRecientes[v].contenido
 
             nuevaRecomendacion.innerHTML = `
             

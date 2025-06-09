@@ -59,7 +59,7 @@ function MostrarCanales(offset, mas)
 
             nuevoContenedor.innerHTML = `
             
-                <a href=${`./canal.php?ref=` + suscripcionesActuales[j].canal.nombre_canal} class='flex flex-col gap-2 items-center justify-center'>
+                <a href=${`./canal.html?ref=` + suscripcionesActuales[j].canal.nombre_canal} class='flex flex-col gap-2 items-center justify-center'>
                     <div>
                         <img src='${suscripcionesActuales[j].media.avatar}' class='rounded-full bg-cover bg-center bg-no-repeat w-20 h-20' />
                     </div>

@@ -3,7 +3,7 @@ let q = parametros.get("q")
 
 if (!q)
 {
-    window.location.href = '../404.php'
+    window.location.href = '../404.html'
 }
 
 document.title = `${q} - NewTube`
@@ -106,10 +106,10 @@ function BuscarResultados(offsetC = 0, offsetV = 0)
                             if (mixResultados[almacenarAleatorio[i]].tipo === "video")
                             {
                                 nuevoContenedor.setAttribute("class", "flex gap-5 shrink-0 max-xs:flex-col max-sm:flex-col")
-                                nuevoContenedor.href = `./videos.php?ref=${mixResultados[almacenarAleatorio[i]].link.ruta}`
+                                nuevoContenedor.href = `./videos.html?ref=${mixResultados[almacenarAleatorio[i]].link.ruta}`
                             } else {
                                 nuevoContenedor.setAttribute("class", "flex items-center gap-5 shrink-0 max-xs:gap-3 max-sm:gap-0")
-                                nuevoContenedor.href = `./canal.php?ref=${mixResultados[almacenarAleatorio[i]].nombre_canal}`
+                                nuevoContenedor.href = `./canal.html?ref=${mixResultados[almacenarAleatorio[i]].nombre_canal}`
                             }
         
                             nuevoContenedor.setAttribute("id", `resultado_${(offsetC + offsetV) + i}`)

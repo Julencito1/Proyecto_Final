@@ -119,7 +119,7 @@ function VideosCategoria(offset = 0) {
                                 {
                     
                                     let recomendacion = document.createElement("a")
-                                    recomendacion.href = './pages/videos.php?ref=' + videos[k].link.ruta
+                                    recomendacion.href = './pages/videos.html?ref=' + videos[k].link.ruta
                                     recomendacion.setAttribute("id", "recomendacion_video_" + (k+offset))
                                     recomendacion.classList.add("flex", "flex-col", "gap-2", "fade_in")
                     
@@ -195,7 +195,7 @@ function VideosCategoria(offset = 0) {
                         }
                 } else if (datos.codigo === 404)
                 {
-                    window.location.href = './404.php'
+                    window.location.href = './404.html'
                 }
         } catch(error)
         {
@@ -277,7 +277,7 @@ function RecomendacionVideosInicio()
                             {
                 
                                 let recomendacion = document.createElement("a")
-                                recomendacion.href = './pages/videos.php?ref=' + videos[k].link.ruta
+                                recomendacion.href = './pages/videos.html?ref=' + videos[k].link.ruta
                                 recomendacion.setAttribute("id", "recomendacion_video_" + identificadoresVideos.length)
                                 recomendacion.classList.add("flex", "flex-col", "gap-2", "fade_in")
                 
