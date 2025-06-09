@@ -2,7 +2,7 @@ let parametros = new URLSearchParams(document.location.search)
 let video = parametros.get("ref")
 
 if (!video) {
-    window.location.href = '../404.php'
+    window.location.href = '../404.html'
 }
 
 
@@ -190,7 +190,7 @@ function AlmacenarHistorial() {
         .then((datos) => {
 
             if (datos.codigo === 404) {
-                window.location.href = '../404.php'
+                window.location.href = '../404.html'
             }
 
         })
@@ -233,10 +233,10 @@ function EstadisticasVideo() {
         .then((datos) => {
 
             if (datos.codigo === 404) {
-                window.location.href = '../404.php'
+                window.location.href = '../404.html'
             } else if (datos.codigo === 200) {
                 if (!datos.mensaje.estado) {
-                    window.location.href = '../404.php'
+                    window.location.href = '../404.html'
                 }
 
                 ESTADO_SUSCRIPCION = datos.mensaje.suscriptor
@@ -442,7 +442,7 @@ function ObtenerDatosVideo() {
         .then((datos) => {
 
             if (datos.codigo === 404) {
-                window.location.href = '../404.php'
+                window.location.href = '../404.html'
             } else if (datos.codigo === 200) {
                 let video = datos.mensaje.video
 
@@ -456,12 +456,12 @@ function ObtenerDatosVideo() {
                 videos_vistas.textContent = video.estadisticas.visitas + " visualizaciones"
                 video_fecha_creacion.textContent += video.estadisticas.fecha.fecha_creacion
                 video_categoria.textContent = video.categoria.nombre
-                video_categoria.href = '../index.php?categoria=' + video.categoria.nombre
+                video_categoria.href = '../index.html?categoria=' + video.categoria.nombre
                 video_descripcion.textContent = video.descripcion
                 video_total_megusta.textContent = video.estadisticas.me_gusta
                 video_total_nomegusta.textContent = video.estadisticas.no_megusta
                 NOMBRE_CANAL = video.canal.nombre
-                video_link_canal_usuario.href = './canal.php?ref=' + video.canal.nombre
+                video_link_canal_usuario.href = './canal.html?ref=' + video.canal.nombre
                 total_suscriptores_video_canal.textContent = video.canal.total_suscriptores
                 barra_mover_video.max = video.media.duracion
                 
@@ -704,7 +704,7 @@ function ObtenerComentarios(limit = 20, offset = 0) {
                                 <div class='flex flex-row items-center z-30'>
                                     <div class='flex items-center gap-2'>
                                         <div>
-                                        <a href="./canal.php?ref=${comentarios[j].usuario.canal.nombre}" class='flex flex-row items-center gap-3'>
+                                        <a href="./canal.html?ref=${comentarios[j].usuario.canal.nombre}" class='flex flex-row items-center gap-3'>
                                             <div>
                                                 <img src='${comentarios[j].usuario.media.avatar}' width='30' height='30' class='rounded-full bg-center bg-cover overflow-hidden bg-no-repeat' />
                                             </div>
@@ -893,7 +893,7 @@ function ComentariosHijosMostrados(posicion, comentariosHijos) {
                     <div class='flex flex-row items-center z-30 pl-[42px] mt-5'>
                                 <div class='flex items-center gap-2'>
                                     <div>
-                                    <a href="./canal.php?ref=${comentariosHijos[v].usuario.canal.nombre}" class='flex flex-row items-center gap-3'>
+                                    <a href="./canal.html?ref=${comentariosHijos[v].usuario.canal.nombre}" class='flex flex-row items-center gap-3'>
                                         <div>
                                             <img src='${comentariosHijos[v].usuario.media.avatar}' width='30' height='30' class='rounded-full bg-center bg-cover overflow-hidden bg-no-repeat' />
                                         </div>
@@ -1350,15 +1350,15 @@ function RecomendacionVideosVideo()
                     {
         
                         let recomendacion = document.createElement("a")
-                        recomendacion.href = './videos.php?ref=' + videos[k].link.ruta
+                        recomendacion.href = './videos.html?ref=' + videos[k].link.ruta
                         recomendacion.setAttribute("id", "recomendacion_video_" + identificadoresVideos.length)
                         recomendacion.classList.add("flex", "gap-2", "w-full", "max-w-[350px]",  "max-xs:flex-col", "max-all:flex-col")
         
         
                         recomendacion.innerHTML = `
                         
-                                            <div class='min-w-[180px] h-[100px] max-xs:w-full max-xs:h-[180px] max-all:w-full max-all:h-[160px] relative'>
-                                                <img src='${videos[k].media.miniatura}' class='rounded-md bg-cover object-cover bg-no-repeat bg-center min-w-[180px] max-xs:h-[180px] max-xs:w-full max-all:w-full max-all:h-[160px] h-[100px]'>
+                                            <div class='min-w-[180px] max-w-[180px] h-[100px] max-xs:w-full max-xs:max-w-full max-xs:h-[180px] max-all:w-full max-all:max-w-full max-all:h-[160px] relative'>
+                                                <img src='${videos[k].media.miniatura}' class='rounded-md bg-cover object-cover bg-no-repeat bg-center min-w-[180px] max-w-[180px] max-xs:h-[180px] max-xs:max-w-full max-xs:w-full max-all:w-full max-all:max-w-full max-all:h-[160px] h-[100px]'>
                                                 <div class='absolute select-none bg-black rounded-sm py-0.5 px-1 right-0 mb-1 bottom-0 mr-1'>
                                                     <div class='text-white select-none font-Inter text-[10px]'>${videos[k].estadisticas.duracion}</div>
                                                 </div>
