@@ -13,7 +13,7 @@
   <div id="plantilla">
     <?php include '../components/header.php'; ?>
     <main id='main' class="contenedor_ref p-5 overflow-auto h-[100vh-50px]">
-        <div class="w-[1284px] mx-auto h-full max-2xl:w-full">
+        <div class="w-[1284px] mx-auto h-full">
           <div id="contenedor_resultados_busqueda" class="flex flex-col gap-8 h-full">
 
           </div>
