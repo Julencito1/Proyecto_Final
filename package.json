@@ -1,11 +1,10 @@
 {
+  "name": "proyecto_ies",
+  "version": "1.0.0",
   "scripts": {
-    "build": "mkdir dist && tailwindcss -i ./src/index.css -o ./dist/style.css --minify && cp -r ./src/*.html ./dist/"
-  },
-  "dependencies": {
-    "@tailwindcss/cli": "^4.1.4"
+    "build": "tailwindcss -i ./src/input.css -o ./src/output.css --minify"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.1"
   }
 }
