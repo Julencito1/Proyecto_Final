@@ -181,7 +181,7 @@ buscador.addEventListener("keydown", (e) => {
 
     if (e.key === "Enter")
     {
-        window.location.href = `./buscar.html?q=` + buscador.value
+        window.location.href = `https://newtube-tp1f.onrender.com/pages/buscar.html?q=` + buscador.value
     }
 
 })

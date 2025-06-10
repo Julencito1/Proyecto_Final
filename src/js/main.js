@@ -56,3 +56,7 @@ if (!busquedasRecientes)
 }
 
 
+if (!localStorage.getItem("logged")) {
+
+  window.location.href = "https://newtube-tp1f.onrender.com/login.html"
+}
