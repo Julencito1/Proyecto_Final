@@ -11,7 +11,7 @@ function ObtenerHistorial(offset = 0)
     if (!localStorage.getItem("logged")) return; 
         
     
-        fetch(`http://localhost:8080/historial/obtener`,
+        fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/historial/obtener`,
             {
                 method: 'POST',
                 body: JSON.stringify({

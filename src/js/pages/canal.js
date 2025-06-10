@@ -89,7 +89,7 @@ function CrearTabPrivado()
 function DatosCanal() {
     
 
-    fetch(`http://localhost:8080/canales/datos`,
+    fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/canales/datos`,
         {
             method: 'POST',
             headers: {
@@ -156,7 +156,7 @@ DatosCanal()
 
 function Suscribirse() {
 
-    fetch(`http://localhost:8080/canal/agregar/suscribirse`,
+    fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/canal/agregar/suscribirse`,
         {
             method: 'POST',
             headers: {
@@ -191,7 +191,7 @@ function QuitarSuscripcion()
 {
    
 
-        fetch(`http://localhost:8080/canal/quitar/suscribirse`,
+        fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/canal/quitar/suscribirse`,
             {
                 method: 'POST',
                 headers: {
@@ -313,7 +313,7 @@ function VideosCanal(limit = 20, offset = 0)
         contenedor_contenido_tabs.appendChild(contenedorLoader)
     }, 200)
 
-    fetch(`http://localhost:8080/canal/videos`,
+    fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/canal/videos`,
         {
             method: 'POST',
             headers: {
@@ -483,7 +483,7 @@ function SobreMi()
         contenedor_contenido_tabs.appendChild(contenedorLoader)
     }, 200)
 
-    fetch(`http://localhost:8080/canal/sobremi`,
+    fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/canal/sobremi`,
         {
             method: 'POST',
             headers: {
@@ -626,7 +626,7 @@ function ActualizarDescripcionCanal()
 {
     let actualiza_descripcion_canal = document.getElementById("actualiza_descripcion_canal")
 
-    fetch("http://localhost:8080/canal/actualizar/descripcion",
+    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/canal/actualizar/descripcion",
         {
             method: 'PUT',
             body: JSON.stringify({
@@ -674,7 +674,7 @@ function VideosPrivadosCanal(limit = 20, offset = 0)
         contenedor_contenido_tabs.appendChild(contenedorLoader)
     }, 200)
 
-    fetch(`http://localhost:8080/canal/videos/privados`,
+    fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/canal/videos/privados`,
         {
             method: 'POST',
             headers: {
@@ -839,7 +839,7 @@ function HacerPublicoVideo(identificador)
 {
     if (!localStorage.getItem("logged") || !identificador || identificador === "") return
 
-    fetch("http://localhost:8080/canal/videos/publicar",
+    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/canal/videos/publicar",
         {
             method: 'PUT',
             body: JSON.stringify({
@@ -876,7 +876,7 @@ function OcultarVideo(identificador)
 {
     if (!localStorage.getItem("logged") || !identificador || identificador === "") return
 
-    fetch("http://localhost:8080/canal/videos/ocultar",
+    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/canal/videos/ocultar",
         {
             method: 'PUT',
             body: JSON.stringify({
@@ -913,7 +913,7 @@ function BorrarVideo(identificador)
 {
     if (!localStorage.getItem("logged") || !identificador || identificador === "") return
 
-    fetch("http://localhost:8080/canal/videos/borrar",
+    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/canal/videos/borrar",
         {
             method: 'DELETE',
             body: JSON.stringify({
@@ -949,7 +949,7 @@ function GuardarVideo(identificador)
 {
     if (!localStorage.getItem("logged") || !identificador || identificador === "") return
 
-    fetch("http://localhost:8080/canal/videos/guardar",
+    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/canal/videos/guardar",
         {
             method: 'POST',
             body: JSON.stringify({
@@ -985,7 +985,7 @@ function QuitarVideoGuardados(identificador)
 {
     if (!localStorage.getItem("logged") || !identificador || identificador === "") return
 
-    fetch("http://localhost:8080/canal/videos/quitar",
+    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/canal/videos/quitar",
         {
             method: 'POST',
             body: JSON.stringify({
@@ -1035,7 +1035,7 @@ function InicioCanal()
         contenedor_contenido_tabs.appendChild(contenedorLoader)
     }, 200)
 
-    fetch("http://localhost:8080/canal/videos/inicio",
+    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/canal/videos/inicio",
         {
             method: 'POST',
             body: JSON.stringify({

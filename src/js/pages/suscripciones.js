@@ -4,7 +4,7 @@ let suscripcionesActuales = []
 
 function ObtenerSuscripciones(offset = 0) {
 
-    fetch(`http://localhost:8080/suscripciones/obtener`,
+    fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/suscripciones/obtener`,
         {
             method: 'POST',
             headers: {
@@ -97,7 +97,7 @@ function QuitarSuscripcion(posicion, nombre_canal)
 
     
     
-    fetch(`http://localhost:8080/canal/quitar/suscribirse`,
+    fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/canal/quitar/suscribirse`,
         {
             method: 'POST',
             headers: {

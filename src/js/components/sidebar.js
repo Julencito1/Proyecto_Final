@@ -52,7 +52,7 @@ function SidebarSuscripciones()
             loader_suscripciones_sidebar.classList.remove("hidden")
         }, 200)
     
-        fetch(`http://localhost:8080/suscripciones/sidebar`,
+        fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/suscripciones/sidebar`,
             {
                 method: 'GET',
                 headers: {

@@ -15,7 +15,7 @@ function TopCategorias() {
 
     if (!localStorage.getItem("logged")) return
 
-    fetch("http://localhost:8080/categorias/top",
+    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/categorias/top",
         {
             method: 'GET',
             headers: {
@@ -79,7 +79,7 @@ function VideosCategoria(offset = 0) {
 
     }, 200)
 
-    fetch("http://localhost:8080/videos/categorias/obtener",
+    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/videos/categorias/obtener",
         {
             method: 'POST',
             body: JSON.stringify({
@@ -238,7 +238,7 @@ function RecomendacionVideosInicio()
 
     }, 200)
 
-    fetch("http://localhost:8080/videos/recomendados/inicio",
+    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/videos/recomendados/inicio",
         {
             method: 'POST',
             body: JSON.stringify({
