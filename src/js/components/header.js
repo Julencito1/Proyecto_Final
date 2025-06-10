@@ -38,7 +38,7 @@ function EstaLogeado() {
                 <hr class="border-[#e6e6e6]" />
                 <div>
                     <div>
-                    <a href="#" class="w-full flex items-center gap-2 text-left px-4 py-2 font-Inter text-xs transition-colors duration-150 hover:bg-gray-100">
+                    <a href="#" id='link_menu_usuario_canal' class="w-full flex items-center gap-2 text-left px-4 py-2 font-Inter text-xs transition-colors duration-150 hover:bg-gray-100">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tv-icon lucide-tv"><rect width="20" height="15" x="2" y="7" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
                         Tu Canal
                     </a>
@@ -467,10 +467,18 @@ function DatosUsuario()
     })
     .then((datos) => {
 
+        let link_menu_usuario_canal = document.getElementById("link_menu_usuario_canal")
+
         avatar_usuario.forEach(e => {
             e.src = `${datos.mensaje.usuario.imagen.avatar}`
             e.classList.remove("animate-pulse")    
         })
+        
+        if (link_menu_usuario_canal)
+        {
+            link_menu_usuario_canal.href = "https://newtube-tp1f.onrender.com/pages/canal.html?ref=" + datos.mensaje.usuario.canal.nombre_canal
+        }
+
         IMAGEN_USUARIO = datos.mensaje.usuario.imagen.avatar
         usuario_nombre.textContent = `${datos.mensaje.usuario.nombre}` 
         usuario_nombre.title = `${datos.mensaje.usuario.nombre}` 
