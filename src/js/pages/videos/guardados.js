@@ -33,7 +33,7 @@ function VideosGuardados(limit = limitActual, offset = offsetActual, filtro = fi
         contenedor_videos_guardados.appendChild(contenedorLoader)
     }, 200)
 
-    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/videos/guardados/obtener",
+    fetch("https://proyectofinalapi-production-0ce0.up.railway.app/videos/guardados/obtener",
         {
             method: 'POST',
             body: JSON.stringify({
@@ -241,7 +241,7 @@ function QuitarVideo(identificador)
 {
     if (!localStorage.getItem("logged") || !identificador || identificador === "") return
 
-    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/videos/guardados/borrar",
+    fetch("https://proyectofinalapi-production-0ce0.up.railway.app/videos/guardados/borrar",
         {
             method: 'DELETE',
             body: JSON.stringify({

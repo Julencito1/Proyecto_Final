@@ -61,7 +61,7 @@ function VideosMarcados(offset = 0) {
 
     }, 200)
 
-    fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/videos/marcados/obtener`,
+    fetch(`https://proyectofinalapi-production-0ce0.up.railway.app/videos/marcados/obtener`,
         {
             method: 'POST',
             headers: {
@@ -239,7 +239,7 @@ function ComentariosMarcados(offset = 0) {
 
     }, 200)
 
-    fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/obtener/comentarios/marcados`,
+    fetch(`https://proyectofinalapi-production-0ce0.up.railway.app/obtener/comentarios/marcados`,
         {
             method: 'POST',
             headers: {

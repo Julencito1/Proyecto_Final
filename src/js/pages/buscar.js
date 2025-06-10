@@ -59,7 +59,7 @@ function BuscarResultados(offsetC = 0, offsetV = 0)
     }
     
 
-    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/busqueda",
+    fetch("https://proyectofinalapi-production-0ce0.up.railway.app/busqueda",
         {
             method: 'POST',
             body: JSON.stringify({

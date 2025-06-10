@@ -129,7 +129,7 @@ form_signup.addEventListener("submit", (e) => {
     }
 
     try {
-        fetch ("http://proyectofinalapi-production-0ce0.up.railway.app/signup",
+        fetch ("https://proyectofinalapi-production-0ce0.up.railway.app/signup",
             {
                 method: "POST",
                 headers: {

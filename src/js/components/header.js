@@ -219,7 +219,7 @@ function ConteoNotificacionesUsuario()
 
     if (localStorage.getItem("logged") !== null)
     {
-        fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/notificaciones/conteo`,
+        fetch(`https://proyectofinalapi-production-0ce0.up.railway.app/notificaciones/conteo`,
             {
                 method: 'GET',
                 headers: {
@@ -258,7 +258,7 @@ function MarcarLeidas()
 {
     if (localStorage.getItem("logged") !== null)
         {
-            fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/notificaciones/marcarleidas`,
+            fetch(`https://proyectofinalapi-production-0ce0.up.railway.app/notificaciones/marcarleidas`,
                 {
                     method: 'PUT',
                     headers: {
@@ -292,7 +292,7 @@ function NotificacionesUsuario(limit = 20, offset = 0)
 {
     if (localStorage.getItem("logged"))
     {
-        fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/notificaciones/usuario`,
+        fetch(`https://proyectofinalapi-production-0ce0.up.railway.app/notificaciones/usuario`,
             {
                 method: 'POST',
                 body: JSON.stringify(
@@ -449,7 +449,7 @@ function DatosUsuario()
         e.classList.add("animate-pulse")
     })
 
-    fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/usuario/datos`,
+    fetch(`https://proyectofinalapi-production-0ce0.up.railway.app/usuario/datos`,
         {
             method: 'GET',
             headers: {

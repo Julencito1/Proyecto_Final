@@ -44,7 +44,7 @@ function ObtenerCategorias()
 {
     if (!localStorage.getItem("logged")) return
 
-    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/categorias/todas/obtener",
+    fetch("https://proyectofinalapi-production-0ce0.up.railway.app/categorias/todas/obtener",
         {
             method: 'GET',
             headers: {

@@ -169,7 +169,7 @@ agrandar_video_btn.addEventListener("click", () => {
 function AlmacenarHistorial() { 
     if (!localStorage.getItem("logged") || !video) return
 
-    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/historial/almacenar",
+    fetch("https://proyectofinalapi-production-0ce0.up.railway.app/historial/almacenar",
         {
             method: 'POST',
             body: JSON.stringify({
@@ -212,7 +212,7 @@ let video_link_canal_usuario = document.getElementById("video_link_canal_usuario
 function EstadisticasVideo() {
     if (!localStorage.getItem("logged") || !video) return
 
-    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/videos/estadisticas",
+    fetch("https://proyectofinalapi-production-0ce0.up.railway.app/videos/estadisticas",
         {
             method: 'POST',
             body: JSON.stringify({
@@ -421,7 +421,7 @@ let total_suscriptores_video_canal = document.getElementById("total_suscriptores
 function ObtenerDatosVideo() {
     if (!localStorage.getItem("logged") || !video) return
 
-    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/videos/datos/video",
+    fetch("https://proyectofinalapi-production-0ce0.up.railway.app/videos/datos/video",
         {
             method: 'POST',
             body: JSON.stringify({
@@ -475,7 +475,7 @@ ObtenerDatosVideo()
 
 function SuscribirseCanal(nombre_canal) {
 
-    fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/canal/agregar/suscribirse`,
+    fetch(`https://proyectofinalapi-production-0ce0.up.railway.app/canal/agregar/suscribirse`,
         {
             method: 'POST',
             headers: {
@@ -507,7 +507,7 @@ function SuscribirseCanal(nombre_canal) {
 function QuitarSuscripcion(nombre_canal) {
 
 
-    fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/canal/quitar/suscribirse`,
+    fetch(`https://proyectofinalapi-production-0ce0.up.railway.app/canal/quitar/suscribirse`,
         {
             method: 'POST',
             headers: {
@@ -538,7 +538,7 @@ function QuitarSuscripcion(nombre_canal) {
 }
 
 function MeGusta() {
-    fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/videos/megusta`,
+    fetch(`https://proyectofinalapi-production-0ce0.up.railway.app/videos/megusta`,
         {
             method: 'POST',
             headers: {
@@ -566,7 +566,7 @@ function MeGusta() {
 }
 
 function NoMeGusta() {
-    fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/videos/nomegusta`,
+    fetch(`https://proyectofinalapi-production-0ce0.up.railway.app/videos/nomegusta`,
         {
             method: 'POST',
             headers: {
@@ -594,7 +594,7 @@ function NoMeGusta() {
 }
 
 function QuitarMarcado() {
-    fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/videos/quitar/marcado`,
+    fetch(`https://proyectofinalapi-production-0ce0.up.railway.app/videos/quitar/marcado`,
         {
             method: 'POST',
             headers: {
@@ -659,7 +659,7 @@ function ObtenerComentarios(limit = 20, offset = 0) {
 
     }, 200)
 
-    fetch(`http://proyectofinalapi-production-0ce0.up.railway.app/obtener/comentarios`,
+    fetch(`https://proyectofinalapi-production-0ce0.up.railway.app/obtener/comentarios`,
         {
             method: 'POST',
             headers: {
@@ -964,7 +964,7 @@ function MarcarSiComentario(posicion, identificador_comentario)
     if (!localStorage.getItem("logged") || !video) return
     let btnComentarioSi = document.getElementById("contMeGusta_" + posicion)
     let btnComentarioNo = document.getElementById("contNoMeGusta_" + posicion)
-    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/comentarios/marcar",
+    fetch("https://proyectofinalapi-production-0ce0.up.railway.app/comentarios/marcar",
         {
             method: 'POST',
             body: JSON.stringify({
@@ -1006,7 +1006,7 @@ function MarcarNoComentario(posicion, identificador_comentario)
     if (!localStorage.getItem("logged") || !video) return
     let btnComentarioSi = document.getElementById("contMeGusta_" + posicion)
     let btnComentarioNo = document.getElementById("contNoMeGusta_" + posicion)
-    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/comentarios/marcar/no",
+    fetch("https://proyectofinalapi-production-0ce0.up.railway.app/comentarios/marcar/no",
         {
             method: 'POST',
             body: JSON.stringify({
@@ -1071,7 +1071,7 @@ function PublicarComentario()
     if (!localStorage.getItem("logged") || !video || comentario_contenedor_editable.textContent.trim().length === 0) return
 
     
-    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/publicar/comentario",
+    fetch("https://proyectofinalapi-production-0ce0.up.railway.app/publicar/comentario",
         {
             method: 'POST',
             body: JSON.stringify({
@@ -1113,7 +1113,7 @@ function PublicarComentarioHijo(comentario_padre_identificador, posicion)
 
     
     
-    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/comentarios/hijos/publicar",
+    fetch("https://proyectofinalapi-production-0ce0.up.railway.app/comentarios/hijos/publicar",
         {
             method: 'POST',
             body: JSON.stringify({
@@ -1150,7 +1150,7 @@ function MarcarSiComentarioHijo(identificador_comentario)
     if (!localStorage.getItem("logged") || !video) return
     let btnComentarioSi = document.getElementById("contMeGustaCHijo_" + identificador_comentario)
     let btnComentarioNo = document.getElementById("contNoMeGustaCHijo_" + identificador_comentario)
-    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/comentarios/hijos/marcar",
+    fetch("https://proyectofinalapi-production-0ce0.up.railway.app/comentarios/hijos/marcar",
         {
             method: 'POST',
             body: JSON.stringify({
@@ -1192,7 +1192,7 @@ function MarcarNoComentarioHijo(identificador_comentario)
     if (!localStorage.getItem("logged") || !video) return
     let btnComentarioSi = document.getElementById("contMeGustaCHijo_" + identificador_comentario)
     let btnComentarioNo = document.getElementById("contNoMeGustaCHijo_" + identificador_comentario)
-    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/comentarios/hijos/marcar/no",
+    fetch("https://proyectofinalapi-production-0ce0.up.railway.app/comentarios/hijos/marcar/no",
         {
             method: 'POST',
             body: JSON.stringify({
@@ -1232,7 +1232,7 @@ function GuardarVideoVideos()
 {
     if (!localStorage.getItem("logged") || !video) return
 
-    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/canal/videos/guardar",
+    fetch("https://proyectofinalapi-production-0ce0.up.railway.app/canal/videos/guardar",
         {
             method: 'POST',
             body: JSON.stringify({
@@ -1266,7 +1266,7 @@ function QuitarVideoGuardadosVideos()
 {
     if (!localStorage.getItem("logged") || !video) return
 
-    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/canal/videos/quitar",
+    fetch("https://proyectofinalapi-production-0ce0.up.railway.app/canal/videos/quitar",
         {
             method: 'POST',
             body: JSON.stringify({
@@ -1318,7 +1318,7 @@ function RecomendacionVideosVideo()
 
     }, 200)
 
-    fetch("http://proyectofinalapi-production-0ce0.up.railway.app/videos/recomendados/video",
+    fetch("https://proyectofinalapi-production-0ce0.up.railway.app/videos/recomendados/video",
         {
             method: 'POST',
             body: JSON.stringify({
