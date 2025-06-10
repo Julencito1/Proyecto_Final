@@ -84,6 +84,7 @@ function SidebarSuscripciones()
             
                             nuevoA.classList.add("sidebar_nav", "rounded-md", "px-1.5", "w-full", "h-[34px]", "flex", "items-center", "gap-2", "cursor-pointer", "transition-colors", "duration-150", "hover:bg-[#f2f2f2]")
                             nuevoA.title = suscripciones[u].usuario.nombre
+                            nuevoA.href = "https://newtube-tp1f.onrender.com/pages/canal.html?ref=" + suscripciones[u].usuario.canal.nombre_canal
                             nuevoA.innerHTML = `
                             
                             <div class='min-w-[20px] min-h-[20px]'>
