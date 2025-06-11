@@ -187,6 +187,7 @@ mas_visualizaciones.addEventListener("click", () => {
 
 
     filtroActual = "mas_visualizaciones"
+    contenedor_videos_guardados.innerHTML = ''
     VideosGuardados(limitActual, offsetActual, filtroActual, busquedaActual)
     MenuUsuarioFiltroVideosGuardarOut()
     main.scroll(0, 0)
@@ -198,6 +199,7 @@ menos_visualizaciones.addEventListener("click", () => {
 
 
     filtroActual = "menos_visualizaciones"
+    contenedor_videos_guardados.innerHTML = ''
     VideosGuardados(limitActual, offsetActual, filtroActual, busquedaActual)
     MenuUsuarioFiltroVideosGuardarOut()
     main.scroll(0, 0)
@@ -208,6 +210,7 @@ mas_antiguos.addEventListener("click", () => {
 
 
     filtroActual = "mas_antiguos"
+    contenedor_videos_guardados.innerHTML = ''
     VideosGuardados(limitActual, offsetActual, filtroActual, busquedaActual)
     MenuUsuarioFiltroVideosGuardarOut()
     main.scroll(0, 0)
@@ -218,6 +221,7 @@ mas_recientes.addEventListener("click", () => {
 
 
     filtroActual = "mas_recientes"
+    contenedor_videos_guardados.innerHTML = ''
     VideosGuardados(limitActual, offsetActual, filtroActual, busquedaActual)
     MenuUsuarioFiltroVideosGuardarOut()
     main.scroll(0, 0)
