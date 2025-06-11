@@ -63,6 +63,13 @@ function VideosGuardados(limit = limitActual, offset = offsetActual, filtro = fi
                 
     
                 if (datos.mensaje.contenedor.length > 0) {
+
+                    let vacioVideosGuardados = document.getElementById("vacioVideosGuardados")
+
+                    if (vacioVideosGuardados)
+                    {
+                        contenedor_videos_guardados.removeChild(vacioVideosGuardados)
+                    }
     
                     for (let i = 0; i < datos.mensaje.contenedor.length; i++)
                         {
@@ -143,6 +150,7 @@ function VideosGuardados(limit = limitActual, offset = offsetActual, filtro = fi
                     if (contenedor_videos_guardados.childElementCount === 0)
                     {
                         let svgVacio = document.createElement("div")
+                        svgVacio.setAttribute("id", "vacioVideosGuardados")
                         svgVacio.classList.add("flex", "flex-col", "gap-4" ,"items-center", "justify-center")
         
                         svgVacio.innerHTML = `
