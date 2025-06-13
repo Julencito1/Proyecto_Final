@@ -1,7 +1,7 @@
 
 if (localStorage.getItem("logged"))
 {
-    window.location.href = window.location.hostname + "/index.html"
+    window.location.href = window.location.origin + "/index.html"
 }
 
 let msj = document.querySelector("#msj")
