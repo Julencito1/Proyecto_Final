@@ -63,6 +63,13 @@ function VideosGuardados(limit = limitActual, offset = offsetActual, filtro = fi
                 
     
                 if (datos.mensaje.contenedor.length > 0) {
+
+                    let vacioVideosGuardados = document.getElementById("vacioVideosGuardados")
+
+                    if (vacioVideosGuardados)
+                    {
+                        contenedor_videos_guardados.removeChild(vacioVideosGuardados)
+                    }
     
                     for (let i = 0; i < datos.mensaje.contenedor.length; i++)
                         {
@@ -140,22 +147,26 @@ function VideosGuardados(limit = limitActual, offset = offsetActual, filtro = fi
                         }
                 } else {
     
-                    let svgVacio = document.createElement("div")
-                    svgVacio.classList.add("flex", "flex-col", "gap-4" ,"items-center", "justify-center")
+                    if (contenedor_videos_guardados.childElementCount === 0)
+                    {
+                        let svgVacio = document.createElement("div")
+                        svgVacio.setAttribute("id", "vacioVideosGuardados")
+                        svgVacio.classList.add("flex", "flex-col", "gap-4" ,"items-center", "justify-center")
+        
+                        svgVacio.innerHTML = `
+                        
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="170" height="136" viewBox="0 0 170 136" fill="none"><path d="M0 0h170v136H0z"/><path d="M113.56 100.64h15.251m-85.291 0h14.589zm-8.753 0h4.673zm97.24 0h1.953z" stroke="#1F64E7" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="m66.64 29.446 7.548 8.468m27.88-8.468-7.548 8.468zM84.32 26.52v11.394z" stroke="#75A4FE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M63.103 48.28h42.572l-3.812 5.719 5.083 3.812H61.832l5.719-3.812z" fill="#E8F0FE"/><path fill="#fff" d="M61.88 56.44h45.56a1.36 1.36 0 0 1 1.36 1.36v48.28a1.36 1.36 0 0 1-1.36 1.36H61.88a1.36 1.36 0 0 1-1.36-1.36V57.8a1.36 1.36 0 0 1 1.36-1.36"/><path fill-rule="evenodd" clip-rule="evenodd" d="M63.638 84.324V60.959c0-.963.789-1.744 1.763-1.744l41.464 43.576c0 1.284-1.027 2.324-2.295 2.324H65.933c-1.268 0-2.295-1.04-2.295-2.324zm0 5.045v-2.617z" fill="#E8F0FE"/><path d="M61.2 84.635V59.082c0-1.053.864-1.906 1.93-1.906h44.148c.694 0 1.257.569 1.257 1.271v46.385c0 1.404-1.125 2.542-2.513 2.542H63.713c-1.388 0-2.513-1.138-2.513-2.542V92.759m0-2.607v-2.861" stroke="#1F64E7" stroke-width="1.7" stroke-linecap="round"/><path d="M62.467 57.176v-7.625c0-.702.511-1.272 1.14-1.272h42.198c.63 0 1.14.57 1.14 1.272v7.625" stroke="#1F64E7" stroke-width="1.7"/><path d="M74.222 70.519a2.224 2.224 0 1 0 0-4.447 2.224 2.224 0 0 0 0 4.447Zm20.968 0a2.224 2.224 0 1 0 0-4.449 2.224 2.224 0 0 0 0 4.449Z" fill="#E8F0FE" stroke="#1F64E7" stroke-width="1.7" stroke-linecap="round"/><path d="M94.873 70.519c0 5.615-4.552 10.167-10.167 10.167s-10.167-4.552-10.167-10.167M63.141 48.914l4.473 4.415a.68.68 0 0 1-.148 1.079l-4.999 2.768m43.912-8.216-4.281 4.366a.68.68 0 0 0 .16 1.073l5.091 2.777" stroke="#1F64E7" stroke-width="1.7" stroke-linecap="round"/></svg>
+                            </div>
+        
+                            <div class='font-Inter text-[13px]'>
+                                No se han encontrado videos guardados
+                            </div>
+                        
+                        `
+                        contenedor_videos_guardados.appendChild(svgVacio)
+                    }
     
-                    svgVacio.innerHTML = `
-                    
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="170" height="136" viewBox="0 0 170 136" fill="none"><path d="M0 0h170v136H0z"/><path d="M113.56 100.64h15.251m-85.291 0h14.589zm-8.753 0h4.673zm97.24 0h1.953z" stroke="#1F64E7" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="m66.64 29.446 7.548 8.468m27.88-8.468-7.548 8.468zM84.32 26.52v11.394z" stroke="#75A4FE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M63.103 48.28h42.572l-3.812 5.719 5.083 3.812H61.832l5.719-3.812z" fill="#E8F0FE"/><path fill="#fff" d="M61.88 56.44h45.56a1.36 1.36 0 0 1 1.36 1.36v48.28a1.36 1.36 0 0 1-1.36 1.36H61.88a1.36 1.36 0 0 1-1.36-1.36V57.8a1.36 1.36 0 0 1 1.36-1.36"/><path fill-rule="evenodd" clip-rule="evenodd" d="M63.638 84.324V60.959c0-.963.789-1.744 1.763-1.744l41.464 43.576c0 1.284-1.027 2.324-2.295 2.324H65.933c-1.268 0-2.295-1.04-2.295-2.324zm0 5.045v-2.617z" fill="#E8F0FE"/><path d="M61.2 84.635V59.082c0-1.053.864-1.906 1.93-1.906h44.148c.694 0 1.257.569 1.257 1.271v46.385c0 1.404-1.125 2.542-2.513 2.542H63.713c-1.388 0-2.513-1.138-2.513-2.542V92.759m0-2.607v-2.861" stroke="#1F64E7" stroke-width="1.7" stroke-linecap="round"/><path d="M62.467 57.176v-7.625c0-.702.511-1.272 1.14-1.272h42.198c.63 0 1.14.57 1.14 1.272v7.625" stroke="#1F64E7" stroke-width="1.7"/><path d="M74.222 70.519a2.224 2.224 0 1 0 0-4.447 2.224 2.224 0 0 0 0 4.447Zm20.968 0a2.224 2.224 0 1 0 0-4.449 2.224 2.224 0 0 0 0 4.449Z" fill="#E8F0FE" stroke="#1F64E7" stroke-width="1.7" stroke-linecap="round"/><path d="M94.873 70.519c0 5.615-4.552 10.167-10.167 10.167s-10.167-4.552-10.167-10.167M63.141 48.914l4.473 4.415a.68.68 0 0 1-.148 1.079l-4.999 2.768m43.912-8.216-4.281 4.366a.68.68 0 0 0 .16 1.073l5.091 2.777" stroke="#1F64E7" stroke-width="1.7" stroke-linecap="round"/></svg>
-                        </div>
-    
-                        <div class='font-Inter text-[13px]'>
-                            No se han encontrado videos guardados
-                        </div>
-                    
-                    `
-    
-                    contenedor_videos_guardados.appendChild(svgVacio)
                 }
             }
        }
@@ -187,6 +198,7 @@ mas_visualizaciones.addEventListener("click", () => {
 
 
     filtroActual = "mas_visualizaciones"
+    contenedor_videos_guardados.innerHTML = ''
     VideosGuardados(limitActual, offsetActual, filtroActual, busquedaActual)
     MenuUsuarioFiltroVideosGuardarOut()
     main.scroll(0, 0)
@@ -198,6 +210,7 @@ menos_visualizaciones.addEventListener("click", () => {
 
 
     filtroActual = "menos_visualizaciones"
+    contenedor_videos_guardados.innerHTML = ''
     VideosGuardados(limitActual, offsetActual, filtroActual, busquedaActual)
     MenuUsuarioFiltroVideosGuardarOut()
     main.scroll(0, 0)
@@ -208,6 +221,7 @@ mas_antiguos.addEventListener("click", () => {
 
 
     filtroActual = "mas_antiguos"
+    contenedor_videos_guardados.innerHTML = ''
     VideosGuardados(limitActual, offsetActual, filtroActual, busquedaActual)
     MenuUsuarioFiltroVideosGuardarOut()
     main.scroll(0, 0)
@@ -218,6 +232,7 @@ mas_recientes.addEventListener("click", () => {
 
 
     filtroActual = "mas_recientes"
+    contenedor_videos_guardados.innerHTML = ''
     VideosGuardados(limitActual, offsetActual, filtroActual, busquedaActual)
     MenuUsuarioFiltroVideosGuardarOut()
     main.scroll(0, 0)

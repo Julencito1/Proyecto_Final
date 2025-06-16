@@ -61,7 +61,7 @@ function EstaLogeado() {
         let contenedor_iniciar_sesion = document.createElement("a")
 
         contenedor_iniciar_sesion.classList.add("border", "rounded-full", "px-3", "py-1", "font-Inter", "text-[13px]", "transition-colors", "duration-150" ,"hover:bg-gray-100")
-        contenedor_iniciar_sesion.href = "./login.html"
+        contenedor_iniciar_sesion.href = "https://newtube-tp1f.onrender.com/login.html"
 
         contenedor_iniciar_sesion.innerHTML = `
     
@@ -434,7 +434,7 @@ const usuario_cerrar_sesion = document.getElementById("usuario_cerrar_sesion")
 usuario_cerrar_sesion?.addEventListener("click", () => {
 
     localStorage.removeItem("logged")
-    window.location.href = "./login.html";
+    window.location.href = "https://newtube-tp1f.onrender.com/login.html";
 
 })
 
@@ -501,7 +501,7 @@ function MostrarRecomendaciones()
             let nuevaRecomendacion = document.createElement("a")
 
             nuevaRecomendacion.setAttribute("class", "flex items-center gap-4 py-1.5 px-3 transition-colors duration-150 hover:bg-gray-100")
-            nuevaRecomendacion.href =  "/buscar.html?q=" + arrayRecientes[v].contenido
+            nuevaRecomendacion.href =  "https://newtube-tp1f.onrender.com/pages/buscar.html?q=" + arrayRecientes[v].contenido
 
             nuevaRecomendacion.innerHTML = `
             

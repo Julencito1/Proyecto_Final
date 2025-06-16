@@ -1,4 +1,9 @@
 
+if (localStorage.getItem("logged"))
+{
+    window.location.href = window.location.origin + "/index.html"
+}
+
 let msj = document.querySelector("#msj")
 let msj_box = document.querySelector("#msj_box")
 

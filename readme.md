@@ -745,3 +745,26 @@ Se navegará automáticamente a esta página en el caso en que el usuario intent
 ![1748865796543](image/readme/1748865796543.png)
 
 ---
+
+### EXTRA
+
+##### Paginación
+
+La páginacion se ha realizado usando la API de los navegadores, "***Intersection Observer***", que consiste en crear unas opciones y establecerselas a uno o varios elementos, por ejemplo:
+
+* Puedes establecer el contenedor a partir se va a obtener si un elemento esta siendo interseccionado o visto por la pantalla del usuario. `root:`
+* Tambíen te permite elegir el porcentaje que debe estar a la vista de ese elemento para que se dispare la accion que tu le pases. `threshold:`
+* Otra opción es la dejar de observar un elemento, por ejemplo, cuando ya se ha mostrado por pantalla.
+
+
+###### Ejemplo
+
+> Por defecto el limite por página es de 20 elementos.
+
+En este ejemplo, podemos observar que el scroll ocupa el alto de tan solo 20 elementos pero si vamos bajando hasta encontrarnos con el elemento observado, ocurre lo siguiente:
+
+![1749712600508](image/readme/1749712600508.png)
+
+![1749712699690](image/readme/1749712699690.png)
+
+El elemento una vez observado llama devuelta a la funcion para obtener los siguiente 20 elementos, en caso de que queden todavia.
